@@ -53,7 +53,7 @@
 				</c:if>
 				<!-- 로그인 o : 마이페이지 버튼 -->
 				
-				<li><a href="" class="btn_reserve">바로 예매</a></li>
+				<li><a href="./Ticketing.tk" class="btn_reserve">바로 예매</a></li>
 				<!-- 바로예매 이동 -->	
 				<li><button class="btn_menu_all">전체 메뉴 레이어 열기</button>
 					<div id="allmenu"></div></li>
