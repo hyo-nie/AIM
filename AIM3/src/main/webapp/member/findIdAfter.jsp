@@ -46,5 +46,7 @@
 	<input type="button" value="비밀번호 찾기" onclick="location.href='./FindPw.aim'">
 	<!-- 비밀번호 찾기 버튼 -->
 	</div>
+	<!-- 약관 -->
+<jsp:include page="../inc/footer.jsp"/>
 </body>
 </html>

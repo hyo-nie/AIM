@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,64 +21,68 @@
 <title>AIM - Login</title>
 </head>
 <body>
-	
+
 	<!-- 각종 요소 -->
-	<jsp:include page="../inc/include.jsp"/>
-	
+	<jsp:include page="../inc/include.jsp" />
+	<!-- 상위 배너 -->
+	<jsp:include page="../inc/topbanner.jsp"/>
 	<!-- 헤더/네비 -->
-	<jsp:include page="../inc/nav_bar.jsp"></jsp:include>
-	
-	<!-- 보기안좋아서 임시방편입니다 -->
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<!-- 보기안좋아서 임시방편입니다 -->
-	
-	<h1 align="center">LOGIN</h1>
-	<br>
-	<br>
-	<fieldset>
-	<div align="center">
-		<form action="./LoginAction.aim" method="post" name="loginfr" onsubmit="return ckLogin()">
-		<div>
-			<input type="text" name="mb_id" maxlength="12" placeholder="아이디"> <br><br>
-			<!-- 아이디를 입력할 수 있는 최대 길이 12 -->
-			<input type="password" name="mb_pw" maxlength="16" placeholder="비밀번호">
-			<!-- 비밀번호를 입력할 수 있는 최대 길이 16 -->
+	<jsp:include page="../inc/login_nav_bar.jsp" />
+	<!-- 사이드 퀵메뉴 -->
+	<jsp:include page="../inc/side_quick_menu.jsp" />
+	<!--사이드 원 팝업창 -->
+	<jsp:include page="../inc/left_circle_pop.jsp" />
+
+	<div id="loginContents"
+		class="contents_full contents_member_comn area__movingbar litype3">
+		<div class="tab_con">
+			<div class="member_login_wrap">
+				<div class="contents_inner">
+					<div class="login_box">
+						<p class="tip">세상의 모든 영화 - All In Movie !</p>
+						<div class="login_area">
+							<form action="./LoginAction.aim" method="post" name="loginfr"
+								onsubmit="return ckLogin()">
+								<div>
+									<input type="text" id="userId" maxlength="50"
+										placeholder="아이디 또는 이메일을 입력해 주세요." title="입력태그"><input
+										type="password" id="userPassword" maxlength="15"
+										placeholder="비밀번호를 입력해 주세요." title="입력태그"><input
+										type="hidden" name="hidLoginType" id="hidLoginType" value="">
+									<button type="submit" class="btn_login">로그인</button>
+								</div>
+							</form>
+						</div>
+						<div class="login_bot_wrap">
+							<div class="login_check">
+								<input type="checkbox" name="loginCheck" id="checkSavedID"><label
+									for="checkSavedID">아이디 저장</label>
+							</div>
+							<div class="login_menu">
+								<a href="./Join.aim" title="페이지 이동">회원가입</a> <a
+									href="./FindId.aim" title="페이지 이동">아이디 찾기</a> <a
+									href="./FindPw.aim" title="페이지 이동">비밀번호 찾기</a>
+							</div>
+						</div>
+					</div>
+					<!-- 								<div class="ad_box">
+									<a
+										href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_42&amp;adgroupid=adg_lottecinema_20221031_15&amp;adid=adi_lottecinema_20221031_15"
+										target=""><img
+										src="https://caching2.lottecinema.co.kr/lotte_image/2022/Hyundaicard/Hyundaicard_450220.jpg"
+										alt="상시 영화티켓 장당 6,000M포인트 사용 자세히보기"></a>
+								</div> -->
+				</div>
+			</div>
 		</div>
-		<br>
-		<div>
-			<input type="checkbox" name="아이디저장" id="saveId">
-			<label for="saveId">아이디 저장</label>
-			<!-- 제이쿼리로 쿠키 이용해서 구현할 예쩡.... 제이쿼리가 기억이 안 나요.............. -->
-		</div>
-		<br>
-		<div>
-			<input type="submit" value="로그인">
-		</div>
-		<br>
-		<div>
-			<!-- 맵핑 후 가상주소로 바꿀 예정 -->
-			<a href="./FindId.aim">아이디 찾기</a> |
-			<a href="./FindPw.aim">비밀번호 찾기</a> |
-			<a href="./Join.aim">회원가입</a>
-		</div>
-		</form> 
 	</div>
-	</fieldset>
+
+
+
+
+	<!-- 하단배너 -->
+	<jsp:include page="../inc/loginform_bottom_banner.jsp" />
+	<!-- 약관 -->
+	<jsp:include page="../inc/footer.jsp" />
 </body>
 </html>

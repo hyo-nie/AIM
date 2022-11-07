@@ -37,5 +37,6 @@ function fun01(){
 					<input type="button" value="돌아가기" onclick="location.href='./AIM.co.kr';" >
 				</div>
 		</form>		
+		
 </body>
 </html>

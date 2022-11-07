@@ -2,9 +2,52 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<!-- Header -->
+<html>
+<head>
+<title>Login - AIM</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-<div id="header_section" class="header ty3">
+<meta id="description">
+<meta id="Keywords">
+<link href="./Main.aim">
+<script type="text/javascript" src="https://tag-deepad.lpoint.com/cookie?mid=4&amp;cid=1154777567.1667836528"></script>
+<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" src="https://www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-164790289-1&amp;l=dataLayer&amp;cx=c"></script>
+<script src="//dsp.dmcmedia.co.kr/selper/js/selperevt.js?ver=0.1.4.1"></script>
+<script src="https://connect.facebook.net/signals/config/233523444404890?v=2.9.89&amp;r=stable"></script>
+<script src="https://connect.facebook.net/en_US/fbevents.js"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-164790289-1"></script>
+<script src="https://www.googletagmanager.com/gtm.js?id=GTM-PJ6LCKF"></script>
+<script src="https://www.googletagmanager.com/gtm.js?id=GTM-K8MP435"></script>
+<script src="https://www.google-analytics.com/analytics.js"></script>
+
+</script>
+<!-- 각종 요소 -->
+<jsp:include page="../inc/include.jsp" />
+
+
+<script type="text/javascript">
+	var MypageCommonQuery = RequestParams(document.location.search); //페이지 파라메터
+</script>
+
+<body>
+
+
+
+
+	<noscript>
+        <iframe
+			src="https://www.googletagmanager.com/ns.html?id=GTM-K8MP435"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+
+    
+    <div id="loading" class="loader loader-bouncing is-active hidden"></div>
+    
+
+ <div id="header_section" class="header ty3">
 	<h1 class="logo">
 		<a href="./Main.aim"></a>
 		<!-- aim 주소창 변경하기 -->
@@ -58,7 +101,7 @@
 				<div id="allmenu"></div></li>
 		</ul>
 	</div>
-	<div id="nav" class="area__gnbmovingbar" >
+	<div id="nav" class="area__gnbmovingbar">
 		<ul>
 			<li class=""><a href="./Ticketing.tk">예매</a> <!-- 예매 임시 가상주소 입니다 자유롭게 변경해서 사용해주세요 -->
 				<div>
@@ -104,4 +147,24 @@
 	</div>
 </div>
 
-<!-- End Header -->
+    
+    <div id="layerCommonAlert"
+		class="layer_wrap layer_alert layer_wrap200"></div>
+    <ul id="layerPopupMulti" class="layer_wrap layerMultiType"></ul>
+
+    
+
+    
+
+<div id="contents" class="contents_full contents_member_comn" style="">
+    <script src="/NLCHS/Scripts/common/aes.js"></script>
+    <script src="/NLCHS/Scripts/common/sso.js?v=202211080103"></script>
+    <script src="/NLCHS/Scripts/common/LcCommon.js?v=202211080103"></script>
+    <script src="/NLCHS/Scripts/common/crossDomainStorage.js?v=202211080103"></script>
+	<script src="/NLCHS/Scripts/Dist/Login.bundle.js?v=202211080103"></script>  
+</div>
+
+
+</head>
+
+</html>

@@ -1,11 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>AIM - Sign Up</title>
+<!-- 상위 배너 -->
+<jsp:include page="../inc/topbanner.jsp"/>
+<!-- 각종 요소 -->
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<jsp:include page="../inc/include.jsp" />
+<!-- 헤더/네비 -->
+<jsp:include page="../inc/login_nav_bar.jsp" />
+
+
+<!-- /////////////////////////////////////////////////////////////////// -->
+<!-- RADIO 버튼 css 문제로 보이지 않아 수정후에 성별선택버튼 활성화 예정 -->
+<!-- 페이지 css작업 예정입니다.                                          -->
+<!-- /////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
 <script type="text/javascript">
 
 	function checkID(){
@@ -36,84 +55,123 @@
 	}	
 
 	
-	function fun02(){
+	function chk(){
+		var mb_id = $("#mb_id").val();
+		var mb_pw = $("#mb_pw").val();
+		var mb_pw2 = $("#mb_pw2").val();
+		var mb_name = $("#mb_name").val();
+		var mb_nick = $("#mb_nick").val();
+		var mb_birth1 = $("#mb_birth1").val();
+		var mb_birth2 = $("#mb_birth3").val();
+		var mb_birth2 = $("#mb_birth3").val();
+		var mb_gender = $("#mb_gender").val();
+		var mb_tel = $("#mb_tel").val();
+		var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+		// 대문자,소문자,숫자,특수기호 포함 최소 8글자 여부
+		// 특수기호는 "#?!@$%^&*-" 만 사용가능 필요시 추가하면 됍니다.
+		var hangulcheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+		// 한글포함여부
 		if(document.fr.mb_id.value == ""){
 			alert('id를 입력해주세요');
 			document.fr.mb_id.focus();
-			return;
+			return false;
 		}
-		if(document.fr.mb_id.value.length < 4){
-			alert('id는 4자리 이상 12자리 이하로 설정해주세요');
+		if (hangulcheck.test(mb_id)){
+			alert("아이디에 한글을 사용 할 수 없습니다.")
 			document.fr.mb_id.focus();
-			return;
-		}
-		
-		if(document.fr.mb_pw.value==""){
-			alert('pw를 입력하여 주세요');
+			return false;
+		} 
+		if (mb_id.length < 4 || mb_id.length > 12){
+			alert("아이디를 4글자~12글자 사이로 입력하세요")
+			document.fr.mb_id.focus();
+			return false;
+		} 
+		if (mb_pw == "") {
+			alert("비밀번호를 입력하세요.");
 			document.fr.mb_pw.focus();
-			return;
-		}
-		if(document.fr.mb_pw.value.length <8 ){
-			alert('pw는 8자리 이상 입력해주세요');
+			return false;
+		} 
+		if (hangulcheck.test(mb_pw)) {
+			alert("비밀번호에 한글을 사용 할 수 없습니다.");
 			document.fr.mb_pw.focus();
-			return;
+			return false;
+		} 
+		if (mb_pw.length < 8 || mb_pw.length > 20){
+			alert("비밀번호를 8글자~20글자 사이로 입력해주세요");
+			document.fr.mb_pw.focus();
+			return false;
+		} 
+		if (false === reg.test(mb_pw)) {
+			alert('비밀번호는 숫자/대문자/소문자/특수문자를 최소 1개이상 모두 포함해야 합니다.');
+			document.fr.mb_pw.focus();
+			return false;
+		} 
+		if (/(\w)\1\1/.test(mb_pw)) {
+			// \1 추가/제거하면 반복횟수 +- 1
+			alert('비밀번호에 같은 문자를 3번 이상 사용하실 수 없습니다.');
+			document.fr.mb_pw.focus();
+			return false;
+		} 
+		if (mb_pw.search(mb_id) > -1) {
+			alert("비밀번호에 아이디가 포함되었습니다.");
+			document.fr.mb_pw.focus();
+			return false;
+		} 
+		// pw check 
+		if (mb_pw == mb_pw2) {
+			// 일치시에는 문구 출력하지 않음
+		} else {
+			alert("비밀번호가 일치하지 않습니다.")
+			return false;
 		}
-		if(document.fr.mb_pw2.value !== document.fr.mb_pw.value){
-			alert('pw를 일치 시켜 주세요');
-			document.fr.mb_pw2.focus();
-			return;
-		}
-		if(document.fr.mb_name.value == ""){
+		if (mb_name == ""){
 			alert('이름을 입력해주세요');
 			document.fr.mb_name.focus();
-			return;
-		}
-		if(document.fr.mb_nick.value == ""){
+			return false;
+		} 
+		if (mb_nick == ""){
 			alert('별명을 입력해 주세요');
 			document.fr.mb_nick.focus();
-			return;
-		}
-		if(document.fr.mb_birth1.value == "년"){
+			return false;
+		} 
+		if (mb_birth1 == ""){
 			alert('년도를 선택해 주세요');
 			document.fr.mb_birth1.focus();
-			return;
-		}
-		if(document.fr.mb_birth2.value == "월"){
+			return false;
+		} 
+		if (mb_birth2 == ""){
 			alert('월을 선택해 주세요');
 			document.fr.mb_birth2.focus();
-			return;
-		}
-		if(document.fr.mb_birth3.value == "일"){
+			return false;
+		} 
+		if (mb_birth3 == ""){
 			alert('일을 선택해 주세요');
 			document.fr.mb_birth3.focus();
-			return;
-		}
-		if(document.fr.mb_gender.value == ""){
+			return false;
+		} 
+/* 		if (mb_gender1 == "" && mb_gender2 == ""){
 			alert('성별을 선택해 주세요');
 			document.fr.mb_gender.focus();
-			return;
-		}
-		if(document.fr.mb_tel.value == ""){
+			return false;
+		}  */
+		if (mb_tel == ""){
 			alert('휴대전화번호를 입력해 주세요');
 			document.fr.mb_tel.focus();
-			return;
-		}
+			return false;
+		} 
+		
+
 		alert("회원가입이 완료되었습니다");
 		document.fr.submit();
 	}
-	
 
 
 </script>
 </head>
 <body>
 
-	<!-- 각종 요소 -->
-	<jsp:include page="../inc/include.jsp"/>
-	
-	<!-- 헤더/네비 -->
-	<jsp:include page="../inc/nav_bar.jsp"></jsp:include>
-	
+
+
 	<!-- 보기안좋아서 임시방편입니다 -->
 	<br>
 	<br>
@@ -134,50 +192,54 @@
 	<br>
 	<!-- 보기안좋아서 임시방편입니다 -->
 
-	<h2> 회원가입 페이지 </h2>
-		<br>
-		<form action="./JoinAction.aim" method="post" name="fr" id="join">
-		
-			<fieldset>
-				<legend> 회원가입 정보 </legend> 
-				<label>ID :</label> <input type="text" name="mb_id" class="mb_id" maxlength="12" >
-								    <input type="button" name="IdCheck" value="ID중복확인" onclick="checkID()"> <br><br>
-				<label>비밀번호 : </label> <input type="password" name="mb_pw"> <br><br>
-				<label>비밀번호 확인 : </label> <input type="password" name="mb_pw2" ><br><br>
-				<label>이름 : </label> <input type="text" name="mb_name"><br><br>
-				<label>별명 : </label><input type="text" name="mb_nick">
-									<input type="button" name="NickCheck" value="닉네임중복확인" onclick="checkNick()"> <br><br>
-				<label>생년월일 : </label>
-							<select name="mb_birth1">
-								<option> 년 </option>
-								<c:forEach var="y" begin="2000" end="2014" step="1">
-									<option value="${y }">${y }년 </option>
-								</c:forEach>
-							</select>
-							<select name="mb_birth2">
-								<option> 월 </option>
-								<c:forEach var="m" begin="1" end="12" step="1">
-									<option value="${m }">${m }월</option>
-								</c:forEach>								
-							</select>
-							<select name="mb_birth3">
-								<option> 일 </option>
-								<c:forEach var="d" begin="1" end="31" step="1">
-									<option value="${d }">${d }일</option>
-								</c:forEach>
-							</select><br><br>
-				<label> 성별 : </label> <input type="radio" name="mb_gender" value="남">남
-										<input type="radio" name="mb_gender" value="여">여 <br><br>
-				<label> 전화번호 : </label> <input type="tel" name="mb_tel"> 
-							<input type="radio" name="SMS" value="동의" checked> SMS 동의 	
-							<input type="radio" name="SMS" value="비동의"> SMS 비동의
-						
-				
-				
-			</fieldset>
-					<input type="button" value="회원가입" class="submit" onclick="fun02()" >
-					<input type="button" value="돌아가기" onclick="location.href='./Login.aim';" > <!-- 로그인페이지로 이동 -->
-		</form>
-			
+	<h2>회원가입 페이지</h2>
+	<br>
+	<form action="./JoinAction.aim" method="post" name="fr" id="join">
+
+		<fieldset>
+			<legend> 회원가입 정보 </legend>
+			<label>ID :</label> 
+			<input type="text" id="mb_id" name="mb_id" class="mb_id"
+				maxlength="12"> <input type="button" name="IdCheck"
+				value="ID중복확인" onclick="checkID()"> 
+				<br> <br>
+			<label>비밀번호 : </label> <input type="password" name="mb_pw" id="mb_pw">
+				 <br> <br>
+			<label>비밀번호 확인 : </label> <input type="password" name="mb_pw2" id="mb_pw2"><br>
+			<br> <label>이름 : </label> <input type="text" name="mb_name" id="mb_name"><br>
+			<br> <label>별명 : </label><input type="text" name="mb_nick" id="mb_nick">
+			<input type="button" name="NickCheck" value="닉네임중복확인"
+				onclick="checkNick()"> <br> <br> <label>생년월일
+				: </label> <select name="mb_birth1" id="mb_birth1">
+				<option>년</option>
+				<c:forEach var="y" begin="2000" end="2014" step="1">
+					<option value="${y }">${y }년</option>
+				</c:forEach>
+			</select> <select name="mb_birth2" id="mb_bireth2">
+				<option>월</option>
+				<c:forEach var="m" begin="1" end="12" step="1">
+					<option value="${m }">${m }월</option>
+				</c:forEach>
+			</select> <select name="mb_birth3" id="mb_birth3">
+				<option>일</option>
+				<c:forEach var="d" begin="1" end="31" step="1">
+					<option value="${d }">${d }일</option>
+				</c:forEach>
+			</select><br> <br> <!-- <label> 성별 : </label> <input type="radio"
+				name="mb_gender" value="남" id="mb_gender1">남 <input type="radio"
+				name="mb_gender" value="여" id="mb_gender2">여 --> <br> <br> <label>
+				전화번호 : </label> <input type="tel" name="mb_tel" id="mb_tel"> <input type="radio"
+				name="SMS" value="동의" checked> SMS 동의 <input type="radio"
+				name="SMS" value="비동의"> SMS 비동의
+
+
+
+		</fieldset>
+		<input type="button" value="회원가입" onclick="chk()">
+		<input type="button" value="돌아가기" onclick="location.href='./Login.aim';">
+		<!-- 로그인페이지로 이동 -->
+	</form>
+	<!-- 약관 -->
+	<jsp:include page="../inc/footer.jsp" />
 </body>
 </html>
