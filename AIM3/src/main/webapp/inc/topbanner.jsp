@@ -8,7 +8,7 @@
 	<div class="inner">
 		<a href="#" target="">
 			<img src="https://caching2.lottecinema.co.kr/lotte_image/2022/BB/1102/BB_98080.jpg"
-				alt="창극 기획전 11월 대개봉 15세이상관람가">
+				alt="와칸다포에뻐">
 		</a>
 		<button class="btn_close">닫기</button>
 	</div>
