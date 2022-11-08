@@ -920,7 +920,7 @@ ver : 1.01 20191219 2502 line > íŒì—…ë©”ë‰´ ê³ ì •ë†�
 /* ë¡œê·¸ì¸ ========================================================================================= */
 .member_login_wrap .contents_inner {position : relative;}
 .member_login_wrap .ad_box {position:absolute; left:1000px; right:0; top:20px; width:450px; height:220px;}
-.member_login_wrap .login_box {position:relative; left: 750px; width:470px; min-height:220px; box-sizing:border-box; -webkit-box-sizing:border-box; }
+.member_login_wrap .login_box {position:relative; margin: 0 auto; width:470px; min-height:220px; box-sizing:border-box; -webkit-box-sizing:border-box; }
 .member_login_wrap .login_box .tip {font-size:15px;}
 .member_login_wrap .login_box .login_area {position:relative; margin-top:21px; padding-right:120px;}
 .member_login_wrap .login_box .login_area input {display:block; width:100%; height:45px;}
