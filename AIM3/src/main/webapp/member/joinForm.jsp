@@ -180,91 +180,64 @@
 
 </head>
 <body>
-<div class="member_login_wrap">
+<div id="member_join" class="member_join_wrap">
 	<div class="contents_inner">
-		<div class="login_box">
+		<div class="join_box">
+			<form action="./JoinAction.aim" method="post" name="fr" id="join">
+				<div class="join_input_box">
+					<div class="title" >
+						회원가입 페이지
+					</div>
+					<div class="inp_box">
+						<div class="input">
+							<label>아이디 :</label> 
+							<input type="text" id="mb_id" name="mb_id" class="mb_id"
+									maxlength="12"> <input type="button" name="IdCheck"
+									value="ID중복확인" onclick="checkID()">
+							<label>비밀번호 : </label> 
+							<input type="password" name="mb_pw" id="mb_pw">
+			
+							<label>비밀번호 확인 : </label>
+							<input type="password" name="mb_pw2" id="mb_pw2">
+			
+							<label>이름 : </label>
+							<input type="text" name="mb_name" id="mb_name">
+							<label>별명 : </label><input type="text" name="mb_nick" id="mb_nick">
+							<input type="button" name="NickCheck" value="닉네임중복확인"
+									onclick="checkNick()">
+							<label>생년월일 : </label> 
+							<label>전화번호 : </label> <input type="tel" name="mb_tel" id="mb_tel"> 
 
-
-	<h2>회원가입 페이지</h2>
-	<br>
-	<form action="./JoinAction.aim" method="post" name="fr" id="join">
-	<table>
-			<tr class="left">
-				<td class="td_left">
-					<label>아이디 :</label> 
-					<input type="text" id="mb_id" name="mb_id" class="mb_id"
-						maxlength="12"> <input type="button" name="IdCheck"
-						value="ID중복확인" onclick="checkID()">
-				</td>
-			</tr> 
-			<tr>
-				<td>
-				<label>비밀번호 : </label> 
-				<input type="password" name="mb_pw" id="mb_pw">
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<label>비밀번호 확인 : </label>
-				<input type="password" name="mb_pw2" id="mb_pw2">
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<label>이름 : </label>
-				<input type="text" name="mb_name" id="mb_name">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label>별명 : </label><input type="text" name="mb_nick" id="mb_nick">
-					<input type="button" name="NickCheck" value="닉네임중복확인"
-						onclick="checkNick()">
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<label>생년월일 : </label> 
-				<select name="mb_birth1" id="mb_birth1">
-				<option>년</option>
-				<c:forEach var="y" begin="2000" end="2014" step="1">
-					<option value="${y }">${y }년</option>
-				</c:forEach>
-				</select> <select name="mb_birth2" id="mb_bireth2">
-				<option>월</option>
-				<c:forEach var="m" begin="1" end="12" step="1">
-					<option value="${m }">${m }월</option>
-				</c:forEach>
-				</select> <select name="mb_birth3" id="mb_birth3">
-				<option>일</option>
-				<c:forEach var="d" begin="1" end="31" step="1">
-				<option value="${d }">${d }일</option>
-				</c:forEach>
-				</select>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label>전화번호 : </label> <input type="tel" name="mb_tel" id="mb_tel"> 
-				</td>
-			</tr>
-			<tr>
-				<td>
+				<div class="select">
 					<input type="radio" name="SMS" value="동의" checked> SMS 동의 
 					<input type="radio" name="SMS" value="비동의"> SMS 비동의
-				</td>
-			</tr>
-			<tr>
-				<td>
+					<select name="mb_birth1" id="mb_birth1">
+					<option>년</option>
+					<c:forEach var="y" begin="2000" end="2014" step="1">
+						<option value="${y }">${y }년</option>
+					</c:forEach>
+					</select> <select name="mb_birth2" id="mb_bireth2">
+					<option>월</option>
+					<c:forEach var="m" begin="1" end="12" step="1">
+						<option value="${m }">${m }월</option>
+					</c:forEach>
+					</select> <select name="mb_birth3" id="mb_birth3">
+					<option>일</option>
+					<c:forEach var="d" begin="1" end="31" step="1">
+					<option value="${d }">${d }일</option>
+					</c:forEach>
+					</select>
+				</div>
+					<div class="submit">						
 					<input type="button" value="회원가입" onclick="chk()">
 					<input type="button" value="돌아가기" onclick="location.href='./Login.aim';">
-				</td>
-			</tr>
-		<!-- 로그인페이지로 이동 -->
-		</table>
-	</form>
+					</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
 </div>
 	           <!--  추후 적용 -->
 				 <!-- <label> 성별 : </label> <input type="radio"

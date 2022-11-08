@@ -953,10 +953,11 @@ ver : 1.01 20191219 2502 line > íŒì—…ë©”ë‰´ ê³ ì •ë†�
 .member_join_wrap .contents_inner { position: relative;}
 .member_join_wrap .contents_inner .join_box { position: relative; margin:0 auto; width : 500px; box-sizing: border-box; -webkit-box-sizing:border-box;}
 /* form */
-.join_input_box {position:relative; padding-left:160px;}
-.join_input_box .title {position:absolute; left:0; top:0; width:140px; line-height:40px; letter-spacing:-0.5px; font-size:15px; text-align:right;}
+.join_input_box {position:relative; padding-left:130px; padding-top:100px;}
+.join_input_box .title {position:relative; line-height:40px; letter-spacing:-0.5px; font-size:15px; text-align:left; }
 .join_input_box .inp_box {font-size:0;}
-.join_input_box .inp_box input {width:100%;}
+.join_input_box .inp_box .input {width:100%;}
+.join_input_box .inp_box .input .submit {width:50%;}
 .join_input_box .inp_box > select {padding:0 18px; width:91px;}
 .join_input_box .inp_box > select:first-child {width:108px;}
 .join_input_box .inp_box > select ~ select {margin-left:10px;}
