@@ -52,6 +52,39 @@
 <![endif]-->
 
 <script type="text/javascript">
+
+	 function fnChkag() {
+		 alert('test');
+		 
+			if(document.getElementById('agreeCco_1009C0').checked == false){
+				alert("필수요소를 체크하세요");
+				return false;
+			}
+			
+			if(document.getElementById('agreeCco_1009BG').checked == false){
+				alert("필수요소를 체크하세요");
+				return false;
+			}
+			
+			if(document.getElementById('agreeCco_1009BI').checked == false){
+				alert("필수요소를 체크하세요");
+				return false;
+			}
+			
+			if(document.getElementById('agreeCco_1050C1').checked == false){
+				alert("필수요소를 체크하세요");
+				return false;
+			}
+			
+			if(document.getElementById('agreeCco_1050B2').checked == false){
+				alert("필수요소를 체크하세요");
+				return false;
+			}
+			document.fr.submit();
+		}
+			
+			
+
 	if (window.console == undefined) {
 		console = {
 			log : function() {
@@ -78,24 +111,12 @@
 	};
 	 */
 	 
-	 function fnChkag() {
 
-			if(document.fr.1009[0].checked == false && document.fr.1009[1].checked == false){
-				alert("필수요소를 체크하세요");
-				return false;
-			}
-			if(document.fr.1009[2].checked == false && document.fr.1009[3].checked == false){
-				alert("필수요소를 체크하세요");
-				return false;
-			}
-			if(document.fr.1009[4].checked == false){
-				alert("필수요소를 체크하세요");
-				return false;
-			}
-			document.fr.submit();
-		}
 	 
 	 
+	  
+	 
+
 </script>
 
 
@@ -482,7 +503,7 @@
 						취소
 						<!-- 취소 -->
 					</button>
-					<button type="submit"
+					<button type="button"
 						class="ui-button __square-large __point-color" id="delaychk"
 						onclick="fnChkag();">
 						다음
