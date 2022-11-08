@@ -167,78 +167,111 @@
 
 
 </script>
+
+<style type="text/css">
+.left {
+	width : 50px;
+	height : 20px;
+}
+
+
+</style>
+
+
 </head>
 <body>
+<div class="member_login_wrap">
+	<div class="contents_inner">
+		<div class="login_box">
 
-
-
-	<!-- 보기안좋아서 임시방편입니다 -->
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<!-- 보기안좋아서 임시방편입니다 -->
 
 	<h2>회원가입 페이지</h2>
 	<br>
 	<form action="./JoinAction.aim" method="post" name="fr" id="join">
-
-		<fieldset>
-			<legend> 회원가입 정보 </legend>
-			<label>ID :</label> 
-			<input type="text" id="mb_id" name="mb_id" class="mb_id"
-				maxlength="12"> <input type="button" name="IdCheck"
-				value="ID중복확인" onclick="checkID()"> 
-				<br> <br>
-			<label>비밀번호 : </label> <input type="password" name="mb_pw" id="mb_pw">
-				 <br> <br>
-			<label>비밀번호 확인 : </label> <input type="password" name="mb_pw2" id="mb_pw2"><br>
-			<br> <label>이름 : </label> <input type="text" name="mb_name" id="mb_name"><br>
-			<br> <label>별명 : </label><input type="text" name="mb_nick" id="mb_nick">
-			<input type="button" name="NickCheck" value="닉네임중복확인"
-				onclick="checkNick()"> <br> <br> <label>생년월일
-				: </label> <select name="mb_birth1" id="mb_birth1">
+	<table>
+			<tr class="left">
+				<td class="td_left">
+					<label>아이디 :</label> 
+					<input type="text" id="mb_id" name="mb_id" class="mb_id"
+						maxlength="12"> <input type="button" name="IdCheck"
+						value="ID중복확인" onclick="checkID()">
+				</td>
+			</tr> 
+			<tr>
+				<td>
+				<label>비밀번호 : </label> 
+				<input type="password" name="mb_pw" id="mb_pw">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<label>비밀번호 확인 : </label>
+				<input type="password" name="mb_pw2" id="mb_pw2">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<label>이름 : </label>
+				<input type="text" name="mb_name" id="mb_name">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>별명 : </label><input type="text" name="mb_nick" id="mb_nick">
+					<input type="button" name="NickCheck" value="닉네임중복확인"
+						onclick="checkNick()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<label>생년월일 : </label> 
+				<select name="mb_birth1" id="mb_birth1">
 				<option>년</option>
 				<c:forEach var="y" begin="2000" end="2014" step="1">
 					<option value="${y }">${y }년</option>
 				</c:forEach>
-			</select> <select name="mb_birth2" id="mb_bireth2">
+				</select> <select name="mb_birth2" id="mb_bireth2">
 				<option>월</option>
 				<c:forEach var="m" begin="1" end="12" step="1">
 					<option value="${m }">${m }월</option>
 				</c:forEach>
-			</select> <select name="mb_birth3" id="mb_birth3">
+				</select> <select name="mb_birth3" id="mb_birth3">
 				<option>일</option>
 				<c:forEach var="d" begin="1" end="31" step="1">
-					<option value="${d }">${d }일</option>
+				<option value="${d }">${d }일</option>
 				</c:forEach>
-			</select><br> <br> <!-- <label> 성별 : </label> <input type="radio"
-				name="mb_gender" value="남" id="mb_gender1">남 <input type="radio"
-				name="mb_gender" value="여" id="mb_gender2">여 --> <br> <br> <label>
-				전화번호 : </label> <input type="tel" name="mb_tel" id="mb_tel"> <input type="radio"
-				name="SMS" value="동의" checked> SMS 동의 <input type="radio"
-				name="SMS" value="비동의"> SMS 비동의
-
-
-
-		</fieldset>
-		<input type="button" value="회원가입" onclick="chk()">
-		<input type="button" value="돌아가기" onclick="location.href='./Login.aim';">
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>전화번호 : </label> <input type="tel" name="mb_tel" id="mb_tel"> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="radio" name="SMS" value="동의" checked> SMS 동의 
+					<input type="radio" name="SMS" value="비동의"> SMS 비동의
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="회원가입" onclick="chk()">
+					<input type="button" value="돌아가기" onclick="location.href='./Login.aim';">
+				</td>
+			</tr>
 		<!-- 로그인페이지로 이동 -->
+		</table>
 	</form>
+	</div>
+</div>
+</div>
+	           <!--  추후 적용 -->
+				 <!-- <label> 성별 : </label> <input type="radio"
+				name="mb_gender" value="남" id="mb_gender1">남
+				 <input type="radio"
+				name="mb_gender" value="여" id="mb_gender2">여 -->
+	
 	<!-- 약관 -->
 	<jsp:include page="../inc/footer.jsp" />
 </body>
