@@ -45,9 +45,9 @@
 								onsubmit="return ckLogin()">
 								<div>
 									<input type="text" id="userId" maxlength="50"
-										placeholder="아이디 또는 이메일을 입력해 주세요." title="입력태그"><input
+										placeholder="아이디 또는 이메일을 입력해 주세요." title="입력태그" name="mb_id"><input
 										type="password" id="userPassword" maxlength="15"
-										placeholder="비밀번호를 입력해 주세요." title="입력태그"><input
+										placeholder="비밀번호를 입력해 주세요." title="입력태그" name="mb_pw"><input
 										type="hidden" name="hidLoginType" id="hidLoginType" value="">
 									<button type="submit" class="btn_login">로그인</button>
 								</div>
