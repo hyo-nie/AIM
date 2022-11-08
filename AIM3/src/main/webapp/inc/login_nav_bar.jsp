@@ -86,7 +86,7 @@
 		<ul class="g_menu3">
 
 			<c:if test="${mb_id == null }">
-				<li><a href="./Join.aim" class="btn_my">회원가입</a></li>
+				<li><a href="./JoinTerms.aim" class="btn_my">회원가입</a></li>
 			</c:if>
 			<!-- 로그인 x : 회원가입 버튼 -->
 

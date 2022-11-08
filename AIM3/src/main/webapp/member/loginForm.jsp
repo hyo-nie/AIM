@@ -19,9 +19,6 @@
 
 <meta charset="UTF-8">
 <title>AIM - Login</title>
-</head>
-<body>
-
 	<!-- 각종 요소 -->
 	<jsp:include page="../inc/include.jsp" />
 	<!-- 상위 배너 -->
@@ -32,6 +29,9 @@
 	<jsp:include page="../inc/side_quick_menu.jsp" />
 	<!--사이드 원 팝업창 -->
 	<jsp:include page="../inc/left_circle_pop.jsp" />
+</head>
+<body>
+
 
 	<div id="loginContents"
 		class="contents_full contents_member_comn area__movingbar litype3">

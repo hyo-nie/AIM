@@ -117,12 +117,20 @@ public class MemberFrontController extends HttpServlet {
               e.printStackTrace();
            }
         } // FindIdAction.aim 
+    	else if(command.equals("/JoinTerms.aim")) {				// 회원가입 약관
+    		System.out.println(" C : /JoinTerms.aim 호출 / 패턴1");
+    		
+    		forward = new ActionForward();
+    		forward.setPath("./member/join_Terms.jsp");
+    		forward.setRedirect(false);
+    		
+    	}
     	
     	else if(command.equals("/Join.aim")) {				// 회원가입
      		System.out.println(" C : /Join.aim 호출 / 패턴1");
 	   		
  	   		forward = new ActionForward();
- 	   		forward.setPath("./member/joinForm.jsp");
+ 	   		forward.setPath("./member/joinformnew.jsp");
  	   		forward.setRedirect(false);
  	   		
      	} // Join.aim 끝
@@ -140,6 +148,16 @@ public class MemberFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
     	} // JoinAction.aim 끝
+    	
+    	else if(command.equals("/JoinSuccess.aim")) {				// 회원가입 성공
+    		System.out.println(" C : /JoinSuccess.aim 호출 / 패턴1");
+    		
+    		forward = new ActionForward();
+    		forward.setPath("./member/join_success.jsp");
+    		forward.setRedirect(false);
+    		
+    	}
+    	
     	
     	else if(command.equals("/IdCheck.aim")) {			// 아이디 중복 확인
    			System.out.println(" C : /IdCheck.aim 호출");

@@ -44,7 +44,7 @@ a:focus {outline:1px solid #ee1c25;}
 .description-addr {color:#ee1c25;}
 
 /* 툴팁 */
-.tooltip-content {background-color:#ee1c25;}
+.tooltip-content {background-color:#ee1c25; opacity: 0.7;}
 .tooltip-container.active .tooltip-trigger:before {border-bottom-color:#ee1c25;}
 .tooltip-content b {color:#ffec00;}
 
