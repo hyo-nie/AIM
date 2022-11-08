@@ -77,29 +77,19 @@
 
 
  
-<!-- header -->
-<div id="mast-head">
-	<div class="container">
-		<h1 class="bi">
-			<!-- <a href="https://www.lpoint.com/" onclick="return fnWindowOpen(this.href);" target="_blank"><img src="/resources/images/common/bi-lpoint.png" alt="L.POINT"></a> -->
-			
-			<a href="https://www.lpoint.com/" onclick="return fnWindowOpen(this.href);" target="_blank"><img src="/resources/images/common/bi-lpoint-new.png" alt="L.POINT"></a>
-			<a href="http://www.lottecinema.co.kr/LCHS/index.aspx" onclick="return fnWindowOpen(this.href);" target="_blank" class=""><img src="/resources/images/logo/img_1050.png" alt="롯데컬처웍스" id="ccoLogo"></a>
-		</h1>
+	<!-- header -->
+	<div id="mast-head">
+		<div class="container">
+			<h1 class="bi">
+				<!-- <a href="https://www.lpoint.com/" onclick="return fnWindowOpen(this.href);" target="_blank"><img src="/resources/images/common/bi-lpoint.png" alt="L.POINT"></a> -->
 
-		<div class="language __none">
-			<button type="button" class="ui-toggle">Language</button>
-			<button type="button" onclick="fnChangeLocale('en')">English</button>
-			<button type="button" onclick="fnChangeLocale('zh_cn')">简体字</button>
-			<button type="button" onclick="fnChangeLocale('zh_tw')">繁體字</button>
-			<button type="button" onclick="fnChangeLocale('ja')">日本語</button>
-			
-			
-			<button type="button" onclick="fnChangeLocale('vi')">Tiếng Việt</button>
+				<a href="./Main.aim" onclick="return fnWindowOpen(this.href);"
+					target="_blank"><img src="https://ifh.cc/g/RGtYO5.png"
+					alt="AIM홈페이지"></a>
+			</h1>
 		</div>
 	</div>
-</div>
-<!-- //header -->
+	<!-- //header -->
 
 
 <!-- mast body -->
@@ -123,60 +113,70 @@
 						<span class="__require-info __point-color"><small>*는 필수입력 항목입니다.<!-- *는 필수입력 항목입니다. --></small></span>
 					</em>
 				</h3>
-				<!-- 이름 -->
+				<!-- 아이디 -->
 				<div class="row _none" id="div-cstNm">
 					<div class="col-md">
-						<label for="cstNm"><em class="__point-color">*</em>이름<!-- 이름 --></label>
+						<label for="cstNm"><em class="__point-color">*</em>아이디<!-- 아이디 --></label>
 					</div>
 					<div class="col-md">
 						<div class="form-wrap __normal">
 							<div class="ui-input">
-								<input type="text" id="cstNm" title="이름을 입력해주세요." maxlength="13"> <!-- 이름을 입력해주세요 -->
-								<span class="placeholder">한글 또는 영문으로 입력해주세요.<!-- 한글 또는 영문으로 입력해주세요. --></span>
+								<input type="text" id="cstNm" title="아이디를 입력해주세요." maxlength="13"> <!-- 아이디를 입력해주세요 -->
+								<span class="placeholder">영문으로 입력해주세요.<!-- 한글 또는 영문으로 입력해주세요. --></span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- 이메일인증 -->
+				<!-- 아이디 -->
 				<div class="section rowgroup" id="div-elcAdd">
-					<!-- 이메일 -->
+					<!-- 이름 -->
 					<div class="row">
 						<div class="col-md">
-							<label for="elcAdd"><em class="__point-color">*</em>이메일 주소<!-- 이메일 주소 --></label>
+							<label for="elcAdd"><em class="__point-color">*</em>이름<!-- 본인 이름 --></label>
 						</div>
 						<div class="col-md">
 							<div class="form-wrap __normal __x1">
 								<div class="inner">
 									<div class="ui-input">
-										<input type="email" id="elcAdd" title="이메일주소를 입력해주세요." onkeyup="fnElcAddCtfYnFlagChange();" class=""><!-- 이메일 주소를 입력해주세요. -->
-										<span class="placeholder">이메일주소를 입력해주세요.<!-- 이메일 주소를 입력해주세요. --></span>
+										<input type="text" id="elcAdd" title="이름을 입력해주세요." class="" maxlength="10"><!-- 이름을 입력해주세요. -->
+										<span class="placeholder">이름을 입력해주세요.<!-- 이름을 입력해주세요. --></span>
 									</div>
-									<button type="button" class="ui-button __square-small __black" id="elcAddBtn" onclick="fnElcAddDupChk('fnElcAddDupChkEsyCallBack')">메일발송<!-- 메일발송 --></button><!--  메일발송 후, 재전송으로 변경 -->
-									<button type="button" class="ui-button __square-small __black __none" id="elcAddReBtn" onclick="fnElcAddDupChk('fnElcAddDupChkEsyCallBack')">재발송<!-- 재발송 --></button>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- 인증번호 -->
+					<!-- 닉네임 -->
 					<div class="row">
 						<div class="col-md">
-							<label for="ctfMg"><em class="__point-color">*</em>인증번호<!-- 인증번호 --></label>
+							<label for="ctfMg"><em class="__point-color">*</em>닉네임<!-- 닉네임 --></label>
 						</div>
 						<div class="col-md">
 							<div class="form-wrap __normal __x1">
 								<div class="inner">
 									<div class="ui-input">
-										<input type="tel" id="ctfMg" maxlength="6" title="전송된 인증번호를 입력해주세요." class=""><!-- 전송된 인증번호를 입력해주세요. -->
-										<span class="placeholder">인증번호를 입력해주세요.<!-- 인증번호를 입력해주세요. --></span>
-										<span class="timer"></span>
+										<input type="text" id="ctfMg" maxlength="10" title="닉네임을 입력해주세요." class=""><!-- 닉네임을 입력해주세요. -->
+										<span class="placeholder">닉네임을 입력해주세요.<!-- 닉네임을 입력해주세요. --></span>
 									</div>
-									<button type="button" class="ui-button __square-small __black" onclick="fnElcAddCtfNoMg();" id="fnElcAddCtfNoMg">인증확인<!-- 인증확인 --></button>
 								</div>
-								<span class="__point-color"><small>전송된 이메일을 확인 하신 후 인증번호를 입력해주세요.<!-- 전송된 이메일을 확인 하신 후 인증번호를 입력해주세요 --></small></span>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- 이메일 -->
+				<div class="row _none" id="div-cstNm">
+					<div class="col-md">
+						<label for="cstNm"><em class="__point-color"></em>이메일<!-- 이메일 --></label>
+					</div>
+					<div class="col-md">
+						<div class="form-wrap __normal">
+							<div class="ui-input">
+								<input type="text" id="cstNm" title="이메일을 입력해주세요." maxlength="20"> <!-- 이메일 입력해주세요 -->
+								<span class="placeholder">이메일을 입력해주세요.<!-- 이메일을 입력해주세요. --></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 이메일 -->
 				<!-- 비밀번호 -->
 				<div class="row" id="div-pswd">
 					<div class="col-md">
@@ -187,9 +187,10 @@
 			              <div class="tooltip-content">
 			                <p class="tooltip-title"><b>비밀번호 입력 시 아래 규칙을 참고해주세요!</b></p>
 			                <p>1. 비밀번호는 영문자,숫자,특수기호의 조합으로 <b>8~15자리</b>를 사용해야합니다.</p>
-			                <p>2. 특수기호는 <b>! @ # $ % ^ * ? _ ~</b> 만 사용 가능합니다.</p>
+			                <p>2. 특수기호는 <b>? = . *  [ # ? ! @ $ % ^ & * -</b> 만 사용 가능합니다.</p>
 			                <p>3. 연속된 문자열을 <b>3자 이상</b> 사용할 수 없습니다.</p>
 			                <p>4. 동일한 문자열을 <b>3자 이상</b> 사용할 수 없습니다.</p>
+			                <p>5. <b>아이디가포함된</b> 비밀번호를 사용할 수 없습니다.</p>
 			              </div>
 			            </div>
 					</div>
@@ -201,7 +202,7 @@
 									<span class="placeholder">비밀번호를 입력해주세요.<!-- 비밀번호를 입력해주세요. --></span>
 								</div>
 							</div>
-							<span class="__point-color"><small>8-15자리의 영문/숫자/특수문자를 함께 입력해주세요.<!-- 8-15자리의 영문/숫자/특수문자를 함께 입력해주세요. --></small></span>
+							<span class="__point-color"><small>8-20자리의 대소문자/숫자/특수기호를 함께 입력해주세요.<!-- 8-20자리의 대소문자/숫자/특수기호를 함께 입력해주세요. --></small></span>
 							<div class="inner">
 								<div class="ui-input">
 									<input type="password" id="onlCstPswdChk" title="입력하신 비밀번호를 다시 한번 입력해주세요." maxlength="20">
@@ -293,66 +294,65 @@
 							<!-- 제휴사 유효기간 설정 loop -->
 							<div class="row" id="div-mbMrktRcvYn">    
 								<div class="col-md">
-									<label id="txt-lpointNm">L.POINT</label>
+									<label id="txt-lpointNm">수신방법</label>
 								</div>
 								<div class="col-md">
 									<div class="ui-check">
 										<input type="checkbox" id="mbMlRcvYn" name="mbMlRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="mbMlRcvYn" title="E-Mail">E-Mail<!-- E-Mail --></label>
+										<label for="mbMlRcvYn" title="E-Mail">카카오톡<!-- E-Mail --></label>
 									</div>
 									<div class="ui-check">
 										<input type="checkbox" id="mbSmsRcvYn" name="mbSmsRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
 										<label for="mbSmsRcvYn" title="SMS">SMS<!-- SMS --></label>
 									</div>
-									<div class="ui-check __none">
-										<input type="checkbox" id="mbTmRcvYn" name="mbTmRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="mbTmRcvYn" title="TM">TM<!-- TM --></label>
+									<div class="ui-check">
+										<input type="checkbox" id="mbSmsRcvYn" name="mbSmsRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
+										<label for="mbSmsRcvYn" title="SMS">미동의<!-- SMS --></label>
 									</div>
-									<div class="ui-check __none">
-										<input type="checkbox" id="mbDmRcvYn" name="mbDmRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="mbDmRcvYn" title="DM">DM<!-- DM --></label>
-									</div>
+
 									<div class="description">
-										<p>L.POINT 및 제휴사에서 진행하는 L.POINT 회원 맞춤 이벤트, 혜택 등 광고성 정보를 받으실 수 있습니다.<!-- L.POINT 및 제휴사에서 진행하는 L.POINT 회원 맞춤 이벤트, 혜택 등 광고성 정보를 받으실 수 있습니다. --></p>
-									</div>
-								</div>
-							</div>
-							<!-- //제휴사 유효기간 설정 loop -->
-							<div class="row" id="div-ccoMrktRcvYn">
-								<div class="col-md">
-									<label id="txt-ccoNm">롯데컬처웍스</label>
-								</div>
-								<div class="col-md">
-									<div class="ui-check">
-										<input type="checkbox" id="ccoMlRcvYn" name="ccoMlRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="ccoMlRcvYn" title="E-Mail">E-Mail<!-- E-Mail --></label>
-									</div>
-									<div class="ui-check">
-										<input type="checkbox" id="ccoSmsRcvYn" name="ccoSmsRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="ccoSmsRcvYn" title="SMS">SMS<!-- SMS --></label>
-									</div>
-									<div class="ui-check __none">
-										<input type="checkbox" id="ccoTmRcvYn" name="ccoTmRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="ccoTmRcvYn" title="TM">TM<!-- TM --></label>
-									</div>
-									<div class="ui-check __none">
-										<input type="checkbox" id="ccoDmRcvYn" name="ccoDmRcvYn" class="ui-allchk-el ui-allchk-group1" data-separator-number="1">
-										<label for="ccoDmRcvYn" title="DM">DM<!-- DM --></label>
+										<p>AIM 및 제휴사에서 진행하는 AIM 회원 맞춤 이벤트, 혜택 등 광고성 정보를 받으실 수 있습니다.<!-- L.POINT 및 제휴사에서 진행하는 L.POINT 회원 맞춤 이벤트, 혜택 등 광고성 정보를 받으실 수 있습니다. --></p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="description">
-					<p>정보수신동의를 하시면, 고객혜택 및 이벤트 등 다양한 정보를 받으실 수 있습니다.<!-- 정보수신동의를 하시면, 고객혜택 및 이벤트 등 다양한 정보를 받으실 수 있습니다. --></p>
-				</div>
 			</div>
 			<!-- //section -->
 
 			<!-- section : 개인정보유효기간 -->
-			<div class="section __half __expiry" id="div-cstVltrmMg"><h3 class="subject __underline"><em>개인정보 유효기간<span class="__require-info __point-color"><small>*는 필수입력 항목입니다.</small></span></em></h3><div class="row"><div class="col-md"><div class="form-wrap __agreement"><div class="row"><div class="col-md"><label><em class="__point-color">*</em><span>L.POINT</span></label></div><div class="col-md"><div class="ui-radio"><input type="radio" id="10090-privacy" name="1009" value="1"><label for="10090-privacy">1년</label></div><div class="ui-radio"><input type="radio" id="10091-privacy" name="1009" value="9"><label for="10091-privacy">탈퇴시 파기</label></div></div></div></div></div></div><div class="description"><p>개인정보 유효기간 경과 이후 개인정보를 분리 저장/관리 또는 파기합니다.</p></div></div>
-			<!-- //section -->
+				<div class="section __half __expiry" id="div-cstVltrmMg">
+					<h3 class="subject __underline">
+						<em>개인정보 유효기간<span class="__require-info __point-color"><small>*는
+									필수입력 항목입니다.</small></span></em>
+					</h3>
+					<div class="row">
+						<div class="col-md">
+							<div class="form-wrap __agreement">
+								<div class="row">
+									<div class="col-md">
+										<label><em class="__point-color">*</em><span>유효기간</span></label>
+									</div>
+									<div class="col-md">
+										<div class="ui-radio">
+											<input type="radio" id="10090-privacy" name="1009" value="1"><label
+												for="10090-privacy">1년</label>
+										</div>
+										<div class="ui-radio">
+											<input type="radio" id="10091-privacy" name="1009" value="9"><label
+												for="10091-privacy">탈퇴시 파기</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="description">
+						<p>개인정보 유효기간 경과 이후 개인정보를 분리 저장/관리 또는 파기합니다.</p>
+					</div>
+				</div>
+				<!-- //section -->
 
 			<!-- btn -->
 			<div class="btn-area __center">

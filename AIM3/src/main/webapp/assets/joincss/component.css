@@ -5,8 +5,8 @@
 .form-wrap > .inner:first-child {margin:0;}
 .form-wrap.__normal .ui-input {margin:0 6px 0 0;max-width:462px;width:100%;}
 .form-wrap.__normal .ui-select {width:100%;max-width:236px;}
-.form-wrap.__x1 .ui-input {width:382px;}
-.form-wrap.__x2 .ui-input {width:382px;}
+.form-wrap.__x1 .ui-input {width:500px;}
+.form-wrap.__x2 .ui-input {width:500px;}
 .form-wrap.__choice {margin:7px 0 0;}
 .form-wrap.__choice + .description {margin:5px 0 0;}
 .__normal.__x1 {white-space:nowrap;}
