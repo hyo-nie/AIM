@@ -14,4 +14,11 @@ public class TheaterDTO {
 	private String branch_name;
 	private String branch_addr;
 	
+	@Override
+	public String toString() {
+		return "TheaterDTO [scCode=" + scCode + ", branchCd=" + branchCd + ", roomCd=" + roomCd + ", starttime="
+				+ starttime + ", sc_date=" + sc_date + ", movieNm=" + movieNm + ", branch_name=" + branch_name
+				+ ", branch_addr=" + branch_addr + "]";
+	}
+	
 }
