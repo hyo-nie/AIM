@@ -58,7 +58,7 @@
 				<div id="allmenu"></div></li>
 		</ul>
 	</div>
-	<div id="nav" class="area__gnbmovingbar" >
+	<div id="nav" class="area__gnbmovingbar">
 		<ul>
 			<li class=""><a href="./Ticketing.tk">예매</a> <!-- 예매 임시 가상주소 입니다 자유롭게 변경해서 사용해주세요 -->
 				<div>
@@ -79,19 +79,15 @@
 			<li class=""><a href="">영화관</a> <!-- 영화관은 상세영화관 클릭안하면 클릭해도 이동 없습니다 자유롭게 변경해서 사용해주세요 -->
 				<div>
 					<ul>
-						<li><a href="#" title="다대포">다대포</a>
-							<div style="display :none;">
-								<ul style="opacity : 0; ">
+						<li><a href="#" title="서면">서면</a>
+							<div style="display: none;">
+								<ul style="opacity: 0;">
 								</ul>
 							</div>
-						<li><a href="#" title="남포">남포</a>
-						<li><a href="#" title="서면">서면</a>
-						<li><a href="#" title="연산">연산</a>
+						<li><a href="#" title="해운대">해운대</a>
 						<li><a href="#" title="동래">동래</a>
 						<li><a href="#" title="사상">사상</a>
-						<li><a href="#" title="수영">수영</a>
-						<li><a href="#" title="해운대">해운대</a>
-						<li><a href="#" title="대연">대연</a></li>
+						<li><a href="#" title="대연">대연</a>
 					</ul>
 				</div></li>
 			<li class=""><a href="./Store.st">스토어</a> <!-- 스토어 임시 가상주소 입니다 자유롭게 변경해서 사용해주세요 -->
