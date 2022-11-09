@@ -93,7 +93,7 @@
 					</div>
 					<div class="section __opt-in __opt-wrap" id="div-prv">
 						<div class="row __block">
-							<div class="col-md">L.POINT</div>
+							<div class="col-md">AIM.POINT</div>
 							<div class="col-md">
 								<div class="form-wrap __agreement">
 									<div class="inner">
@@ -105,7 +105,7 @@
 													data-title="L.POINT 회원약관" data-prvdvc="C0"
 													data-cconm="L.POINT" data-ccoenm="L.POINT"
 													data-separator-number="1">><label
-													for="agreeCco_1009C0">L.POINT 회원약관 <em class="">(필수)</em></label>
+													for="agreeCco_1009C0">AIM.POINT 회원약관 <em class="">(필수)</em></label>
 											</div>
 											<div class="detail">
 												<button type="button"
@@ -116,12 +116,12 @@
 										<div id="term-code-agree-10090"
 											class="modal-container __fixed">
 											<div class="modal-header">
-												<div class="headline">L.POINT 회원약관</div>
+												<div class="headline">AIM.POINT 회원약관</div>
 											</div>
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss//iframe_1009_C0_ko.html"
+														src="./assets/joincss/iframe_1009_C0_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -158,7 +158,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/iframe_1009_BG_ko.html"
+														src="./assets/joincss/iframe_1009_BG_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -195,7 +195,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/iframe_1009_BH_ko.html"
+														src="./assets/joincss/iframe_1009_BH_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -232,7 +232,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/iframe_1009_BI_ko.html"
+														src="./assets/joincss/iframe_1009_BI_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -269,7 +269,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/iframe_1009_BJ_ko.html"
+														src="./assets/joincss/iframe_1009_BJ_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -312,7 +312,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/1050c1/iframe_1050_C1_ko.html"
+														src="./assets/joincss/1050c1/iframe_1050_C1_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -348,7 +348,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/iframe_1050_B2_ko.html"
+														src="./assets/joincss/iframe_1050_B2_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
@@ -385,7 +385,7 @@
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
 													<iframe
-														src="../assets/joincss/1050b3/iframe_1050_B3_ko.html"
+														src="./assets/joincss/1050b3/iframe_1050_B3_ko.html"
 														width="100%" height="100%" frameborder="0"
 														scrolling="auto" marginwidth="0" marginheight="0"
 														allowtransparency="true" title=""></iframe>
