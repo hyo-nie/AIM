@@ -52,16 +52,21 @@ public class TheaterDAO {
 	// 자원해제 메서드-closeDB()
 	
 	//스케줄 리스트 - getScheList()
-	public List getScheList(int branchCd) {
+	public List getScheList(int branchCd, String date) {
 		List scheList = new ArrayList();
 		
+		StringBuffer SQL = new StringBuffer();
+		
 		try {
-			con= getConnection();
+			con= getConnection();		
 			
-			sql = "select * from schedule where branchCd=? order by sc_date";
+//			SQL.append("select * from schedule where branchCd=? ");
+			
+			sql = "select * from schedule where branchCd=? and sc_date=?";
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setInt(1, branchCd);
+			pstmt.setString(2, date);
 			
 			rs = pstmt.executeQuery();
 			
@@ -71,7 +76,7 @@ public class TheaterDAO {
 				dto.setScCode(rs.getInt("scCode"));
 				dto.setMovieNm(rs.getString("movieNm"));
 				dto.setRoomCd(rs.getInt("roomCd"));
-				dto.setSc_date(rs.getString("sc_date"));
+//				dto.setSc_date(rs.getDate("sc_date"));
 				dto.setStarttime(rs.getString("starttime"));
 				
 				scheList.add(dto);

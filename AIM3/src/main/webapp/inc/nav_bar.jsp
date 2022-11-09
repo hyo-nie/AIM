@@ -76,18 +76,14 @@
 						<li><a href="#" title="상영예정작">상영예정작</a></li>
 					</ul>
 				</div></li>
-			<li class=""><a href="">영화관</a> <!-- 영화관은 상세영화관 클릭안하면 클릭해도 이동 없습니다 자유롭게 변경해서 사용해주세요 -->
-				<div>
+			<li class="is-current"><a href="#">영화관</a> <!-- 영화관은 상세영화관 클릭안하면 클릭해도 이동 없습니다 자유롭게 변경해서 사용해주세요 -->
+			<div>
 					<ul>
-						<li><a href="./Seomyeon.th" title="서면">서면</a>
-							<div style="display: none;">
-								<ul style="opacity: 0;">
-								</ul>
-							</div>
-						<li><a href="./Haeundae.th" title="해운대">해운대</a>
-						<li><a href="./Dongrae.th" title="동래">동래</a>
-						<li><a href="./Sasang.th" title="사상">사상</a>
-						<li><a href="./Daeyeon.th" title="대연">대연</a>
+						<li><a href="./branch.th?branchCd=1" title="서면">서면</a></li>
+						<li><a href="./branch.th?branchCd=2" title="해운대">해운대</a></li>
+						<li><a href="./branch.th?branchCd=3" title="대연">대연</a></li>
+						<li><a href="./branch.th?branchCd=4" title="사상">사상</a></li>
+						<li><a href="./branch.th?branchCd=5" title="동래">동래</a></li>
 					</ul>
 				</div></li>
 			<li class=""><a href="./Store.st">스토어</a> <!-- 스토어 임시 가상주소 입니다 자유롭게 변경해서 사용해주세요 -->

@@ -257,8 +257,8 @@ input.inp_cont {width:54px; margin:0 3px;} /* 2020.01.02 */
 .visual_top .swiper-container-horizontal > .swiper-pagination-bullets {bottom:20px;}
 /* owl */
 .owl-carousel .owl-nav {position:static; right:auto;}
-.owl-carousel .owl-nav .owl-prev {opacity:.6; position:absolute; left:0; top:50%; width:37px; height:39px; margin-top:-20px; background:url("../images/icon/arr_lf_11.png") no-repeat center center;}
-.owl-carousel .owl-nav .owl-next {opacity:.6; position:absolute; right:0; top:50%; width:37px; height:39px;  margin-top:-20px; background:url("../images/icon/arr_rg_11.png") no-repeat center center;}
+.owl-carousel .owl-nav .owl-prev {opacity:.6; position:absolute; left:0; top:50%; width:37px; height:39px; margin-top:-20px; background:url("https://www.lottecinema.co.kr/NLCHS/Content/images/icon/arr_lf_11.png") no-repeat center center;}
+.owl-carousel .owl-nav .owl-next {opacity:.6; position:absolute; right:0; top:50%; width:37px; height:39px;  margin-top:-20px; background:url("https://www.lottecinema.co.kr/NLCHS/Content/images/icon/arr_rg_11.png") no-repeat center center;}
 .owl-carousel .owl-nav .owl-prev:hover,
 .owl-carousel .owl-nav .owl-next:hover {opacity:1;}
 .owl-carousel .owl-nav .owl-prev.disabled,
@@ -509,6 +509,7 @@ body {overflow-y:scroll;}
 /* active */
 .header.ty3 #nav > ul > li.active > div > ul > li.active > a,
 .header.ty3 #nav > ul > li.active > div > ul > li > a:hover {opacity:1;}
+
 /* header :fixed ================================================== */
 .header.fixed {position:fixed; z-index:90; top:0; left:0; right:0; height:43px;}
 .header.fixed .gnb {height:auto; border-bottom:none;}

@@ -40,8 +40,8 @@
 <link href="./assets/css/owl.theme.green.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/swiper.css" rel="stylesheet" type="text/css">
-<link href="./assets/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> -->
 
 
 <!-- other -->
@@ -68,7 +68,7 @@
     <script src="./assets/jquery-ui.min.js"></script>
     <script src="./assets/jquery.cookie.js"></script>
     <script src="./assets/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="./assets/owl.carousel-2.3.4-custom.js"></script>
+    <script src="./assets/css/owl.carousel-2.3.4-custom.js"></script>
     <script src="./assets/plugin.js"></script>
     <script src="./assets/pl_custom.js"></script>
     <script src="./assets/moment.js"></script>
