@@ -178,7 +178,7 @@ ex ) skt / 010 / 0000 / 0000
 </div>
 <!-- //header -->
 
-<form action="./JoinSuccess.aim" method="post" name="fr" id="join">
+<form action="./JoinAction.aim" method="post" name="fr" id="join">
 <!-- mast body -->
 <div id="mast-body">
 	<div class="container">
