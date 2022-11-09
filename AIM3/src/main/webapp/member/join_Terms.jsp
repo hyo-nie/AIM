@@ -284,7 +284,7 @@
 							</div>
 						</div>
 						<div class="row __block">
-							<div class="col-md">롯데컬처웍스</div>
+							<div class="col-md">AIM컬처웍스</div>
 							<div class="col-md">
 								<div class="form-wrap __agreement">
 									<div class="inner">
@@ -296,7 +296,7 @@
 													data-title="롯데컬처웍스 회원사 약관" data-prvdvc="C1"
 													data-cconm="롯데컬처웍스" data-ccoenm="LOTTE CINEMA"
 													data-separator-number="1"><label
-													for="agreeCco_1050C1">롯데컬처웍스 회원사 약관 <em class="">(필수)</em></label>
+													for="agreeCco_1050C1">AIM컬처웍스 회원사 약관 <em class="">(필수)</em></label>
 											</div>
 											<div class="detail">
 												<button type="button"
@@ -307,7 +307,7 @@
 										<div id="term-code-agree-10500"
 											class="modal-container __fixed">
 											<div class="modal-header">
-												<div class="headline">롯데컬처웍스 회원사 약관</div>
+												<div class="headline">AIM컬처웍스 회원사 약관</div>
 											</div>
 											<div class="modal-contents __no-style">
 												<div class="privacyArea">
@@ -405,13 +405,6 @@
 						<p class="__point-color">
 							선택약관에 동의하지 않으셔도 회원가입이 가능합니다.
 							<!-- 선택항목에 동의하지 않으셔도 정상적인 서비스를 이용하실 수 있습니다. -->
-						</p>
-						<p>
-							L.POINT 선택약관에 동의하지 않으시면 L.POINT 모든 제휴사에서 회원 혜택이 제한됩니다.<br>
-							1) 롯데백화점 MVG 등 제휴사 회원등급 선정 및 추가포인트 적립 대상에서 제외<br> 2) 롯데마트 등
-							쿠폰 지급 대상에서 제외<br> 3) 모든 제휴사 이벤트 당첨대상에서 제외<br> 4) 롯데ON
-							L.stamp 적립 및 리워드 대상에서 제외
-							<!-- L.POINT선택약관에 동의하시면 DM쿠폰발송, 백화점MVG선정 등 다양한 혜택을 경험하실 수 있습니다. -->
 						</p>
 					</div>
 				</div>
