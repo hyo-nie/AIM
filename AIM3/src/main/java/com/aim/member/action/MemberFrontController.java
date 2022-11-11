@@ -229,6 +229,15 @@ public class MemberFrontController extends HttpServlet {
 			}
     	} // Logout.aim 끝
     	
+    	else if (command.equals("/AdminPage.aim")) {
+    		System.out.println(" C : /AdminPage.aim 호출 ");
+    		System.out.println(" [패턴1]");
+    		
+    		forward = new ActionForward();
+    		forward.setPath("./member/adminPage.jsp");
+    		forward.setRedirect(false);
+    	}
+    	
     	
 
     	

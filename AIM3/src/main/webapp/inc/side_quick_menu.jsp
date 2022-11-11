@@ -5,7 +5,7 @@
 	<jsp:include page="../inc/include.jsp"/>
     <div class="quick_wrap" style="padding-top: 105px;">
         <div id="quick_menu" class="quick_menu" style="top: 220.234px;">
-			<a href="#">
+			<a href="./Ticketing.tk">
 				<img
 				src="https://caching.lottecinema.co.kr//Media/WebAdmin/961c9cbf311b4f1299827c21a61fab76.png"
 				alt="예매하기"></a>
