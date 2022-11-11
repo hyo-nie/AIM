@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.aim.movie.action.MovieInsertAction;
+
 @WebServlet("*.aim")
 public class MemberFrontController extends HttpServlet {
 
@@ -234,9 +236,12 @@ public class MemberFrontController extends HttpServlet {
     		System.out.println(" [패턴1]");
     		
     		forward = new ActionForward();
-    		forward.setPath("./member/adminPage.jsp");
+    		forward.setPath("./admin/adminPage.jsp");
     		forward.setRedirect(false);
-    	}
+    	} // AdminPage.aim 끝
+    	
+    		
+    		
     	
     	
 
