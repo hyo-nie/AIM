@@ -13,7 +13,11 @@
 <jsp:include page="../inc/topbanner.jsp"/>
 <!-- 헤더/네비 -->
 <jsp:include page="../inc/login_nav_bar.jsp" />
+
+
 <br><br><br><br><br><br><br><br><br><br><br><br>
+	<c:set var="movie" value="${movieList }"/>
+
 <table border="1">
 	<tr>
 		<td>포스터</td>
@@ -22,16 +26,14 @@
 		<td>예매율</td>
 	</tr>	
 	
- <c:forEach items="${movieList }" var="movie" >
- 
-  <tr>
-    <td>포스터</td>
-    <td>${movie.get("movieNm") }</td>
-    <td>관람등급</td>
-    <td>예매율</td>
-  </tr> 
- 
- </c:forEach>
+	  <tr>
+	  	<c:forEach var="movie" items="${movieList }">
+			    <td>${movie.poster }</td>
+			    <td>${movie.movieNm }</td>
+			    <td>${movie.watchGradeNm }</td>
+			    <td>${movie.bookRating }</td>
+	  	</c:forEach>
+	  </tr> 
 </table>
 
 

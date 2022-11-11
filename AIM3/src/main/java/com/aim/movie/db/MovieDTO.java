@@ -4,8 +4,8 @@ public class MovieDTO {
 	private String movieCd;      //영화코드
 	private String movieNm;      //영화이름
 	private String openDt;       //개봉날짜
-	private String genreAlt;     //장르
-	private String director;     //감독
+	private String genreNm;     //장르
+	private String directors;     //감독
 	private String poster;       //포스터
 	private int audiAcc;         //총관람객수
 	private int bookRating;      //예매율
@@ -32,17 +32,17 @@ public class MovieDTO {
 	public void setOpenDt(String openDt) {
 		this.openDt = openDt;
 	}
-	public String getGenreAlt() {
-		return genreAlt;
+	public String getGenreNm() {
+		return genreNm;
 	}
-	public void setGenreAlt(String genreAlt) {
-		this.genreAlt = genreAlt;
+	public void setGenreNm(String genreNm) {
+		this.genreNm = genreNm;
 	}
-	public String getDirector() {
-		return director;
+	public String getDirectors() {
+		return directors;
 	}
-	public void setDirector(String director) {
-		this.director = director;
+	public void setDirectors(String directors) {
+		this.directors = directors;
 	}
 	public String getPoster() {
 		return poster;
@@ -86,14 +86,14 @@ public class MovieDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
+	@Override
+	public String toString() {
+		return "MovieDTO [movieCd=" + movieCd + ", movieNm=" + movieNm + ", openDt=" + openDt + ", genreNm=" + genreNm
+				+ ", directors=" + directors + ", poster=" + poster + ", audiAcc=" + audiAcc + ", bookRating="
+				+ bookRating + ", watchGradeNm=" + watchGradeNm + ", showTm=" + showTm + ", actors=" + actors
+				+ ", contents=" + contents + "]";
+	}
 	
-  @Override
-  public String toString() {
-    return "MovieDTO [movieCd=" + movieCd + ", movieNm=" + movieNm + ", openDt=" + openDt + ", genreAlt=" + genreAlt
-        + ", director=" + director + ", poster=" + poster + ", audiAcc=" + audiAcc + ", bookRating=" + bookRating
-        + ", watchGradeNm=" + watchGradeNm + ", showTm=" + showTm + ", actors=" + actors + ", contents=" + contents
-        + "]";
-  }
 
 	
 	

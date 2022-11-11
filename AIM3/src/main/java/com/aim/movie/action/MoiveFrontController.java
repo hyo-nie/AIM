@@ -44,9 +44,9 @@ public class MoiveFrontController extends HttpServlet{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    			
-    	
     	} //MovieList.mv 끝
+    	
+    
     	
 
     	
