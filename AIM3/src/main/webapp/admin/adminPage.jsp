@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<jsp:include page="../inc/login_nav_bar.jsp" />
+<jsp:include page="../inc/nav_bar.jsp" />
 
 
 	<br><br><br><br><br><br><br><br><br>

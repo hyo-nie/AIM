@@ -46,9 +46,35 @@ public class MoiveFrontController extends HttpServlet{
 			}
     	} //MovieList.mv 끝
     	
-    
-    	
 
+    	else if (command.equals("/MovieInsert.mv")) {
+    		System.out.println(" C : /MovieInsert.mv 호출 ");
+    		System.out.println(" C : [패턴3]");
+    		
+    		// MovieInsertAction() 객체
+    		action = new MovieInsertAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // MovieInsert.aim 끝
+    	
+    	else if (command.equals("/AdminMoiveInsertAction.mv")) {
+    		System.out.println(" C : /AdminMoiveInsertAction.mv 호출 ");
+    		System.out.println(" C : [패턴2] ");
+    		
+    		// AdminMoiveInsertAction() 객체
+    		action = new AdminMoiveInsertAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // AdminMoiveInsertAction.mv
+    	
     	
     	
     	System.out.println("C : 2. 가상주소 매핑 끝\n");
