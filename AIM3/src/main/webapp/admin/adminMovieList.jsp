@@ -35,6 +35,7 @@
 				<th>showTm</th>
 				<th class="actors_ym">actors</th>
 				<th>contents</th>
+				<th>boxrank</th>
 			</tr>
 			
 			<c:forEach var="dto" items="${adminMovieList }">
@@ -51,6 +52,7 @@
 				<td>${dto.showTm }</td>
 				<td>${dto.actors }</td>
 				<td>${dto.contents }</td>
+				<td>${dto.boxrank }</td>
 			</tr>
 			</c:forEach>
 			

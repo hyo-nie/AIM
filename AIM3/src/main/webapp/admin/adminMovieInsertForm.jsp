@@ -66,6 +66,7 @@
 		<c:forEach var="dto2" items="${boxOfficeList }">		
 			<input type="hidden" name="movieCd${i }" value="${dto2.get('movieCd') }">	
 			<input type="hidden" name="audiAcc${i }" value="${dto2.get('audiAcc') }">	
+			<input type="hidden" name="rank${i }" value="${dto2.get('rank') }">	
 			<c:set var="i" value="${i+1 }"></c:set>
 		</c:forEach>
 		

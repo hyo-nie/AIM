@@ -26,6 +26,18 @@ public class AdminMovieInsertAction implements Action {
 		String movieCd9 = request.getParameter("movieCd9");
 		String movieCd10 = request.getParameter("movieCd10");
 		
+		// 데이터 저장 (rank)
+		int rank1 = Integer.parseInt(request.getParameter("rank1"));
+		int rank2 = Integer.parseInt(request.getParameter("rank2"));
+		int rank3 = Integer.parseInt(request.getParameter("rank3"));
+		int rank4 = Integer.parseInt(request.getParameter("rank4"));
+		int rank5 = Integer.parseInt(request.getParameter("rank5"));
+		int rank6 = Integer.parseInt(request.getParameter("rank6"));
+		int rank7 = Integer.parseInt(request.getParameter("rank7"));
+		int rank8 = Integer.parseInt(request.getParameter("rank8"));
+		int rank9 = Integer.parseInt(request.getParameter("rank9"));
+		int rank10 = Integer.parseInt(request.getParameter("rank10"));
+		
 		// 데이터 저장 (총관객수)
 		int audiAcc1 = Integer.parseInt(request.getParameter("audiAcc1"));
 		int audiAcc2 = Integer.parseInt(request.getParameter("audiAcc2"));
@@ -92,17 +104,20 @@ public class AdminMovieInsertAction implements Action {
 		// MovieDAO : adminInsertMovie()
 		MovieDAO dao = new MovieDAO();
 		
+		// 저장하기전 movie 테이블 모두 삭제
+		dao.adminDeleteMoiveAll();
+		
 		// adminInserMovie() boxOffice 1~10위 영화 정보 DB에 저장 
-		dao.adminInsertMovie(movieInfo1, audiAcc1);	
-		dao.adminInsertMovie(movieInfo2, audiAcc2);	
-		dao.adminInsertMovie(movieInfo3, audiAcc3);	
-		dao.adminInsertMovie(movieInfo4, audiAcc4);	
-		dao.adminInsertMovie(movieInfo5, audiAcc5);	
-		dao.adminInsertMovie(movieInfo6, audiAcc6);	
-		dao.adminInsertMovie(movieInfo7, audiAcc7);	
-		dao.adminInsertMovie(movieInfo8, audiAcc8);	
-		dao.adminInsertMovie(movieInfo9, audiAcc9);	
-		dao.adminInsertMovie(movieInfo10, audiAcc10);	
+		dao.adminInsertMovie(movieInfo1, audiAcc1, rank1);	
+		dao.adminInsertMovie(movieInfo2, audiAcc2, rank2);	
+		dao.adminInsertMovie(movieInfo3, audiAcc3, rank3);	
+		dao.adminInsertMovie(movieInfo4, audiAcc4, rank4);	
+		dao.adminInsertMovie(movieInfo5, audiAcc5, rank5);	
+		dao.adminInsertMovie(movieInfo6, audiAcc6, rank6);	
+		dao.adminInsertMovie(movieInfo7, audiAcc7, rank7);	
+		dao.adminInsertMovie(movieInfo8, audiAcc8, rank8);	
+		dao.adminInsertMovie(movieInfo9, audiAcc9, rank9);	
+		dao.adminInsertMovie(movieInfo10, audiAcc10, rank10);	
 		
 		// 페이지 이동
 		ActionForward forward = new ActionForward();

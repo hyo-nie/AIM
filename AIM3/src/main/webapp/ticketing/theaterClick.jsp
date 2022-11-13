@@ -9,13 +9,13 @@
 </head>
 <body>
 	
-	<c:forEach var="scheduleDTO" items="${scheduleList }">
+	<c:forEach var="movieDTO" items="${movieList }">
 		<li class="">
 			<a href="#none">
 				<div class="group_infor">
 					<div class="bx_tit">
 						<span class="ic_grade gr_12"></span>
-						<strong class="tit">${scheduleDTO.movieCd }</strong>
+						<strong class="tit">${movieDTO.movieNm }</strong>
 					</div>
 				</div>
 			</a>

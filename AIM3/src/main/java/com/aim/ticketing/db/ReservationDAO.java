@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.aim.movie.db.MovieDTO;
 import com.aim.schedule.db.ScheduleDTO;
 import com.aim.theater.db.TheaterDTO;
 
@@ -119,6 +120,56 @@ public class ReservationDAO {
 		}
 		return scheduleList;
 	} // getScheduleList()
+	
+	/**
+	 * getMovieList(List<moviedto>) - 영화 정보 조회 메서드 : 영화코드로 영화정보 조회
+	 */
+	public List<MovieDTO> getMovieList(List<ScheduleDTO> scheduleList) {
+		List<MovieDTO> list = null;
+		
+		try {
+		
+			con = getConnection();
+			
+			list = new ArrayList<MovieDTO>();
+			for (ScheduleDTO sdto : scheduleList) {
+				
+				sql = "select * from movie where movieCd = ? order by boxrank";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, sdto.getMovieCd());
+				rs = pstmt.executeQuery();
+				
+				while (rs.next()) {
+					MovieDTO dto = new MovieDTO();
+					
+					dto.setMovieCd(rs.getString("movieCd"));
+					dto.setMovieNm(rs.getString("movieNm"));
+					dto.setOpenDt(rs.getString("openDt"));
+					dto.setGenreNm(rs.getString("genreNm"));
+					dto.setDirectors(rs.getString("directors"));
+					dto.setPoster(rs.getString("poster"));
+					dto.setAudiAcc(rs.getInt("audiAcc"));
+					dto.setBookRating(rs.getInt("bookRating"));
+					dto.setWatchGradeNm(rs.getString("watchGradeNm"));
+					dto.setShowTm(rs.getString("showTm"));
+					dto.setActors(rs.getString("actors"));
+					dto.setContents(rs.getString("contents"));
+					dto.setBoxrank(rs.getInt("boxrank"));
+					
+					list.add(dto);
+				}
+			}
+			
+			System.out.println(" DAO : 영화 정보 조회 완료 ");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		
+		return list;
+	} // getMovieList(movieCd) 끝
 	
 	
 	

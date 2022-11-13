@@ -131,7 +131,7 @@ public class MovieDAO {
 	 * 
 	 * adminInsertMovie(JSONObject) : 관리자가 DB에 API로 받아온 영화 정보를 저장하는 메서드, 중복값은 빼고 저장
 	 */
-	public void adminInsertMovie(JSONObject movieInfo, int audiAcc) {
+	public void adminInsertMovie(JSONObject movieInfo, int audiAcc, int boxrank) {
 		
 		try {
 			con = getConnection();
@@ -150,8 +150,8 @@ public class MovieDAO {
 				System.out.println(" DAO : 이미 등록된 영화입니다! movidNm : " + movieInfo.getString("movieNm"));
 			} else {
 				// 파라미터로 받은 무비코드가 DB에 없으면
-				sql = "insert into movie(movieCd,movieNm,openDt,genreNm,directors,poster,audiAcc,bookRating,watchGradeNm,showTm,actors,contents) "
-						+ "values(?,?,?,?,?,?,?,?,?,?,?,?)";
+				sql = "insert into movie(movieCd,movieNm,openDt,genreNm,directors,poster,audiAcc,bookRating,watchGradeNm,showTm,actors,contents,boxrank) "
+						+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setString(1, movieInfo.getString("movieCd")); // 영화코드
@@ -178,10 +178,7 @@ public class MovieDAO {
 				JSONObject movieWatchGradeNm = movieAuditsArr.getJSONObject(0);
 				pstmt.setString(9, movieWatchGradeNm.getString("watchGradeNm")); // 관람등급
 				
-				
-				
 				pstmt.setString(10, movieInfo.getString("showTm")); // 상영시간
-				//pstmt.setString(11, movieInfo.getString("actors")); // 배우
 				
 				// 배우 추출
 				JSONArray actorsArr = movieInfo.getJSONArray("actors");
@@ -198,14 +195,13 @@ public class MovieDAO {
 				pstmt.setString(11, actors); // 배우
 				
 				pstmt.setString(12, "임 시 값 입 니 다"); // 줄거리/내용 (일단 보류, 크롤링 해서 가져올 예정 @@@@@@@@@@@@@@@@@@@@@@@@@@)
+				pstmt.setInt(13, boxrank); // 순위
 				
 				
 				pstmt.executeUpdate();
 				
 				System.out.println(" DAO : 영화 등록 완료! movieNm : " + movieInfo.getString("movieNm"));
 			}
-			
-				
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -222,7 +218,7 @@ public class MovieDAO {
 		
 		try {
 			con = getConnection();
-			sql = "select * from movie order by audiAcc desc";
+			sql = "select * from movie order by boxrank";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -242,6 +238,7 @@ public class MovieDAO {
 				dto.setPoster(rs.getString("poster"));
 				dto.setShowTm(rs.getString("showTm"));
 				dto.setWatchGradeNm(rs.getString("watchGradeNm"));
+				dto.setBoxrank(rs.getInt("boxrank"));
 				
 				list.add(dto);
 			}
@@ -250,13 +247,34 @@ public class MovieDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			closeDB();
 		}
 		
 		return list;
-	}
-	// adminGetMovieList 끝
-	
+	} // adminGetMovieList 끝
 
+	/**
+	 * adminDeleteMoiveAll() - movie 테이블의 데이터를 모두 지우는 메서드
+	 */
+	public void adminDeleteMoiveAll() {
+		
+		try {
+			con = getConnection();
+			sql = "delete from movie";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.executeUpdate();
+			
+			System.out.println(" DAO : movie 테이블 삭제 완료 ");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+	} // adminDeleteMoiveAll 끝
+	
 }
 
 

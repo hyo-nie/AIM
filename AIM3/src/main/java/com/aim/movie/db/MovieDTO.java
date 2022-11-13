@@ -13,6 +13,7 @@ public class MovieDTO {
 	private String showTm;       //상영시간
 	private String actors;       //배우
 	private String contents;     //내용(줄거리)
+	private int boxrank;
 	
 	public String getMovieCd() {
 		return movieCd;
@@ -86,16 +87,17 @@ public class MovieDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
+	public int getBoxrank() {
+		return boxrank;
+	}
+	public void setBoxrank(int boxrank) {
+		this.boxrank = boxrank;
+	}
 	@Override
 	public String toString() {
 		return "MovieDTO [movieCd=" + movieCd + ", movieNm=" + movieNm + ", openDt=" + openDt + ", genreNm=" + genreNm
 				+ ", directors=" + directors + ", poster=" + poster + ", audiAcc=" + audiAcc + ", bookRating="
 				+ bookRating + ", watchGradeNm=" + watchGradeNm + ", showTm=" + showTm + ", actors=" + actors
-				+ ", contents=" + contents + "]";
+				+ ", contents=" + contents + ", boxrank=" + boxrank + "]";
 	}
-	
-
-	
-	
-	
 }

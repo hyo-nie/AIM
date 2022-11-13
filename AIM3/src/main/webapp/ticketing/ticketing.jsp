@@ -162,13 +162,13 @@
 										
 										<!-- 영화 정보 시작 gr_12, 15, 18, all -->
 										<ul id="movieList_ym">
-											<c:forEach var="s_first" items="${scheduleFirst }">
+											<c:forEach var="m_first" items="${movieFirst }">
 												<li class="">
 													<a href="#none">
 														<div class="group_infor">
 															<div class="bx_tit">
 																<span class="ic_grade gr_12"></span>
-																<strong class="tit">${s_first.movieCd }</strong>
+																<strong class="tit">${m_first.movieNm }</strong>
 															</div>
 														</div>
 													</a>

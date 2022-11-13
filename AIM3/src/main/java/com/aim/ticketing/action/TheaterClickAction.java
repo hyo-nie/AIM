@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.aim.movie.db.MovieDTO;
 import com.aim.schedule.db.ScheduleDTO;
 import com.aim.ticketing.db.ReservationDAO;
 
@@ -21,9 +22,11 @@ public class TheaterClickAction implements Action {
 		ReservationDAO dao = new ReservationDAO();
 		List<ScheduleDTO> scheduleList = dao.getScheduleList(branchCd);
 		
-		System.out.println(scheduleList);
+		List<MovieDTO> movieList = dao.getMovieList(scheduleList);
 		
+		// request 저장
 		request.setAttribute("scheduleList", scheduleList);
+		request.setAttribute("movieList", movieList);
 			
 //		for (ScheduleDTO dto : scheduleList) {
 //		

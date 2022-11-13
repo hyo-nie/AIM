@@ -25,5 +25,4 @@ public class MovieDetailAction implements Action {
     
     return forward; 
   }
-
 }
