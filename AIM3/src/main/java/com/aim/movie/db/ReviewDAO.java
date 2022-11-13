@@ -1,4 +1,4 @@
-package com.aim.review.db;
+package com.aim.movie.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

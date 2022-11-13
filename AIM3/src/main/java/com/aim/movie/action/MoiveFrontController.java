@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 @WebServlet("*.mv")
 public class MoiveFrontController extends HttpServlet{
 	
@@ -57,6 +58,18 @@ public class MoiveFrontController extends HttpServlet{
           e.printStackTrace();
         }
       } //MovieDetail.mv 끝
+    	
+      else if(command.equals("/Review.mv")) {      //리뷰게시판 페이지
+        System.out.println("C : ReviewList.mv");
+        System.out.println("C : 패턴3 사용");
+        
+        action = new ReviewListAction();
+        try {
+          action.execute(request, response);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      } //Review.mv 끝
 
     	else if (command.equals("/AdminMovieInsert.mv")) {
     		System.out.println(" C : /AdminMovieInsert.mv 호출 ");

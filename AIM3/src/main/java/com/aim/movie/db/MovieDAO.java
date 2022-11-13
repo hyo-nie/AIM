@@ -103,6 +103,7 @@ public class MovieDAO {
       rs = pstmt.executeQuery();
       
       if(rs.next()) {
+        dto.setMovieCd(rs.getString("movieCd"));
         dto.setMovieNm(rs.getString("movieNm"));
         dto.setOpenDt(rs.getString("openDt"));
         dto.setGenreNm(rs.getString("genreNm"));

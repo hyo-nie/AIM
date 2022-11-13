@@ -1,11 +1,12 @@
-package com.aim.review.action;
+package com.aim.movie.action;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.aim.review.db.ReviewDAO;
+import com.aim.movie.db.ReviewDAO;
+
 
 public class ReviewListAction implements Action {
 
