@@ -69,7 +69,7 @@ public class MovieAPI {
 			JSONObject boxOfficeResult = responseBody.getJSONObject("boxOfficeResult");
 			
 			// 박스오피스 주제 출력
-			String boxofficeType = boxOfficeResult.getString("boxofficeType");
+//			String boxofficeType = boxOfficeResult.getString("boxofficeType");
 			
 			// 박스오피스 목록 출력
 			dailyBoxOfficeList = boxOfficeResult.getJSONArray("dailyBoxOfficeList");
@@ -79,10 +79,6 @@ public class MovieAPI {
 				list.add(dailyBoxOfficeList.getJSONObject(i));
 				
 			}
-			
-			
-			
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

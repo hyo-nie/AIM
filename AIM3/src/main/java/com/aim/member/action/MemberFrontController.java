@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.aim.movie.action.MovieInsertAction;
+import com.aim.movie.action.AdminMovieInsert;
 
 @WebServlet("*.aim")
 public class MemberFrontController extends HttpServlet {

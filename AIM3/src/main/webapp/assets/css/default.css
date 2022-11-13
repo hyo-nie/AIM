@@ -87,6 +87,9 @@ body, input, button, select, textarea {font-family:"Noto Sans KR", "Roboto", "do
 fieldset {border:none;}
 img {border:none; vertical-align:top;}
 h1, h2, h3, h4, h5, h6, address, caption, em, th {font-style:normal; font-weight:normal;}
+.actors_ym {
+	width: 800px;
+}
 ul, ol {list-style:none;}
 table {width:100%; border-collapse:collapse; border-spacing:0; border:0;}
 legend {position:absolute;}

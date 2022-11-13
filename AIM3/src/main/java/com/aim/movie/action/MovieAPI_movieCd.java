@@ -54,8 +54,6 @@ public class MovieAPI_movieCd {
 			// JSON 객체로 변환
 			JSONObject responseBody = new JSONObject(response.toString());
 			
-			System.out.println(responseBody);
-			
 			// 데이터 추출
 			// JSONObject boxOffice = responseBody.getJSONObject("movieInfoResult");
 			JSONObject movieInfoResult = responseBody.getJSONObject("movieInfoResult");

@@ -15,7 +15,7 @@
 <jsp:include page="../inc/nav_bar.jsp" />
 
 
-	<br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	
 	<h1>adminMoiveInsertForm.jsp</h1>
 	
@@ -26,21 +26,35 @@
 	
 	
 	
-	<form action="./AdminMoiveInsertAction.mv" method="post">
+	<form action="./AdminMovieInsertAction.mv" method="post">
+
+		<h3>일별 박스 오피스 순위</h3>
+		<br>
+		
 		<table border="1">
 			<tr>
 				<th>순위</th>
 				<th>제목</th>
-				<th>포스터</th>
+				<th>포스터/줄거리/평점(크롤링)</th>
 				<th>개봉일</th>
 				<th>누적관객수</th>
 			</tr>
 			
+			<c:set var="j" value="1"></c:set>
 			<c:forEach var="dto" items="${boxOfficeList }">
 			<tr>
 				<td>${dto.get("rank") }</td>
 				<td>${dto.get("movieNm") }</td>
-				<td>임시값</td>
+				<td> 
+					<select name="poster${j }">
+						<option>아직 미구현</option>
+						<option>CGV에서</option>
+						<option>크롤링해서</option>
+						<option>가지고올</option>
+						<option>예정입니다</option>
+						<c:set var="j" value="${j+1 }"></c:set>
+					</select> 
+				</td>
 				<td>${dto.get("openDt") }</td>
 				<td>${dto.get("audiAcc") }</td>
 			</tr>
@@ -51,13 +65,14 @@
 		
 		<c:forEach var="dto2" items="${boxOfficeList }">		
 			<input type="hidden" name="movieCd${i }" value="${dto2.get('movieCd') }">	
+			<input type="hidden" name="audiAcc${i }" value="${dto2.get('audiAcc') }">	
 			<c:set var="i" value="${i+1 }"></c:set>
 		</c:forEach>
-	
-	
-		<input type="submit" value="저장">
-		<input type="button" value="취소" onclick="history.back();">
 		
+		<br><br>
+	
+		<input type="submit" value="모두 저장">
+		<input type="button" value="취소" onclick="history.back();">
 		
 	</form>
 	

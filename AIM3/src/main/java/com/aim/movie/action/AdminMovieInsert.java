@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-public class MovieInsertAction implements Action {
+public class AdminMovieInsert implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -16,6 +16,9 @@ public class MovieInsertAction implements Action {
 		// 무비 API 호출 
 		MovieAPI api = new MovieAPI();
 		List<JSONObject> boxOfiiceList = api.requestAPI();
+		
+		// cgv 크롤링 (포스터, 예매율, 줄거리 추출)
+		
 		
 		// request 객체에 저장
 		request.setAttribute("boxOfficeList", boxOfiiceList);
