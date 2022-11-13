@@ -17,11 +17,10 @@ public class MovieListAction implements Action {
   public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
     System.out.println("M : MovieListAction_execute() 호출");
     
-    String movieCd = request.getParameter("movieCd");
     MovieDAO dao = new MovieDAO();
-    List movieList = dao.getMovieList(movieCd);
+    MovieDTO dto = new MovieDTO();
     
-    //ArrayList<MovieDTO> movieList = null;
+    List movieList = dao.allMovieList();
     
     request.setAttribute("movieList", movieList);
     

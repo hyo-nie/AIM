@@ -46,120 +46,85 @@ public class MovieDAO {
   // 자원해제
   
   /**
-   * 영화 정보 메서드 - getMovieList(movieCd)
+   * allMovieList() : 영화탭 첫페이지에서 영화의 정보를 보여주는 메서드
+   */
+  public List allMovieList() {
+      List movieList = new ArrayList();
+      MovieDTO dto = null;
+      
+      try {
+        con = getConnection();
+        sql = "select * from movie";
+        pstmt = con.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        
+        while(rs.next()) {
+          dto = new MovieDTO();
+          
+          dto.setMovieCd(rs.getString("movieCd"));
+          dto.setMovieNm(rs.getString("movieNm"));
+          dto.setOpenDt(rs.getString("openDt"));
+          dto.setGenreNm(rs.getString("genreNm"));
+          dto.setDirectors(rs.getString("directors"));
+          dto.setPoster(rs.getString("poster"));
+          dto.setAudiAcc(rs.getInt("audiAcc"));
+          dto.setBookRating(rs.getInt("bookRating"));
+          dto.setWatchGradeNm(rs.getString("watchGradeNm"));
+          dto.setShowTm(rs.getString("showTm"));
+          dto.setActors(rs.getString("actors"));
+          dto.setContents(rs.getString("contents"));
+          
+          movieList.add(dto);
+        }
+        System.out.println("DAO : 영화 정보 저장 완료");
+        
+      } catch (Exception e) {
+        e.printStackTrace();
+      } finally {
+        closeDB();
+      }
+      return movieList;
+    }
+    //allMovieList() 끝
+  
+  
+  /**
+   * getMovieDetail(movieCd) : 특정 영화의 상세정보를 보여주는 메서드
    * 
    */
-//  public MovieDTO getMovieList(String movieCd) {
-//    MovieDTO dto = new MovieDTO();
-//    
-//    try {
-//      con = getConnection();
-//      sql = "select * from movie where movieCd=?";
-//      pstmt = con.prepareStatement(sql);
-//      pstmt.setString(1, dto.getMovieCd());
-//      rs= pstmt.executeQuery();
-//      
-//      if(rs.next()) {
-//        dto.setMovieNm(rs.getString("movieNm"));
-//        dto.setOpenDt(rs.getString("openDt"));
-//        dto.setGenreAlt(rs.getString("genreAlt"));
-//        dto.setDirector(rs.getString("director"));
-//        dto.setPoster(rs.getString("poster"));
-//        dto.setAudiAcc(rs.getInt("audiAcc"));
-//        dto.setBookRating(rs.getInt("bookRating"));
-//        dto.setWatchGradeNm(rs.getString("watchGradeNm"));
-//        dto.setShowTm(rs.getString("showTm"));
-//        dto.setActors(rs.getString("actors"));
-//        dto.setContents(rs.getString("contents"));
-//      }
-//      System.out.println("DAO : 영화 정보 저장 완료");
-//      
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    } finally {
-//      closeDB();
-//    }
-//    return dto;
-//  }
-//  
-//  //영화 정보 메서드 - getMovieList(movieCd)
-  
-  public List getMovieList(String movieCd) {
-	    List movieList = new ArrayList();
-	    
-	    try {
-	      con = getConnection();
-	      sql = "select * from movie where movieCd=?";
-	      pstmt = con.prepareStatement(sql);
-	      pstmt.setString(1, movieCd);
-	      rs= pstmt.executeQuery();
-	      
-	      while(rs.next()) {
-	    	MovieDTO dto = new MovieDTO();
-	    	  
-	        dto.setMovieNm(rs.getString("movieNm"));
-	        dto.setOpenDt(rs.getString("openDt"));
-	        dto.setGenreNm(rs.getString("genreNm"));
-	        dto.setDirectors(rs.getString("directors"));
-	        dto.setPoster(rs.getString("poster"));
-	        dto.setAudiAcc(rs.getInt("audiAcc"));
-	        dto.setBookRating(rs.getInt("bookRating"));
-	        dto.setWatchGradeNm(rs.getString("watchGradeNm"));
-	        dto.setShowTm(rs.getString("showTm"));
-	        dto.setActors(rs.getString("actors"));
-	        dto.setContents(rs.getString("contents"));
-	        
-	        movieList.add(dto);
-	      }
-	      System.out.println("DAO : 영화 정보 저장 완료");
-	      
-	    } catch (Exception e) {
-	      e.printStackTrace();
-	    } finally {
-	      closeDB();
-	    }
-	    return movieList;
-	  }
-	  //영화 정보 메서드 - getMovieList(movieCd)
-
-	/**
-	 * 영화 정보 메서드 - getMovieList(movieCd)
-	 * 
-	 */
-//	public MovieDTO getMovieList(String movieCd) {
-//		MovieDTO dto = null;
-//
-//		try {
-//			con = getConnection();
-//			sql = "select * from movie where movieCd=?";
-//			pstmt = con.prepareStatement(sql);
-//			pstmt.setString(1, dto.getMovieCd());
-//			rs = pstmt.executeQuery();
-//
-//			if (rs.next()) {
-//				dto = new MovieDTO();
-//
-//				dto.setMovieNm(rs.getString("MovieNm"));
-//				dto.setOpenDt(rs.getString("openDt"));
-//				dto.setGenreNm(rs.getString("genreNm"));
-//				dto.setDirectors(rs.getString("directors"));
-//				dto.setPoster(rs.getString("poster"));
-//				dto.setAudiAcc(rs.getInt("audiAcc"));
-//				dto.setBookRating(rs.getInt("bookRating"));
-//				dto.setWatchGradeNm(rs.getString("watchGradeNm"));
-//				dto.setShowTm(rs.getString("showTm"));
-//				dto.setActors(rs.getString("actors"));
-//				dto.setContents(rs.getString("contents"));
-//			}
-//			System.out.println("DAO : 영화 정보 저장 완료");
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			closeDB();
-//		}
-//		return dto;
-//	}
+  public MovieDTO getMovieDetail(String movieCd) {
+    MovieDTO dto = new MovieDTO();
+    
+    try {
+      con = getConnection();
+      sql = "select * from movie where movieCd=?";
+      pstmt = con.prepareStatement(sql);
+      pstmt.setString(1, movieCd);
+      rs = pstmt.executeQuery();
+      
+      if(rs.next()) {
+        dto.setMovieNm(rs.getString("movieNm"));
+        dto.setOpenDt(rs.getString("openDt"));
+        dto.setGenreNm(rs.getString("genreNm"));
+        dto.setDirectors(rs.getString("directors"));
+        dto.setPoster(rs.getString("poster"));
+        dto.setAudiAcc(rs.getInt("audiAcc"));
+        dto.setBookRating(rs.getInt("bookRating"));
+        dto.setWatchGradeNm(rs.getString("watchGradeNm"));
+        dto.setShowTm(rs.getString("showTm"));
+        dto.setActors(rs.getString("actors"));
+        dto.setContents(rs.getString("contents"));
+      }
+      System.out.println("DAO : 영화 정보 저장 완료");
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      closeDB();
+    }
+    return dto;
+  }
+  //getMovieDetail(movieCd) 끝
 
 	/**
 	 * 

@@ -16,32 +16,28 @@
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-	<c:set var="movie" value="${movieList }"/>
 
 <table border="1">
-	<tr>
-		<td>포스터</td>
-		<td>영화명</td>
-		<td>관람등급</td>
-		<td>예매율</td>
-	</tr>	
-	
-	  <tr>
-	  	<c:forEach var="movie" items="${movieList }">
-			    <td>${movie.poster }</td>
-			    <td>${movie.movieNm }</td>
-			    <td>${movie.watchGradeNm }</td>
-			    <td>${movie.bookRating }</td>
-	  	</c:forEach>
-	  </tr> 
+  <tr>
+    <td>포스터</td>
+    <td>영화명</td>
+    <td>관람등급</td>
+    <td>예매율</td>
+  </tr> 
+  
+  <c:forEach var="movie" items="${movieList }" >
+    <tr>
+      <td onclick="location.href='./MovieDetail.mv?movieCd=${movie.movieCd}';">${movie.poster }</td>
+      <td>${movie.movieNm }</td>
+      <td>${movie.watchGradeNm }</td>
+      <td>${movie.bookRating }</td>
+      <td onclick="location.href='./Ticketing.tk?movieCd=${movie.movieCd}';">예매하기</td>
+    </tr> 
+   </c:forEach>
 </table>
 
 
-	
 
-
-<a href="#">예매하기</a>
-<a href="./MovieInfo.mv">상세정보</a>
 
 <!-- 약관 -->
 <jsp:include page="../inc/footer.jsp" />
