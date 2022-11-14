@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+import com.aim.movie.db.MovieDAO;
+import com.aim.movie.db.MovieVo;
+
 public class AdminMovieInsert implements Action {
 
 	@Override
@@ -18,10 +21,12 @@ public class AdminMovieInsert implements Action {
 		List<JSONObject> boxOfiiceList = api.requestAPI();
 		
 		// cgv 크롤링 (포스터, 예매율, 줄거리 추출)
-		
+		MovieDAO dao = new MovieDAO();
+		List<MovieVo> cgvList = dao.getCGVdata();
 		
 		// request 객체에 저장
 		request.setAttribute("boxOfficeList", boxOfiiceList);
+		request.setAttribute("cgvList", cgvList);
 		
 		// 페이지 이동 준비
 		

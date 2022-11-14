@@ -13,6 +13,10 @@ import javax.sql.DataSource;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class MovieDAO {
 	private Connection con = null;
@@ -133,7 +137,7 @@ public class MovieDAO {
 	 * 
 	 * adminInsertMovie(JSONObject) : 관리자가 DB에 API로 받아온 영화 정보를 저장하는 메서드, 중복값은 빼고 저장
 	 */
-	public void adminInsertMovie(JSONObject movieInfo, int audiAcc, int boxrank) {
+	public void adminInsertMovie(JSONObject movieInfo, int audiAcc, int boxrank, double bookRating, String poster) {
 		
 		try {
 			con = getConnection();
@@ -170,10 +174,10 @@ public class MovieDAO {
 				JSONObject movieDirector = movieDirectorArr.getJSONObject(0);
 				pstmt.setString(5, movieDirector.getString("peopleNm")); // 감독
 				
-				pstmt.setString(6, "image(임시값)"); // 포스터 (일단 보류, 크롤링 해서 가져올 예정 @@@@@@@@@@@@@@@@@@@@@@@@@@)
+				pstmt.setString(6, poster); // 포스터
 				
 				pstmt.setInt(7, audiAcc); // 총관객수
-				pstmt.setInt(8, 0); // 예매율 (일단 보류, 크롤링 해서 가져올 예정 @@@@@@@@@@@@@@@@@@@@@@@@@@)
+				pstmt.setDouble(8, bookRating); // 예매율
 				
 				// 관람등급 추출
 				JSONArray movieAuditsArr = movieInfo.getJSONArray("audits");
@@ -276,6 +280,39 @@ public class MovieDAO {
 			closeDB();
 		}
 	} // adminDeleteMoiveAll 끝
+	
+	/**
+	 * 크롤링해서 cgv에서 title(제목), percents(예매율), image(포스터) 가져오는 메서드
+	 */
+	public static List<MovieVo> getCGVdata() throws Exception{
+		
+		Document doc = Jsoup.connect("http://www.cgv.co.kr/movies/?lt=1&ft=0").get();
+  
+        Elements titles = doc.select("div.box-contents strong.title");        
+        Elements percents = doc.select("div.box-contents div.score strong.percent span");
+        Elements images = doc.select("div.box-image a span.thumb-image img");
+        
+        List<MovieVo> list = new ArrayList<MovieVo>();
+        
+        for(int i = 0; i < 19; i++) {
+        	Element title = titles.get(i);
+        	Element percent = percents.get(i);
+        	
+        	String image = images.get(i).attr("src");
+        	String t = title.text();
+        	String p = percent.text();
+        	
+        	double pv = Double.parseDouble(p.replace("%",""));
+        	
+        	MovieVo vo = new MovieVo(t, pv, image);
+        	
+        	list.add(vo);
+        }
+        
+        return list;
+        
+	}
+	
 	
 }
 

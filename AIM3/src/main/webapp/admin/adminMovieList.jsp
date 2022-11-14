@@ -45,7 +45,7 @@
 				<td>${dto.openDt }</td>
 				<td>${dto.genreNm }</td>
 				<td>${dto.directors }</td>
-				<td>${dto.poster }</td>
+				<td> <img src="${dto.poster }" width="100" height="100"></td>
 				<td>${dto.audiAcc }</td>
 				<td>${dto.bookRating }</td>
 				<td>${dto.watchGradeNm }</td>
