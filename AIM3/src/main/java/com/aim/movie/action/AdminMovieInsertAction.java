@@ -49,18 +49,18 @@ public class AdminMovieInsertAction implements Action {
 		int audiAcc8 = Integer.parseInt(request.getParameter("audiAcc8"));
 		int audiAcc9 = Integer.parseInt(request.getParameter("audiAcc9"));
 		int audiAcc10 = Integer.parseInt(request.getParameter("audiAcc10"));
-		
-		// 데이터저장 poster(테스트중)
-		String poster1 = request.getParameter("poster1");
-		String poster2 = request.getParameter("poster2");
-		String poster3 = request.getParameter("poster3");
-		String poster4 = request.getParameter("poster4");
-		String poster5 = request.getParameter("poster5");
-		String poster6 = request.getParameter("poster6");
-		String poster7 = request.getParameter("poster7");
-		String poster8 = request.getParameter("poster8");
-		String poster9 = request.getParameter("poster9");
-		String poster10 = request.getParameter("poster10");
+			
+		// 데이터저장 예매율
+		String[] crawling1 = request.getParameter("poster1").split(",");
+		String[] crawling2 = request.getParameter("poster2").split(",");
+		String[] crawling3 = request.getParameter("poster3").split(",");
+		String[] crawling4 = request.getParameter("poster4").split(",");
+		String[] crawling5 = request.getParameter("poster5").split(",");
+		String[] crawling6 = request.getParameter("poster6").split(",");
+		String[] crawling7 = request.getParameter("poster7").split(",");
+		String[] crawling8 = request.getParameter("poster8").split(",");
+		String[] crawling9 = request.getParameter("poster9").split(",");
+		String[] crawling10 = request.getParameter("poster10").split(",");
 		
 		// MovieAPI_movieCd : 영화코드로 영화정보 조회 
 		MovieAPI_movieCd movieAPI = new MovieAPI_movieCd();
@@ -108,16 +108,16 @@ public class AdminMovieInsertAction implements Action {
 		dao.adminDeleteMoiveAll();
 		
 		// adminInserMovie() boxOffice 1~10위 영화 정보 DB에 저장 
-		dao.adminInsertMovie(movieInfo1, audiAcc1, rank1);	
-		dao.adminInsertMovie(movieInfo2, audiAcc2, rank2);	
-		dao.adminInsertMovie(movieInfo3, audiAcc3, rank3);	
-		dao.adminInsertMovie(movieInfo4, audiAcc4, rank4);	
-		dao.adminInsertMovie(movieInfo5, audiAcc5, rank5);	
-		dao.adminInsertMovie(movieInfo6, audiAcc6, rank6);	
-		dao.adminInsertMovie(movieInfo7, audiAcc7, rank7);	
-		dao.adminInsertMovie(movieInfo8, audiAcc8, rank8);	
-		dao.adminInsertMovie(movieInfo9, audiAcc9, rank9);	
-		dao.adminInsertMovie(movieInfo10, audiAcc10, rank10);	
+		dao.adminInsertMovie(movieInfo1, audiAcc1, rank1, Double.parseDouble(crawling1[0]), crawling1[1]);	
+		dao.adminInsertMovie(movieInfo2, audiAcc2, rank2, Double.parseDouble(crawling2[0]), crawling2[1]);	
+		dao.adminInsertMovie(movieInfo3, audiAcc3, rank3, Double.parseDouble(crawling3[0]), crawling3[1]);	
+		dao.adminInsertMovie(movieInfo4, audiAcc4, rank4, Double.parseDouble(crawling4[0]), crawling4[1]);	
+		dao.adminInsertMovie(movieInfo5, audiAcc5, rank5, Double.parseDouble(crawling5[0]), crawling5[1]);	
+		dao.adminInsertMovie(movieInfo6, audiAcc6, rank6, Double.parseDouble(crawling6[0]), crawling6[1]);	
+		dao.adminInsertMovie(movieInfo7, audiAcc7, rank7, Double.parseDouble(crawling7[0]), crawling7[1]);	
+		dao.adminInsertMovie(movieInfo8, audiAcc8, rank8, Double.parseDouble(crawling8[0]), crawling8[1]);	
+		dao.adminInsertMovie(movieInfo9, audiAcc9, rank9, Double.parseDouble(crawling9[0]), crawling9[1]);	
+		dao.adminInsertMovie(movieInfo10, audiAcc10, rank10, Double.parseDouble(crawling10[0]), crawling10[1]);	
 		
 		// 페이지 이동
 		ActionForward forward = new ActionForward();

@@ -46,12 +46,13 @@
 				<td>${dto.get("rank") }</td>
 				<td>${dto.get("movieNm") }</td>
 				<td> 
-					<select name="poster${j }">
-						<option>아직 미구현</option>
-						<option>CGV에서</option>
-						<option>크롤링해서</option>
-						<option>가지고올</option>
-						<option>예정입니다</option>
+					<select name="poster${j }">	
+						<option>포스터를 선택하세요.</option>
+						<c:forEach var="cgv" items="${cgvList }">
+							<option value="${cgv.percent},${cgv.image}" >
+								${cgv.title }
+							</option>
+						</c:forEach>
 						<c:set var="j" value="${j+1 }"></c:set>
 					</select> 
 				</td>
