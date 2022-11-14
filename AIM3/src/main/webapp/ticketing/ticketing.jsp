@@ -198,7 +198,7 @@
 				<!-- 영화 선택 끝 -->
 				
 				
-				<!-- 시간/날짜 선택 시작 -->
+				<!-- 시간/날짜 영역 시작 -->
 				<div class="article article_time area__movingbar litype6">
 					<div class="group_top">
 						<h4 class="tit">2022-11-09(오늘)</h4>
@@ -212,7 +212,7 @@
 											
 											
 											
-											<!-- 날짜 쓰는 곳 -->
+											<!-- 날짜 쓰는 곳 시작 -->
 											<div class="owl-item active" style="width: 52.5px;">
 												<li class="item">
 													<strong class="month">11월</strong>
@@ -239,15 +239,14 @@
 													</span>
 												</li>
 											</div>
-											<!-- 날짜 쓰는 곳 -->
-											
-											
-											
+											<!-- 날짜 쓰는 곳 끝 -->
 											
 											
 											
 										</div>
 									</div>
+									
+									
 									<div class="owl-nav">
 										<button type="button" role="presentation"
 											class="owl-prev disabled">
@@ -259,11 +258,12 @@
 									</div>
 									<div class="owl-dots disabled"></div>
 								</ul>
+								
 							</div>
 						</div>
 						<ul class="tab_wrap outer sml actionmovingbar">
 							<li class="active"><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 0%;">
+									style="width: 33.3333%; left: 0%;">
 									<span>전체</span>
 								</button>
 								<div class="tab_con ty5">
@@ -275,14 +275,121 @@
 										<div id="mCSB_22"
 											class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
 											style="max-height: none;" tabindex="0">
-											<div id="mCSB_22_container"
-												class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
-												style="position: relative; top: 0; left: 0;" dir="ltr">
-												<div class="bx_notice">
+											<div id="mCSB_22_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position: relative; top: 0; left: 0;" dir="ltr">
+												<!-- <div class="bx_notice">
 													<p>조회 가능한 상영시간이 없습니다.</p>
 													<p>조건을 변경해주세요.</p>
+												</div> -->
+
+												<!-- 시간 선택 그룹 -->
+												<div class="group_time_select">
+													
+													<!-- 시간 선택 영화정보 -->
+													<div class="time_select_tit">
+													
+														<!-- 영화 정보 (ajax 구현), 등급, 제목 -->
+														<span class="ic_grade gr_12">12</span>
+														<strong>블랙 팬서: 와칸다 포에버</strong>
+														
+													</div>
+													
+													<!-- 시간 선택 시간정보 -->
+													<div class="time_select_wrap timeSelect">
+														<ul class="list_time">
+															<li class=""><a role="button" href="#none"><dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>18:30</strong>
+																			<div class="tooltip">종료 21:21</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>94</strong> / 100
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">3관</dd>
+																	</dl></a></li>
+														</ul>
+													</div>
+													<div class="time_select_wrap timeSelect">
+														<ul class="list_hall">
+															<li>2D</li>
+														</ul>
+														<ul class="list_time">
+															<li class=""><a role="button" href="#none"><dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>19:00</strong>
+																			<div class="tooltip">종료 21:51</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>286</strong> / 332
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">5관</dd>
+																	</dl></a></li>
+															<li class=""><a role="button" href="#none"><dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>19:40</strong>
+																			<div class="tooltip">종료 22:31</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>148</strong> / 164
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">1관</dd>
+																	</dl></a></li>
+															<li class=""><a role="button" href="#none"><dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>20:20</strong>
+																			<div class="tooltip">종료 23:11</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>169</strong> / 184
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">6관</dd>
+																	</dl></a></li>
+															<li class="">
+																<a role="button" href="#none">
+																	<dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>21:00</strong>
+																			<div class="tooltip">종료 23:51</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>125</strong> / 132
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">4관</dd>
+																	</dl>
+																</a>
+															</li>
+															<li class=""><a role="button" href="#none"><dl>
+																		<dt>상영시간</dt>
+																		<dd class="time">
+																			<strong>22:10</strong>
+																			<div class="tooltip">종료 25:01</div>
+																		</dd>
+																		<dt>잔여석</dt>
+																		<dd class="seat">
+																			<strong>317</strong> / 332
+																		</dd>
+																		<dt>상영관</dt>
+																		<dd class="hall">5관</dd>
+																	</dl></a></li>
+														</ul>
+													</div>
 												</div>
 											</div>
+											
 										</div>
 										<div id="mCSB_22_scrollbar_vertical"
 											class="mCSB_scrollTools mCSB_22_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
@@ -297,114 +404,12 @@
 										</div>
 									</div>
 								</div></li>
+							
+							
+							
 							<li><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 16.6667%;">
-									<span>스페셜관</span>
-								</button>
-								<div class="tab_con ty5">
-									<h5 class="hidden">스페셜관</h5>
-									<div
-										class="mCustomScrollbar timeScroll _mCS_23 mCS-autoHide mCS_no_scrollbar"
-										data-mcs-theme="minimal-dark"
-										style="position: relative; overflow: visible;">
-										<div id="mCSB_23"
-											class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-											style="max-height: none;" tabindex="0">
-											<div id="mCSB_23_container"
-												class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
-												style="position: relative; top: 0; left: 0;" dir="ltr">
-												<div class="bx_notice">
-													<p>조회 가능한 상영시간이 없습니다.</p>
-													<p>조건을 변경해주세요.</p>
-												</div>
-											</div>
-										</div>
-										<div id="mCSB_23_scrollbar_vertical"
-											class="mCSB_scrollTools mCSB_23_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
-											style="display: none;">
-											<div class="mCSB_draggerContainer">
-												<div id="mCSB_23_dragger_vertical" class="mCSB_dragger"
-													style="position: absolute; min-height: 50px; height: 0px; top: 0px;">
-													<div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
-												</div>
-												<div class="mCSB_draggerRail"></div>
-											</div>
-										</div>
-									</div>
-								</div></li>
-							<li><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 33.3333%;">
-									<span>Atmos</span>
-								</button>
-								<div class="tab_con ty5">
-									<h5 class="hidden">Atmos</h5>
-									<div
-										class="mCustomScrollbar timeScroll _mCS_24 mCS-autoHide mCS_no_scrollbar"
-										data-mcs-theme="minimal-dark"
-										style="position: relative; overflow: visible;">
-										<div id="mCSB_24"
-											class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-											style="max-height: none;" tabindex="0">
-											<div id="mCSB_24_container"
-												class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
-												style="position: relative; top: 0; left: 0;" dir="ltr">
-												<div class="bx_notice">
-													<p>조회 가능한 상영시간이 없습니다.</p>
-													<p>조건을 변경해주세요.</p>
-												</div>
-											</div>
-										</div>
-										<div id="mCSB_24_scrollbar_vertical"
-											class="mCSB_scrollTools mCSB_24_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
-											style="display: none;">
-											<div class="mCSB_draggerContainer">
-												<div id="mCSB_24_dragger_vertical" class="mCSB_dragger"
-													style="position: absolute; min-height: 50px; height: 0px; top: 0px;">
-													<div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
-												</div>
-												<div class="mCSB_draggerRail"></div>
-											</div>
-										</div>
-									</div>
-								</div></li>
-							<li><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 50%;">
-									<span>13시 이후</span>
-								</button>
-								<div class="tab_con ty5">
-									<h5 class="hidden">13시 이후</h5>
-									<div
-										class="mCustomScrollbar timeScroll _mCS_25 mCS-autoHide mCS_no_scrollbar"
-										data-mcs-theme="minimal-dark"
-										style="position: relative; overflow: visible;">
-										<div id="mCSB_25"
-											class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-											style="max-height: none;" tabindex="0">
-											<div id="mCSB_25_container"
-												class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
-												style="position: relative; top: 0; left: 0;" dir="ltr">
-												<div class="bx_notice">
-													<p>조회 가능한 상영시간이 없습니다.</p>
-													<p>조건을 변경해주세요.</p>
-												</div>
-											</div>
-										</div>
-										<div id="mCSB_25_scrollbar_vertical"
-											class="mCSB_scrollTools mCSB_25_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
-											style="display: none;">
-											<div class="mCSB_draggerContainer">
-												<div id="mCSB_25_dragger_vertical" class="mCSB_dragger"
-													style="position: absolute; min-height: 50px; height: 0px; top: 0px;">
-													<div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
-												</div>
-												<div class="mCSB_draggerRail"></div>
-											</div>
-										</div>
-									</div>
-								</div></li>
-							<li><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 66.6667%;">
-									<span>19시 이후</span>
+									style="width: 33.3333%; left: 33.3333%;">
+									<span>조조</span>
 								</button>
 								<div class="tab_con ty5">
 									<h5 class="hidden">19시 이후</h5>
@@ -438,7 +443,7 @@
 									</div>
 								</div></li>
 							<li><button type="button" class="tab_tit"
-									style="width: 16.6667%; left: 83.3333%;">
+									style="width: 33.3333%; left: 66.6666%;">
 									<span>심야</span>
 								</button>
 								<div class="tab_con ty5">
@@ -476,7 +481,7 @@
 						</ul>
 					</div>
 				</div>				
-				<!-- 시간/날짜 선택 끝 -->				
+				<!-- 시간/날짜 영역 끝 -->			
 				
 				
 				
