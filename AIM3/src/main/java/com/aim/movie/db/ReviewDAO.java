@@ -45,21 +45,22 @@ public class ReviewDAO {
   /**
    * getReviewList() : 리뷰 글 정보를 가져오는 메서드
    */
-  public ArrayList getReviewList() {
+  public ArrayList getReviewList(String movieCd) {
     ArrayList reviewList = new ArrayList();
     
     try {
       con = getConnection();
-      sql = "select * from review";
+      sql = "select * from review where movieCd=?";
       pstmt = con.prepareStatement(sql);
+      pstmt.setString(1, movieCd);
       rs = pstmt.executeQuery();
       
       while(rs.next()) {
         ReviewDTO dto = new ReviewDTO();
+        dto.setMovieCd(rs.getString("movieCd"));
         dto.setReviewNo(rs.getInt("reviewNo"));
         dto.setReview(rs.getString("review"));
         dto.setDate(rs.getDate("date"));
-        dto.setMovieCd(rs.getString("movieCd"));
         dto.setMb_id(rs.getString("mb_id"));
         
         reviewList.add(dto);

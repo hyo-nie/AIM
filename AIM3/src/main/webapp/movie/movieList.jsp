@@ -19,6 +19,7 @@
 
 <table border="1">
   <tr>
+  	<td>순위</td>
     <td>포스터</td>
     <td>영화명</td>
     <td>관람등급</td>
@@ -27,7 +28,8 @@
   
   <c:forEach var="movie" items="${movieList }" >
     <tr>
-      <td onclick="location.href='./MovieDetail.mv?movieCd=${movie.movieCd}';">${movie.poster }</td>
+      <td>${movie.boxrank }</td>
+      <td onclick="location.href='./MovieDetail.mv?movieCd=${movie.movieCd}';"><img src="${movie.poster }" width="200" height="300"></td>
       <td>${movie.movieNm }</td>
       <td>${movie.watchGradeNm }</td>
       <td>${movie.bookRating }</td>

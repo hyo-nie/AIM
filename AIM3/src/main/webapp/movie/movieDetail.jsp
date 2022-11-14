@@ -31,7 +31,7 @@
   </tr>
 
   <tr>
-   <td>${dto.poster }</td>
+   <td><img src="${dto.poster }" width="200" height="300"></td>
    <td>${dto.movieNm }</td>
    <td>${dto.watchGradeNm }</td>
    <td>${dto.bookRating }</td>

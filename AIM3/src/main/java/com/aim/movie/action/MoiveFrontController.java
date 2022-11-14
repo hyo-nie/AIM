@@ -59,13 +59,13 @@ public class MoiveFrontController extends HttpServlet{
         }
       } //MovieDetail.mv 끝
     	
-      else if(command.equals("/Review.mv")) {      //리뷰게시판 페이지
+      else if(command.equals("/ReviewList.mv")) {      //리뷰게시판 페이지
         System.out.println("C : ReviewList.mv");
         System.out.println("C : 패턴3 사용");
         
         action = new ReviewListAction();
         try {
-          action.execute(request, response);
+          forward = action.execute(request, response);
         } catch (Exception e) {
           e.printStackTrace();
         }

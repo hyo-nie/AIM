@@ -25,7 +25,7 @@
     <td>영화코드</td>
     <td>작성자</td>
   </tr>
-  
+
   <c:forEach var="dto" items="${reviewListAll }">
 	  <tr>
 	    <td>${dto.reviewNo }</td>
@@ -34,7 +34,7 @@
 	    <td>${dto.movieCd }</td>
 	    <td>${dto.mb_id }</td>
 	  </tr>
-	 </c:forEach> 
+  </c:forEach> 
 </table>
 
 

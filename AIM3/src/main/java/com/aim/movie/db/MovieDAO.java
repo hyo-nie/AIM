@@ -54,7 +54,7 @@ public class MovieDAO {
       
       try {
         con = getConnection();
-        sql = "select * from movie";
+        sql = "select * from movie order by boxrank asc";
         pstmt = con.prepareStatement(sql);
         rs = pstmt.executeQuery();
         
@@ -73,6 +73,7 @@ public class MovieDAO {
           dto.setShowTm(rs.getString("showTm"));
           dto.setActors(rs.getString("actors"));
           dto.setContents(rs.getString("contents"));
+          dto.setBoxrank(rs.getInt("boxrank"));
           
           movieList.add(dto);
         }
@@ -115,6 +116,7 @@ public class MovieDAO {
         dto.setShowTm(rs.getString("showTm"));
         dto.setActors(rs.getString("actors"));
         dto.setContents(rs.getString("contents"));
+        dto.setBoxrank(rs.getInt("boxrank"));
       }
       System.out.println("DAO : 영화 정보 저장 완료");
       
