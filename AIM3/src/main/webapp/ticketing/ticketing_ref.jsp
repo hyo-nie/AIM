@@ -955,23 +955,7 @@
 															<span class="ic_grade gr_12">12세 관람가</span><strong
 																class="tit">블랙 팬서: 와칸다 포에버</strong>
 														</div>
-														<dl>
-															<dt>예매율</dt>
-															<dd>
-																<strong>77.0%</strong>
-															</dd>
-															<dt class="side">
-																<span class="txt_ic_score ty1"><em>평점</em></span>
-															</dt>
-															<dd>
-																<span class="txt_ic_score ty1"><strong>8.4</strong></span>
-															</dd>
-															<dt>개봉일</dt>
-															<dd>2022.11.09</dd>
-															<dt class="side day">d -day</dt>
-															<dd>
-																<strong class="expired"></strong>
-															</dd>
+														
 														</dl>
 													</div></a></li>
 											<li class=""><a href="#none"><div class="bx_thm">

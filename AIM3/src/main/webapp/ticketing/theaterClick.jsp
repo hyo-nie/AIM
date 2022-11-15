@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,10 @@
 </head>
 <body>
 	
-	<c:if test=""></c:if>
+	<c:set var="i" value="0"/>
 	<c:forEach var="movieDTO" items="${movieList }">
-		<li class="">
+		<c:set var="scDTO" value="${scheduleList.get(i) }"></c:set>
+		<li class="" value="${scDTO.branchCd}${movieDTO.movieCd }">
 			<a href="#none">
 				<div class="group_infor">
 					<div class="bx_tit">
@@ -30,10 +32,13 @@
 							</c:if>>
 						</span>
 						<strong class="tit">${movieDTO.movieNm }</strong>
+						<c:set var="i" value="${i+1 }"/>
 					</div>
 				</div>
 			</a>
 		</li>
 	</c:forEach>
+	
+	
 </body>
 </html>
