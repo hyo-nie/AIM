@@ -4,16 +4,16 @@ public class MovieDTO {
 	private String movieCd;      //영화코드
 	private String movieNm;      //영화이름
 	private String openDt;       //개봉날짜
-	private String genreNm;     //장르
-	private String directors;     //감독
+	private String genreNm;      //장르
+	private String directors;    //감독
 	private String poster;       //포스터
 	private int audiAcc;         //총관람객수
-	private int bookRating;      //예매율
+	private double bookRating;      //예매율
 	private String watchGradeNm; //관람등급
 	private String showTm;       //상영시간
 	private String actors;       //배우
 	private String contents;     //내용(줄거리)
-	private int boxrank;
+	private int boxrank;		 //박스오피스순위
 	
 	public String getMovieCd() {
 		return movieCd;
@@ -57,10 +57,10 @@ public class MovieDTO {
 	public void setAudiAcc(int audiAcc) {
 		this.audiAcc = audiAcc;
 	}
-	public int getBookRating() {
+	public double getBookRating() {
 		return bookRating;
 	}
-	public void setBookRating(int bookRating) {
+	public void setBookRating(double bookRating) {
 		this.bookRating = bookRating;
 	}
 	public String getWatchGradeNm() {
