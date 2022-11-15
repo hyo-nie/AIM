@@ -1,5 +1,8 @@
 package com.aim.ticketing.action;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +12,7 @@ import com.aim.movie.db.MovieDTO;
 import com.aim.schedule.db.ScheduleDTO;
 import com.aim.theater.db.TheaterDTO;
 import com.aim.ticketing.db.ReservationDAO;
+import com.aim.ticketing.db.timeDTO;
 
 public class TicketingAction implements Action {
 
@@ -29,12 +33,14 @@ public class TicketingAction implements Action {
 		// 영화 정보 조회 메서드
 		List<MovieDTO> movieFirst = dao.getMovieList(scheduleFirst);
 		
-		System.out.println(movieFirst);
+		// 날짜 정보 조회 메서드 - getTime()
+		List<timeDTO> timeList = dao.getTime();
 		
 		// request에 극장정보 저장
 		request.setAttribute("theaterList", theaterList);
 		request.setAttribute("scheduleFirst", scheduleFirst);
 		request.setAttribute("movieFirst", movieFirst);
+		request.setAttribute("timeList", timeList);
 		
 		// 페이지 이동 준비
 		ActionForward forward = new ActionForward();

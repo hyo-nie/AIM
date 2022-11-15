@@ -3268,7 +3268,7 @@ dl.total_price dd strong {font-family:'Roboto'; font-size:25px; font-weight:bold
 .wrap_reserve .section_step_tit ul li.prev {border-color:#333; border-bottom-color:#666; background-color:#333;}
 .wrap_reserve .section_step_tit ul li.prev > a {color:#FFF;}
 /* í˜„ë‹¨ê³„ */
-.wrap_reserve .section_step_tit ul li.active {border-color:#FF243E; border-bottom-color:#666; background-color:#FF243E;}
+.wrap_reserve .section_step_tit ul li.active {border-color:#333; border-bottom-color:#666; background-color:#333;}
 .wrap_reserve .section_step_tit ul li.active > a {color:#FFF;}
 .wrap_reserve .section_step_tit ul li.active > a:before {content:"í˜„ìž¬ ë‹¨ê³„"; overflow:hidden; position:absolute; width:1px; height:1px; text-indent:-9999em;}
 .wrap_reserve .section_step_tit ul li.active > a > strong {font-size:15px;}
@@ -3293,7 +3293,7 @@ dl.total_price dd strong {font-family:'Roboto'; font-size:25px; font-weight:bold
 .wrap_reserve .section_step_con:after {content:""; display:block; clear:both;}
 .wrap_reserve .section_step_con.active {display:block; overflow:inherit; position:relative; width:1202px; height:100%; margin-left:78px;}
 .wrap_reserve .section_step_con .article {position:relative; float:left; height:100%; box-sizing:border-box; background-color:#FFF;}
-.wrap_reserve .section_step_con .article .group_top {overflow:hidden; position:relative; height:55px; line-height:55px; border-right:1px solid #222; text-align:center; background-color:#000;}
+.wrap_reserve .section_step_con .article .group_top {overflow:hidden; position:relative; height:55px; line-height:55px; border-right:1px solid #222; text-align:center; background-color:#717275;}
 .wrap_reserve .section_step_con .article:first-child .group_top {border-left:none;}
 .wrap_reserve .section_step_con .article .group_top .tit {font-size:18px; color:#FFF;}
 .wrap_reserve .section_step_con .article .group_top .txt {position:absolute; top:5px; right:30px; font-size:13px; color:#fff;}
@@ -3539,7 +3539,7 @@ dl.total_price dd strong {font-family:'Roboto'; font-size:25px; font-weight:bold
 .date_select_wrap .swiper-container {padding:0 20px;}
 .date_select_wrap .swiper-button-prev {left:0; margin-top:0px;}
 .date_select_wrap .swiper-button-next {right:0; margin-top:0px;}
-.date_select_wrap .month {position:absolute; top:0; left:0; width:100%; text-align:center; font-size:10px;}
+.date_select_wrap .month {position:absolute; top:0; left:0; width:100%; text-align:center; font-size:12px;}
 .date_select_wrap .date {display:block; position:relative; padding-top:20px;}
 .date_select_wrap .date label {display:block; cursor:pointer;}
 .date_select_wrap .date label input[type="radio"] {overflow:hidden; position:absolute; width:1px; height:1px; clip:rect(0, 0, 0, 0);}

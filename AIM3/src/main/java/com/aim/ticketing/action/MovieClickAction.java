@@ -19,14 +19,15 @@ public class MovieClickAction implements Action {
 		String branch_movie = request.getParameter("branch_movie");
 		int branchCd = Integer.parseInt(branch_movie.substring(0, 1));
 		String movieCd = branch_movie.substring(1);
+		String date = request.getParameter("date");
 		
 		// dao - getScheduleList
 		ReservationDAO dao = new ReservationDAO();
-		List<ScheduleDTO> scheduleList = dao.getScheduleList(branchCd, movieCd);
+		List<ScheduleDTO> scheduleList = dao.getScheduleList(branchCd, movieCd, date);
 		List<MovieDTO> movieList = dao.getMovieList(scheduleList);
 		
 		// request에 저장
-		request.setAttribute("scheduleList", dao.getScheduleList(branchCd, movieCd));
+		request.setAttribute("scheduleList", dao.getScheduleList(branchCd, movieCd, date));
 		request.setAttribute("movieList", movieList);
 		
 		System.out.println("scheduleList : " + scheduleList);

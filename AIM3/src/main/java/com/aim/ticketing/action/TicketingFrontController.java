@@ -88,7 +88,35 @@ public class TicketingFrontController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}
+    	} // MovieClick2.tk 끝
+    	
+    	else if (command.equals("/DateClick.tk")) {
+    		System.out.println(" C : /DateClick.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// DateClickAction 객체
+    		action = new DateClickAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // DateClick.tk 끝
+    	
+    	else if (command.equals("/DateClick2.tk")) {
+    		System.out.println(" C : /DateClick2.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// DateClickAction2 객체
+    		action = new DateClickAction2();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // DateClick.tk2 끝
     	
 
     	

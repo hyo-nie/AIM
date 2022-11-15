@@ -28,14 +28,14 @@
 						
 						// ajax - movie 클릭 이벤트
 						$('#movieList_ym li').click(function(){
-							alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+// 							alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 							$('#time_select_tit_ym span').remove();
 							$('#time_select_tit_ym strong').remove();
 							$('#bx_notice_ym').remove();
 							
 							$.ajax({
 								url:"./MovieClick.tk",
-								data: {branch_movie:$(this).val()},
+								data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 								success:function(data){
 // 									alert('ajax2 성공!')
 									$('#time_select_tit_ym').append(data);
@@ -45,19 +45,40 @@
 								}
 							});
 							
-							$('#list_time_ym li').remove();
+							
 							
 							$.ajax({
 								url:"./MovieClick2.tk",
-								data: {branch_movie:$(this).val()},
+								data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 								success:function(data){
 // 									alert('ajax3 성공!')
-									$('#list_time_ym').append(data);
+									$('#list_time_ym li').remove();
+									$('#list_time_ym').append(data)
+// 									alert(data)
+
 								},
 								error:function(){
 // 									alert('ajax3 실패!')
 								}
 							});
+							
+							// 날짜 클릭 ajax 시작
+// 							$('#owl-stage_ym input').click(function(){
+// 								alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+// // 								alert($(this).val());
+// 								$.ajax({
+// 									url:"./DateClick.tk",
+// 									data: {date:$(this).val()},
+// 									success: function(data){
+// 										alert('ajax4 성공!');
+// 									},
+// 									error:function(){
+// 										alert('ajax4 실패!');
+// 									}
+// 								});
+									
+// 							});
+							// 날짜 클릭 ajax 끝
 							
 						});
 					// ajax - movie 클릭 이벤트 끝
@@ -71,14 +92,14 @@
 		
 		// 초기값 movie 클릭 ajax 시작
 		$('#movieList_ym li').click(function(){
-			alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+// 			alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 			$('#time_select_tit_ym span').remove();
 			$('#time_select_tit_ym strong').remove();
 			$('#bx_notice_ym').remove();
 			
 			$.ajax({
 				url:"./MovieClick.tk",
-				data: {branch_movie:$(this).val()},
+				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 				success:function(data){
 // 					alert('ajax2 성공!')
 					$('#time_select_tit_ym').append(data);
@@ -88,23 +109,87 @@
 				}
 			});
 			
-			$('#list_time_ym li').remove();
+			
 			
 			$.ajax({
 				url:"./MovieClick2.tk",
-				data: {branch_movie:$(this).val()},
+				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 				success:function(data){
 // 					alert('ajax3 성공!')
+					$('#list_time_ym li').remove();
 					$('#list_time_ym').append(data);
+// 					alert(data)
+
 				},
 				error:function(){
 // 					alert('ajax3 실패!')
 				}
 			});
 			
+			// 날짜 클릭 ajax 시작
+// 			$('#owl-stage_ym input').click(function(){
+// 				alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+// // 				alert($(this).val());
+// 				$.ajax({
+// 					url:"./DateClick.tk",
+// 					data: {date:$(this).val()},
+// 					success: function(data){
+// 						alert('ajax4 성공!');
+// 					},
+// 					error:function(){
+// 						alert('ajax4 실패!');
+// 					}
+// 				});
+// 			});
+			// 날짜 클릭 ajax 끝
 			
 		});
 		// 초기값 movie 클릭 ajax 끝
+		
+		
+		// 날짜 클릭 ajax 시작
+		$('#owl-stage_ym input').click(function(){
+// 			alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+//			alert($(this).val());
+// 			alert($('#list_time_ym li').val())
+			$('#time_select_tit_ym span').remove();
+			$('#time_select_tit_ym strong').remove();
+			$('#bx_notice_ym').remove();
+			
+			$.ajax({
+				url:"./DateClick.tk",
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val()},
+				success: function(data){
+// 					alert('ajax4 성공!');
+					$('#time_select_tit_ym').append(data);
+// 					alert(data);
+				},
+				error:function(){
+// 					alert('ajax4 실패!');
+				}
+			});
+			
+			
+			
+			$.ajax({
+				url:"./DateClick2.tk",
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val()},
+				success: function(data){
+// 					alert('ajax5 성공!');
+					$('#list_time_ym li').remove();
+					$('#list_time_ym').append(data);
+// 					alert(data);
+				},
+				error:function(){
+// 					alert('ajax5 실패!');
+				}
+			});
+			
+		});
+		// 날짜 클릭 ajax 끝
+		
+		
+		
 		
 	});
 
@@ -293,44 +378,48 @@
 				<!-- 시간/날짜 영역 시작 -->
 				<div class="article article_time area__movingbar litype6">
 					<div class="group_top">
-						<h4 class="tit">2022-11-09(오늘)</h4>
+						<h4 class="tit">${timeList.get(0).yyyyMMdd }(오늘)</h4>
 					</div>
 					<div class="inner">
 						<div class="date_select_wrap dateReserveWrap">
 							<div class="slide_wrap slide_reserve_date">
 								<ul class="owl-carousel owl-loaded owl-drag">
 									<div class="owl-stage-outer">
-										<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1470px;">
+										<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1470px;" id="owl-stage_ym">
 											
 											
 											
 											<!-- 날짜 쓰는 곳 시작 -->
-											<div class="owl-item active" style="width: 52.5px;">
+											<div class="owl-item active" style="width: 52.5px;" >
 												<li class="item">
-													<strong class="month">11월</strong>
+													<strong class="month">${timeList.get(0).month }월</strong>
 													<span class="date">
 														<label>
-															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="2022-11-09" data-isplaydate="Y"
-															data-playweek="오늘" checked="">
-															<strong>9</strong>
+															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="${timeList.get(0).yyyyMMdd }" data-isplaydate="Y"
+															data-playweek="${timeList.get(0).korDayOfWeek }" value="${timeList.get(0).yyyyMMdd }" checked="" id="currentDate_ym">
+															<strong>${timeList.get(0).date }</strong>
 															<em>오늘</em>
 														</label>
 													</span>
 												</li>
 											</div>
 											
+											<c:forEach var="i" begin="1" end="7" step="1">
+											<c:set var="timeDTO" value="${timeList.get(i) }"></c:set>
 											<div class="owl-item active" style="width: 52.5px;">
 												<li class="item">
 													<span class="date">
 														<label>
-															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="2022-11-10" data-isplaydate="Y"
-															data-playweek="목">
-															<strong>10</strong>
-															<em>목</em>
+															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="${timeDTO.yyyyMMdd }" 
+															data-isplaydate="Y" data-playweek="${timeDTO.korDayOfWeek }" value="${timeDTO.yyyyMMdd }">
+															<strong>${timeDTO.date }</strong>
+															<em>${timeDTO.korDayOfWeek }</em>
 														</label>
 													</span>
 												</li>
 											</div>
+											</c:forEach>
+											
 											<!-- 날짜 쓰는 곳 끝 -->
 											
 											
@@ -377,23 +466,17 @@
 												<div class="group_time_select">
 													
 													<!-- 시간 선택 영화정보 -->
-													<!-- 영화 정보 (ajax 구현), 등급, 제목 (반복) -->
 													<div class="time_select_tit" id="time_select_tit_ym">
 													
 													</div>
-													<!-- 영화 정보 (ajax 구현), 등급, 제목 (반복) -->
 													<!-- 시간 선택 영화정보 -->
 													
 													<!-- 시간 선택 시간정보 -->
 													<div class="time_select_wrap timeSelect">
 														<ul class="list_time" id="list_time_ym">
-														
 															<!-- 해당 지점/영화 스케줄 반복 시작 -->
-														
-															
 															
 															<!-- 해당 지점/영화 스케줄 반복 끝 -->
-															
 														</ul>
 													</div>
 												</div>
