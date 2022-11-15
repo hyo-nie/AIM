@@ -8,7 +8,7 @@ public class MovieDTO {
 	private String directors;    //감독
 	private String poster;       //포스터
 	private int audiAcc;         //총관람객수
-	private int bookRating;      //예매율
+	private double bookRating;      //예매율
 	private String watchGradeNm; //관람등급
 	private String showTm;       //상영시간
 	private String actors;       //배우
@@ -57,10 +57,10 @@ public class MovieDTO {
 	public void setAudiAcc(int audiAcc) {
 		this.audiAcc = audiAcc;
 	}
-	public int getBookRating() {
+	public double getBookRating() {
 		return bookRating;
 	}
-	public void setBookRating(int bookRating) {
+	public void setBookRating(double bookRating) {
 		this.bookRating = bookRating;
 	}
 	public String getWatchGradeNm() {

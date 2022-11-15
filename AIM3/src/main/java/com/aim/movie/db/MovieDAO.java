@@ -72,7 +72,7 @@ public class MovieDAO {
           dto.setDirectors(rs.getString("directors"));
           dto.setPoster(rs.getString("poster"));
           dto.setAudiAcc(rs.getInt("audiAcc"));
-          dto.setBookRating(rs.getInt("bookRating"));
+          dto.setBookRating(rs.getDouble("bookRating"));
           dto.setWatchGradeNm(rs.getString("watchGradeNm"));
           dto.setShowTm(rs.getString("showTm"));
           dto.setActors(rs.getString("actors"));
@@ -110,12 +110,19 @@ public class MovieDAO {
       if(rs.next()) {
         dto.setMovieCd(rs.getString("movieCd"));
         dto.setMovieNm(rs.getString("movieNm"));
-        dto.setOpenDt(rs.getString("openDt"));
+        
+        String oDate = rs.getString("openDt");
+        String dd = oDate.substring(6);
+        String MM = oDate.substring(4,6);
+        String yyyy = oDate.substring(0, 4);
+        oDate = yyyy + "." + MM + "." + dd; 
+        dto.setOpenDt(oDate);
+        
         dto.setGenreNm(rs.getString("genreNm"));
         dto.setDirectors(rs.getString("directors"));
         dto.setPoster(rs.getString("poster"));
         dto.setAudiAcc(rs.getInt("audiAcc"));
-        dto.setBookRating(rs.getInt("bookRating"));
+        dto.setBookRating(rs.getDouble("bookRating"));
         dto.setWatchGradeNm(rs.getString("watchGradeNm"));
         dto.setShowTm(rs.getString("showTm"));
         dto.setActors(rs.getString("actors"));
@@ -234,7 +241,7 @@ public class MovieDAO {
 				
 				dto.setActors(rs.getString("actors"));
 				dto.setAudiAcc(rs.getInt("audiAcc"));
-				dto.setBookRating(rs.getInt("bookRating"));
+				dto.setBookRating(rs.getDouble("bookRating"));
 				dto.setContents(rs.getString("contents"));
 				dto.setDirectors(rs.getString("directors"));
 				dto.setGenreNm(rs.getString("genreNm"));

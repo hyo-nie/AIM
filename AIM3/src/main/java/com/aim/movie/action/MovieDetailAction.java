@@ -1,10 +1,13 @@
 package com.aim.movie.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.aim.movie.db.MovieDAO;
 import com.aim.movie.db.MovieDTO;
+import com.aim.movie.db.ReviewDAO;
 
 public class MovieDetailAction implements Action {
 
@@ -18,6 +21,15 @@ public class MovieDetailAction implements Action {
     dto = dao.getMovieDetail(request.getParameter("movieCd")); 
     
     request.setAttribute("dto", dto);
+    
+    String movieCd = request.getParameter("movieCd");
+    //System.out.println(movieCd);
+
+    ReviewDAO redao = new ReviewDAO();
+    
+    ArrayList reviewListAll = redao.getReviewList(movieCd);
+    //System.out.println(reviewListAll);
+    request.setAttribute("reviewListAll", reviewListAll);
     
     ActionForward forward = new ActionForward();
     forward.setPath("./movie/movieDetail.jsp");
