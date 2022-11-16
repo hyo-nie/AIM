@@ -47,8 +47,8 @@ public class DateClickAction implements Action {
 		request.setAttribute("scheduleList", dao.getScheduleList(branchCd, movieCd, date));
 		request.setAttribute("movieList", movieList);
 		
-//		System.out.println("scheduleList : " + scheduleList);
-//		System.out.println("movieList : " + movieList);
+		System.out.println("scheduleList : ###################" + scheduleList);
+		System.out.println("movieList : #####################" + movieList);
 		System.out.println(movieList.size() + "###########################################");
 		
 		ActionForward forward = new ActionForward();

@@ -243,7 +243,7 @@ public class ReservationDAO {
 			closeDB();
 		}
 		return scheduleList;
-	} // getScheduleList(branchCd, movieCd)
+	} // getScheduleList(branchCd, movieCd, date)
 	
 	
 	/**

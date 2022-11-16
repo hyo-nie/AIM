@@ -33,6 +33,7 @@
 // 							alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 							$('#time_select_tit_ym span').remove();
 							$('#time_select_tit_ym strong').remove();
+							$('#time_select_tit_ym input').remove();
 							$('#bx_notice_ym').hide();
 							
 							$.ajax({
@@ -105,6 +106,7 @@
 // 			alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 			$('#time_select_tit_ym span').remove();
 			$('#time_select_tit_ym strong').remove();
+			$('#time_select_tit_ym input').remove();
 			$('#bx_notice_ym').hide();
 			
 			$.ajax({
@@ -171,6 +173,9 @@
 // 			alert($('#list_time_ym li').val())
 			$('#time_select_tit_ym span').remove();
 			$('#time_select_tit_ym strong').remove();
+// 			$('#time_select_tit_ym input').remove();
+			
+			
 			$('#bx_notice_ym').hide();
 			
 			$.ajax({
@@ -201,6 +206,7 @@
 // 						alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
 						$('#bx_notice_ym').show();
 					}
+						
 					
 				},
 				error:function(){
@@ -349,6 +355,7 @@
 											<c:set var="i" value="0"/>
 											<c:forEach var="m_first" items="${movieFirst }">
 												<c:set var="sc_first" value="${scheduleFirst.get(i) }"></c:set>
+												<input type="hidden" value="${sc_first.branchCd }" id="select_theater_value_ym">
 												<li class="" value="${sc_first.branchCd}${m_first.movieCd }">
 													<a href="#none">
 														<div class="group_infor">
