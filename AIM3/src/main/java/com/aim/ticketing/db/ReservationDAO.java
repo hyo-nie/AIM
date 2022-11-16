@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.naming.Context;
@@ -92,6 +94,43 @@ public class ReservationDAO {
 		
 		try {
 			con = getConnection();
+			sql = "select distinct movieCd,branchCd from schedule where branchCd = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, branchCd);
+			
+			rs = pstmt.executeQuery();
+			
+			// 데이터 처리
+			scheduleList = new ArrayList<ScheduleDTO>();
+			
+			while(rs.next()) {
+				ScheduleDTO dto = new ScheduleDTO();
+				
+//				dto.setScCode(rs.getInt("scCode"));
+//				dto.setSc_date(rs.getString("sc_date"));
+//				dto.setRoomCd(rs.getInt("roomCd"));
+//				dto.setStarttime(rs.getString("starttime"));
+				dto.setBranchCd(rs.getInt("branchCd"));
+				dto.setMovieCd(rs.getString("movieCd"));
+				
+				scheduleList.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return scheduleList;
+	} // getScheduleList()
+	
+	/**
+	 * getScheduleMovieCd() : 지점코드 (branchCd)를 파라미터로 받아서 해당 지점에서 상영하는 영화 목록 조회, List리턴, 영화정보 중복x
+	 */
+	public List<ScheduleDTO> getScheduleMovieCd(int branchCd) {
+		List<ScheduleDTO> scheduleList = null;
+		
+		try {
+			con = getConnection();
 			sql = "select distinct movieCd from schedule where branchCd = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, branchCd);
@@ -119,7 +158,93 @@ public class ReservationDAO {
 			closeDB();
 		}
 		return scheduleList;
-	} // getScheduleList()
+	} // getScheduleMovieCd()
+	
+	
+	
+	
+
+	/**
+	 * getScheduleList(branchCd, movieCd) : 지점코드 (branchCd), 영화코드 (movieCd) 를 파라미터로 받아 스케줄 정보 조회
+	 */
+	public List<ScheduleDTO> getScheduleList(int branchCd, String movieCd) {
+		List<ScheduleDTO> scheduleList = null;
+		
+		try {
+			con = getConnection();
+			sql = "select * from schedule where branchCd = ? && movieCd = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, branchCd);
+			pstmt.setString(2, movieCd);
+			
+			rs = pstmt.executeQuery();
+			
+			// 데이터 처리
+			scheduleList = new ArrayList<ScheduleDTO>();
+			
+			while(rs.next()) {
+				ScheduleDTO dto = new ScheduleDTO();
+				
+				dto.setScCode(rs.getInt("scCode"));
+				dto.setSc_date(rs.getString("sc_date"));
+				dto.setRoomCd(rs.getInt("roomCd"));
+				dto.setStarttime(rs.getString("starttime"));
+				dto.setEndtime(rs.getString("endtime"));
+				dto.setBranchCd(rs.getInt("branchCd"));
+				dto.setMovieCd(rs.getString("movieCd"));
+				dto.setRuncount(rs.getInt("runcount"));
+				
+				scheduleList.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return scheduleList;
+	} // getScheduleList(branchCd, movieCd)
+	
+	/**
+	 * getScheduleList(branchCd, movieCd, date) : 지점코드 (branchCd), 영화코드 (movieCd), 상영날짜(date) 를 파라미터로 받아 스케줄 정보 조회
+	 */
+	public List<ScheduleDTO> getScheduleList(int branchCd, String movieCd, String date) {
+		List<ScheduleDTO> scheduleList = null;
+		
+		try {
+			con = getConnection();
+			sql = "select * from schedule where branchCd = ? && movieCd = ? && sc_date = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, branchCd);
+			pstmt.setString(2, movieCd);
+			pstmt.setString(3, date);
+			
+			rs = pstmt.executeQuery();
+			
+			// 데이터 처리
+			scheduleList = new ArrayList<ScheduleDTO>();
+			
+			while(rs.next()) {
+				ScheduleDTO dto = new ScheduleDTO();
+				
+				dto.setScCode(rs.getInt("scCode"));
+				dto.setSc_date(rs.getString("sc_date"));
+				dto.setRoomCd(rs.getInt("roomCd"));
+				dto.setStarttime(rs.getString("starttime"));
+				dto.setEndtime(rs.getString("endtime"));
+				dto.setBranchCd(rs.getInt("branchCd"));
+				dto.setMovieCd(rs.getString("movieCd"));
+				dto.setRuncount(rs.getInt("runcount"));
+				
+				scheduleList.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return scheduleList;
+	} // getScheduleList(branchCd, movieCd, date)
+	
 	
 	/**
 	 * getMovieList(List<moviedto>) - 영화 정보 조회 메서드 : 영화코드로 영화정보 조회
@@ -171,6 +296,59 @@ public class ReservationDAO {
 		return list;
 	} // getMovieList(movieCd) 끝
 	
+	/**
+	 * getTime() 날짜 정보 조회 메서드
+	 */
+	public List<timeDTO> getTime() {
+		
+		Calendar cal = Calendar.getInstance();
+		
+		List<timeDTO> timeList = new ArrayList<timeDTO>();
+		
+		
+		for (int i = 0; i < 8; i++) {
+			
+			
+			// 년
+			int year = cal.get(Calendar.YEAR);
+			// 월
+			int month = cal.get(Calendar.MONTH)+1;
+			// 일
+			int date = cal.get(Calendar.DATE);
+			int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+			String korDayOfWeek = "";
+			switch (dayOfWeek % 7) {
+			case 1 : korDayOfWeek = "일"; break;
+			case 2 : korDayOfWeek = "월"; break;
+			case 3 : korDayOfWeek = "화"; break;
+			case 4 : korDayOfWeek = "수"; break;
+			case 5 : korDayOfWeek = "목"; break;
+			case 6 : korDayOfWeek = "금"; break;
+			case 0 : korDayOfWeek = "토"; break;
+			}
+			// yyyy-MM-dd
+			String yyyyMMdd = year+"-"+month+"-"+date;
+			
+			timeDTO tDTO = new timeDTO();
+			
+			tDTO.setMonth(month);
+			tDTO.setDate(date);
+			tDTO.setKorDayOfWeek(korDayOfWeek);
+			tDTO.setYyyyMMdd(yyyyMMdd);
+			
+			timeList.add(tDTO);
+			
+			cal.add(Calendar.DATE, 1);
+		}
+		
+		System.out.println(" DAO : 시간정보 저장 완료! ");
+		
+		return timeList;
+	}
+	
+	
+	
+	// getTime() 끝
 	
 	
 	
@@ -223,4 +401,6 @@ public class ReservationDAO {
 //		}
 //		return scheduleList;
 //	} // getScheduleList()
+	
+	
 }

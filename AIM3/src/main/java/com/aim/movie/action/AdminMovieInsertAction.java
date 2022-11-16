@@ -105,7 +105,7 @@ public class AdminMovieInsertAction implements Action {
 		MovieDAO dao = new MovieDAO();
 		
 		// 저장하기전 movie 테이블 모두 삭제
-		dao.adminDeleteMoiveAll();
+		dao.adminDeleteRankMoive();
 		
 		// adminInserMovie() boxOffice 1~10위 영화 정보 DB에 저장 
 		dao.adminInsertMovie(movieInfo1, audiAcc1, rank1, Double.parseDouble(crawling1[0]), crawling1[1]);	

@@ -62,6 +62,61 @@ public class TicketingFrontController extends HttpServlet {
 			}
     	} // TheaterClick.tk 끝
     	
+    	else if (command.equals("/MovieClick.tk")) {
+    		System.out.println(" C : /MovieClick.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// MovieClickAction 객체
+    		action = new MovieClickAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // MovieClick.tk 끝
+    	
+    	else if (command.equals("/MovieClick2.tk")) {
+    		System.out.println(" C : /MovieClick2.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// MovieClickAction2 객체
+    		action = new MovieClickAction2();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // MovieClick2.tk 끝
+    	
+    	else if (command.equals("/DateClick.tk")) {
+    		System.out.println(" C : /DateClick.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// DateClickAction 객체
+    		action = new DateClickAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // DateClick.tk 끝
+    	
+    	else if (command.equals("/DateClick2.tk")) {
+    		System.out.println(" C : /DateClick2.tk ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// DateClickAction2 객체
+    		action = new DateClickAction2();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // DateClick.tk2 끝
     	
 
     	
@@ -93,5 +148,6 @@ public class TicketingFrontController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response);
 	}
+	
 	
 }

@@ -13,22 +13,213 @@
 // 		alert('테스트');
 		
 		$('#theater_ym li').click(function(){
+// 			alert('지점 클릭@@@@@@@@@@@@@@@@');
 			$('#movieList_ym li').remove();
-			
+			$('#movieList_ym input').remove();
 // 			alert($(this).val());
 			$.ajax({
 				url:"./TheaterClick.tk",
 				data: {branchCd:$(this).val()},
 				success:function(data){
+					$('#currentDate_ym').prop('checked', true);
 // 					alert('ajax 성공!');
 // 					alert(data);
+					
 					$('#movieList_ym').append(data);
+					// ajax - theater 클릭 이벤트 끝
+						
+						// ajax - movie 클릭 이벤트
+						$('#movieList_ym li').click(function(){
+// 							alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+							$('#time_select_tit_ym span').remove();
+							$('#time_select_tit_ym strong').remove();
+							$('#time_select_tit_ym input').remove();
+							$('#bx_notice_ym').hide();
+							
+							$.ajax({
+								url:"./MovieClick.tk",
+				 				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+// 								data: {date:$('#currentDate_ym').val(), branchCd:$('#select_theater_value_ym').val(), movieCd:$('#select_movie_value_ym').val()},
+								success:function(data){
+// 									alert('ajax2 성공!')
+									$('#time_select_tit_ym').append(data);
+									
+								},
+								error:function(){
+// 									alert('ajax2 실패!')
+								}
+							});
+							
+							
+							
+							$.ajax({
+								url:"./MovieClick2.tk",
+								data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+								success:function(data){
+// 									alert('ajax3 성공!')
+									$('#currentDate_ym').prop('checked', true);
+									$('#list_time_ym li').remove();
+									$('#list_time_ym').append(data)
+// 									alert(data)
+
+									if (typeof $('#list_time_ym li').val() == 'undefined') {
+//				 						alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+										$('#bx_notice_ym').show();
+									}
+
+								},
+								error:function(){
+// 									alert('ajax3 실패!')
+								}
+							});
+							
+							// 날짜 클릭 ajax 시작
+// 							$('#owl-stage_ym input').click(function(){
+// 								alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+// // 								alert($(this).val());
+// 								$.ajax({
+// 									url:"./DateClick.tk",
+// 									data: {date:$(this).val()},
+// 									success: function(data){
+// 										alert('ajax4 성공!');
+// 									},
+// 									error:function(){
+// 										alert('ajax4 실패!');
+// 									}
+// 								});
+									
+// 							});
+							// 날짜 클릭 ajax 끝
+							
+						});
+					// ajax - movie 클릭 이벤트 끝
+						
 				},
 				error:function(){
 					alert('ajax 실패!');
 				}
 			});
 		});
+		
+		// 초기값 movie 클릭 ajax 시작
+		$('#movieList_ym li').click(function(){
+// 			alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+			$('#time_select_tit_ym span').remove();
+			$('#time_select_tit_ym strong').remove();
+			$('#time_select_tit_ym input').remove();
+			$('#bx_notice_ym').hide();
+			
+			$.ajax({
+				url:"./MovieClick.tk",
+				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+// 				data: {date:$('#currentDate_ym').val(), branchCd:$('#select_theater_value_ym').val(), movieCd:$('#select_movie_value_ym').val()},
+				success:function(data){
+// 					alert('ajax2 성공!')
+					$('#time_select_tit_ym').append(data);
+				},
+				error:function(){
+// 					alert('ajax2 실패!')
+				}
+			});
+			
+			
+			
+			$.ajax({
+				url:"./MovieClick2.tk",
+				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+				success:function(data){
+// 					alert('ajax3 성공!')
+					$('#currentDate_ym').prop('checked', true);
+					$('#list_time_ym li').remove();
+					$('#list_time_ym').append(data);
+// 					alert(data)
+
+					if (typeof $('#list_time_ym li').val() == 'undefined') {
+//				 		alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+						$('#bx_notice_ym').show();
+					}
+
+				},
+				error:function(){
+// 					alert('ajax3 실패!')
+				}
+			});
+			
+			// 날짜 클릭 ajax 시작
+// 			$('#owl-stage_ym input').click(function(){
+// 				alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+// // 				alert($(this).val());
+// 				$.ajax({
+// 					url:"./DateClick.tk",
+// 					data: {date:$(this).val()},
+// 					success: function(data){
+// 						alert('ajax4 성공!');
+// 					},
+// 					error:function(){
+// 						alert('ajax4 실패!');
+// 					}
+// 				});
+// 			});
+			// 날짜 클릭 ajax 끝
+			
+		});
+		// 초기값 movie 클릭 ajax 끝
+		
+		
+		// 날짜 클릭 ajax 시작
+		$('#owl-stage_ym input').click(function(){
+// 			alert('@@@@@@@@@@@@@@@@@@@제발 부탁드립니다@@@@@@@@');
+//			alert($(this).val());
+// 			alert($('#list_time_ym li').val())
+			$('#time_select_tit_ym span').remove();
+			$('#time_select_tit_ym strong').remove();
+// 			$('#time_select_tit_ym input').remove();
+			
+			
+			$('#bx_notice_ym').hide();
+			
+			$.ajax({
+				url:"./DateClick.tk",
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val(),branchCd:$('#select_theater_value_ym').val(),movieCd:$('#select_movie_value_ym').val()},
+				success: function(data){
+// 					alert('ajax4 성공!');
+					$('#time_select_tit_ym').append(data);
+				},
+				error:function(){
+// 					alert('ajax4 실패!');
+				}
+			});
+			
+			
+			
+			$.ajax({
+				url:"./DateClick2.tk",
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val(),branchCd:$('#select_theater_value_ym').val(),movieCd:$('#select_movie_value_ym').val()},
+				success: function(data){
+// 					alert('ajax5 성공!');
+					$('#list_time_ym li').remove();
+					$('#list_time_ym').append(data);
+					
+// 					alert($('#list_time_ym li').val());
+					
+					if (typeof $('#list_time_ym li').val() == 'undefined') {
+// 						alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+						$('#bx_notice_ym').show();
+					}
+						
+					
+				},
+				error:function(){
+// 					alert('ajax5 실패!');
+				}
+			});
+			
+		});
+		// 날짜 클릭 ajax 끝
+		
+		
+		
+		
 	});
 
 </script>
@@ -43,7 +234,6 @@
 
 
 	<br><br><br><br><br><br>
-
 
 
 	<div id="contents" class="contents_full contents_reserve"
@@ -162,13 +352,30 @@
 										
 										<!-- 영화 정보 시작 gr_12, 15, 18, all -->
 										<ul id="movieList_ym">
+											<c:set var="i" value="0"/>
 											<c:forEach var="m_first" items="${movieFirst }">
-												<li class="">
+												<c:set var="sc_first" value="${scheduleFirst.get(i) }"></c:set>
+												<input type="hidden" value="${sc_first.branchCd }" id="select_theater_value_ym">
+												<li class="" value="${sc_first.branchCd}${m_first.movieCd }">
 													<a href="#none">
 														<div class="group_infor">
 															<div class="bx_tit">
-																<span class="ic_grade gr_12"></span>
+																<span class=
+																	<c:if test="${m_first.watchGradeNm.equals('12세이상관람가') }">
+																		"ic_grade gr_12"
+																	</c:if>
+																	<c:if test="${m_first.watchGradeNm.equals('15세이상관람가') }">
+																		"ic_grade gr_15"
+																	</c:if>
+																	<c:if test="${m_first.watchGradeNm.equals('18세이상관람가') }">
+																		"ic_grade gr_18"
+																	</c:if>
+																	<c:if test="${m_first.watchGradeNm.equals('전체관람가') }">
+																		"ic_grade gr_all"
+																	</c:if>>
+																</span>
 																<strong class="tit">${m_first.movieNm }</strong>
+																<c:set var="i" value="${i+1 }"/>
 															</div>
 														</div>
 													</a>
@@ -201,44 +408,48 @@
 				<!-- 시간/날짜 영역 시작 -->
 				<div class="article article_time area__movingbar litype6">
 					<div class="group_top">
-						<h4 class="tit">2022-11-09(오늘)</h4>
+						<h4 class="tit">${timeList.get(0).yyyyMMdd }(오늘)</h4>
 					</div>
 					<div class="inner">
 						<div class="date_select_wrap dateReserveWrap">
 							<div class="slide_wrap slide_reserve_date">
 								<ul class="owl-carousel owl-loaded owl-drag">
 									<div class="owl-stage-outer">
-										<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1470px;">
+										<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1470px;" id="owl-stage_ym">
 											
 											
 											
 											<!-- 날짜 쓰는 곳 시작 -->
-											<div class="owl-item active" style="width: 52.5px;">
+											<div class="owl-item active" style="width: 52.5px;" >
 												<li class="item">
-													<strong class="month">11월</strong>
+													<strong class="month">${timeList.get(0).month }월</strong>
 													<span class="date">
 														<label>
-															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="2022-11-09" data-isplaydate="Y"
-															data-playweek="오늘" checked="">
-															<strong>9</strong>
+															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="${timeList.get(0).yyyyMMdd }" data-isplaydate="Y"
+															data-playweek="${timeList.get(0).korDayOfWeek }" value="${timeList.get(0).yyyyMMdd }" checked="" id="currentDate_ym">
+															<strong>${timeList.get(0).date }</strong>
 															<em>오늘</em>
 														</label>
 													</span>
 												</li>
 											</div>
 											
+											<c:forEach var="i" begin="1" end="7" step="1">
+											<c:set var="timeDTO" value="${timeList.get(i) }"></c:set>
 											<div class="owl-item active" style="width: 52.5px;">
 												<li class="item">
 													<span class="date">
 														<label>
-															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="2022-11-10" data-isplaydate="Y"
-															data-playweek="목">
-															<strong>10</strong>
-															<em>목</em>
+															<input type="radio" name="radioDate1" data-displayyn="Y" data-playdate="${timeDTO.yyyyMMdd }" 
+															data-isplaydate="Y" data-playweek="${timeDTO.korDayOfWeek }" value="${timeDTO.yyyyMMdd }">
+															<strong>${timeDTO.date }</strong>
+															<em>${timeDTO.korDayOfWeek }</em>
 														</label>
 													</span>
 												</li>
 											</div>
+											</c:forEach>
+											
 											<!-- 날짜 쓰는 곳 끝 -->
 											
 											
@@ -276,115 +487,26 @@
 											class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
 											style="max-height: none;" tabindex="0">
 											<div id="mCSB_22_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position: relative; top: 0; left: 0;" dir="ltr">
-												<!-- <div class="bx_notice">
+												<div class="bx_notice" id="bx_notice_ym">
 													<p>조회 가능한 상영시간이 없습니다.</p>
 													<p>조건을 변경해주세요.</p>
-												</div> -->
+												</div>
 
 												<!-- 시간 선택 그룹 -->
 												<div class="group_time_select">
 													
 													<!-- 시간 선택 영화정보 -->
-													<div class="time_select_tit">
+													<div class="time_select_tit" id="time_select_tit_ym">
 													
-														<!-- 영화 정보 (ajax 구현), 등급, 제목 -->
-														<span class="ic_grade gr_12">12</span>
-														<strong>블랙 팬서: 와칸다 포에버</strong>
-														
 													</div>
+													<!-- 시간 선택 영화정보 -->
 													
 													<!-- 시간 선택 시간정보 -->
 													<div class="time_select_wrap timeSelect">
-														<ul class="list_time">
-															<li class=""><a role="button" href="#none"><dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>18:30</strong>
-																			<div class="tooltip">종료 21:21</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>94</strong> / 100
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">3관</dd>
-																	</dl></a></li>
-														</ul>
-													</div>
-													<div class="time_select_wrap timeSelect">
-														<ul class="list_hall">
-															<li>2D</li>
-														</ul>
-														<ul class="list_time">
-															<li class=""><a role="button" href="#none"><dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>19:00</strong>
-																			<div class="tooltip">종료 21:51</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>286</strong> / 332
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">5관</dd>
-																	</dl></a></li>
-															<li class=""><a role="button" href="#none"><dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>19:40</strong>
-																			<div class="tooltip">종료 22:31</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>148</strong> / 164
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">1관</dd>
-																	</dl></a></li>
-															<li class=""><a role="button" href="#none"><dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>20:20</strong>
-																			<div class="tooltip">종료 23:11</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>169</strong> / 184
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">6관</dd>
-																	</dl></a></li>
-															<li class="">
-																<a role="button" href="#none">
-																	<dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>21:00</strong>
-																			<div class="tooltip">종료 23:51</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>125</strong> / 132
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">4관</dd>
-																	</dl>
-																</a>
-															</li>
-															<li class=""><a role="button" href="#none"><dl>
-																		<dt>상영시간</dt>
-																		<dd class="time">
-																			<strong>22:10</strong>
-																			<div class="tooltip">종료 25:01</div>
-																		</dd>
-																		<dt>잔여석</dt>
-																		<dd class="seat">
-																			<strong>317</strong> / 332
-																		</dd>
-																		<dt>상영관</dt>
-																		<dd class="hall">5관</dd>
-																	</dl></a></li>
+														<ul class="list_time" id="list_time_ym">
+															<!-- 해당 지점/영화 스케줄 반복 시작 -->
+															
+															<!-- 해당 지점/영화 스케줄 반복 끝 -->
 														</ul>
 													</div>
 												</div>

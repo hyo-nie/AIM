@@ -268,13 +268,13 @@ public class MovieDAO {
 	} // adminGetMovieList 끝
 
 	/**
-	 * adminDeleteMoiveAll() - movie 테이블의 데이터를 모두 지우는 메서드
+	 * adminDeleteMoiveAll() - movie 테이블의 데이터를 모두 지우는 메서드 !!수정사항 : rank 컬럼이 1 ~ 10인 무비만 삭제하도록 변경
 	 */
-	public void adminDeleteMoiveAll() {
+	public void adminDeleteRankMoive() {
 		
 		try {
 			con = getConnection();
-			sql = "delete from movie";
+			sql = "delete from movie where boxrank <= 10;";
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.executeUpdate();
