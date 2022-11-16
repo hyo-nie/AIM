@@ -105,23 +105,30 @@
 		  <ul>
 			<li><button type="button" class="tab_tit"
 					style="width: 1000px; height:50px; left: 50%; margin-left: 0px;">
-					<span style="font-size:18px" >평점 및 관람평 (1,394)</span></button>
+					<span style="font-size:18px" >평점 및 관람평 (${requestScope.cnt })</span></button>
 				<div class="tab_con">
 					<h4 class="hidden">평점 및 관람평</h4>
 					<div class="wrap_reviewstarscore starReg" id="movie_review_box">
 						<div class="star_score_box ">
 							<br><h4 class="h4_tit">평점 · 관람평 작성</h4><br>
 						</div>
-						<div class="movi_review_box">
-							<div class="review_write_box">
-								<textarea id="txtComment"
-									placeholder="평점 및 영화 관람평을 작성해주세요. 주제와 무관한 리뷰 또는 스포일러는 표시제한 또는 삭제될 수 있습니다. 
-작성하신 평점 및 관람평은 AIM 홈페이지, SNS 등에 인용될 수 있습니다."
-									title="관람평 작성"></textarea>
-								<span class="byte_info"><strong class="byte">0</strong>/<em>220</em></span>
+						
+						
+						<form action="./ReviewWrite.mv?movieCd=${dto.movieCd }" method="post">
+							<div class="movi_review_box">
+								<div class="review_write_box">
+									<textarea id="txtComment" name="review_sy"
+										placeholder="평점 및 영화 관람평을 작성해주세요. 주제와 무관한 리뷰 또는 스포일러는 표시제한 또는 삭제될 수 있습니다. 
+	작성하신 평점 및 관람평은 AIM 홈페이지, SNS 등에 인용될 수 있습니다."
+										title="관람평 작성"></textarea>
+									<span class="byte_info"><strong class="byte">0</strong>/<em>220</em></span>
+								</div>
+	<!-- 							<button type="submit" id="btnComment" class="btn_submit">관람평 작성</button> -->
+								<input type="submit" id="btnComment" class="btn_submit" value="관람평 작성">
 							</div>
-							<button type="submit" id="btnComment" class="btn_submit">관람평 작성</button>
-						</div>
+						</form>
+						
+						
 					</div>
 					<div class="movi_review_list">
 						<h5 class="hidden">관람평 목록</h5>
@@ -129,7 +136,7 @@
 							<span class="tit"><span class="txt_ic_score">
 							<span class="starimg">관람객 관람평</span></span></span>
 							<div class="wrap_sort_right">
-								<span class="total_num">총 <em>★</em>건</span>
+								<span class="total_num">총 <em>${requestScope.cnt }</em>건</span>
 								<ul class="sort_list">
 									<li id="reviewsortseq1" class="active"><button
 											class="latest">최신순</button></li>
@@ -137,30 +144,31 @@
 								</ul>
 							</div>
 						</div>
-						<ul class="review_con_list" id="review_con_list1"></ul>
-						<ul class="review_con_list" id="review_con_list2">
-						<c:forEach var="dto" items="${reviewListAll }">
-						<li><span class="img_info">
-							<img src="../Content/images/customer/ic_survey_02.png" alt=""></span>
-							<div class="top_info"><span class="name">${dto.mb_id }</span>
-							<span class="txt_ic_score">
-								<span class="stargradebg">
-									<span class="blindbg grade7">
-										<span class="stargradecolor "></span>
+
+							<ul class="review_con_list" id="review_con_list1"></ul>
+							<ul class="review_con_list" id="review_con_list2">
+							<c:forEach var="redto" items="${reviewListAll }">
+							<li><span class="img_info">
+								<img src="../Content/images/customer/ic_survey_02.png" alt=""></span>
+								<div class="top_info"><span class="name">${redto.mb_nick }</span>
+								<span class="txt_ic_score">
+									<span class="stargradebg">
+										<span class="blindbg grade7">
+											<span class="stargradecolor "></span>
+										</span>
 									</span>
 								</span>
-							</span>
-							<span class="date_info">${dto.date }</span></div>
-							<div class="review_info">${dto.review }</div>
-							<div class="btm_info">
-								<div class="edit_review"><em></em></div>
-							</div>
-						</li>
-						</c:forEach> 
-						</ul>
-						<button type="button" class="btn_txt_more" id="btn_review_more">
-							<span>펼쳐보기</span>
-						</button>
+								<span class="date_info">${redto.date}</span></div>
+								<div class="review_info">${redto.review }</div>
+								<div class="btm_info">
+									<div class="edit_review"><em></em></div>
+								</div>
+							</li>
+							</c:forEach> 
+							</ul>
+<!-- 						<button type="button" class="btn_txt_more" id="btn_review_more"> -->
+<!-- 							<span>펼쳐보기</span> -->
+<!-- 						</button> -->
 					</div>
 					<div class="list_bdr_box">
 						<h3 class="title txt_caution2">유의사항</h3>

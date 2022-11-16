@@ -43,7 +43,7 @@ public class ReviewDAO {
   // 자원해제
   
   /**
-   * getReviewList() : 리뷰 글 정보를 가져오는 메서드
+   * getReviewList(movieCD) : 해당 영화의 리뷰 글 정보를 가져오는 메서드
    */
   public ArrayList getReviewList(String movieCd) {
     ArrayList reviewList = new ArrayList();
@@ -60,8 +60,8 @@ public class ReviewDAO {
         dto.setMovieCd(rs.getString("movieCd"));
         dto.setReviewNo(rs.getInt("reviewNo"));
         dto.setReview(rs.getString("review"));
-        dto.setDate(rs.getDate("date"));
-        dto.setMb_id(rs.getString("mb_id"));
+        dto.setDate(rs.getTimestamp("date"));
+        dto.setMb_nick(rs.getString("mb_nick"));
         
         reviewList.add(dto);
       }
@@ -73,7 +73,70 @@ public class ReviewDAO {
     
     return reviewList;
   }
+  //getReviewList(movieCD) 끝
   
-  //getReviewList() 끝
+  
+  /**
+   * getReviewCount(movieCD) : 해당 영화의 리뷰 글 전체 개수를 출력하는 메서드
+   */
+  public int getReviewCount(String movieCd) {
+	  ReviewDTO dto = new ReviewDTO();
+	  int cnt = 0;
+	  	  
+	  try {
+		con = getConnection();
+		sql = "select count(*) from review where movieCd=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, movieCd);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			cnt = rs.getInt(1);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		closeDB();
+	}
+	return cnt;  
+  }
+  //getReviewCount(movieCD) 끝
+  
+  
+  /**
+   * insertReview(DTO) : 리뷰쓰기 메서드
+   */
+  public void insertReview(ReviewDTO dto) {
+	  int reviewNo = 0;
+	  
+	  try {
+		con = getConnection();
+		sql = "select max(reviewNo) from review";
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			reviewNo = rs.getInt(1)+1;
+		}
+		
+		sql = "insert into review(reviewNo,review,date,movieCd,mb_nick) values(?,?,now(),?,?)";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, reviewNo);
+		pstmt.setString(2, dto.getReview());
+		pstmt.setString(3, dto.getMovieCd());
+		pstmt.setString(4, dto.getMb_nick());
+		pstmt.executeUpdate();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		closeDB();
+	}
+  }
+  //insertReview(DTO) 끝
+  
+  
+  
+  
   
 }

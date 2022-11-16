@@ -236,7 +236,32 @@ public class MemberDAO {
    } // 닉네임 중복체크 끝 - NickCheck(mb_nick)
    
    
-   
+   //회원정보 조회 메서드 - getMember
+   	public MemberDTO getMember(String mb_id) {
+   		MemberDTO dto = new MemberDTO();
+   		try {
+			con = getConnection();
+			sql = "select * from member where mb_id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, mb_id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setMb_nick(rs.getString("mb_nick"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+   		
+   		
+   		
+   		return dto;
+   		
+   	}
+   //회원정보 조회 메서드 - getMember
+   	
    
    
    

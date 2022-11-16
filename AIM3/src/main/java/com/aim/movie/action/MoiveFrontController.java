@@ -48,7 +48,7 @@ public class MoiveFrontController extends HttpServlet{
     	} //MovieList.mv 끝
     	
       else if (command.equals("/MovieDetail.mv")) {
-        System.out.println("C : /MovieDetail.mv");     //영화상세정보 페이지
+        System.out.println("C : /MovieDetail.mv");     //영화상세정보,리뷰 페이지
         System.out.println("C : 패턴3 사용");
         
         action = new MovieDetailAction();
@@ -58,6 +58,18 @@ public class MoiveFrontController extends HttpServlet{
           e.printStackTrace();
         }
       } //MovieDetail.mv 끝
+    	
+      else if(command.equals("/ReviewWrite.mv")) {
+    	  System.out.println("C : /ReviewWrite.mv");
+    	  System.out.println("C : 패턴 3 사용");
+    	  
+    	  action = new ReviewWriteAction();
+    	  try {
+			forward = action.execute(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+      }
 
     	else if (command.equals("/AdminMovieInsert.mv")) {
     		System.out.println(" C : /AdminMovieInsert.mv 호출 ");

@@ -24,12 +24,16 @@ public class MovieDetailAction implements Action {
     
     String movieCd = request.getParameter("movieCd");
     //System.out.println(movieCd);
-
+    
     ReviewDAO redao = new ReviewDAO();
+    int cnt = redao.getReviewCount(request.getParameter("movieCd"));
+    System.out.println(movieCd);
+    System.out.println("M : 전체 리뷰 개수 : "+cnt+"개");
     
     ArrayList reviewListAll = redao.getReviewList(movieCd);
     //System.out.println(reviewListAll);
     request.setAttribute("reviewListAll", reviewListAll);
+    request.setAttribute("cnt", cnt);
     
     ActionForward forward = new ActionForward();
     forward.setPath("./movie/movieDetail.jsp");
