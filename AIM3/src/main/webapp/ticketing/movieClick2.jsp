@@ -7,6 +7,7 @@
 </head>
 <body>
 	
+	<c:if test="${scheduleList.size() != 0 }">
 		<c:forEach var="scList" items="${scheduleList }">
 		<li class="" value="${scList.branchCd }${scList.movieCd}">
 			<a role="button" href="#none">
@@ -26,6 +27,7 @@
 			</a>
 		</li>
 		</c:forEach>
+	</c:if>
 	
 </body>
 </html>

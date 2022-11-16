@@ -15,11 +15,13 @@
 		$('#theater_ym li').click(function(){
 // 			alert('지점 클릭@@@@@@@@@@@@@@@@');
 			$('#movieList_ym li').remove();
+			$('#movieList_ym input').remove();
 // 			alert($(this).val());
 			$.ajax({
 				url:"./TheaterClick.tk",
 				data: {branchCd:$(this).val()},
 				success:function(data){
+					$('#currentDate_ym').prop('checked', true);
 // 					alert('ajax 성공!');
 // 					alert(data);
 					
@@ -31,14 +33,16 @@
 // 							alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 							$('#time_select_tit_ym span').remove();
 							$('#time_select_tit_ym strong').remove();
-							$('#bx_notice_ym').remove();
+							$('#bx_notice_ym').hide();
 							
 							$.ajax({
 								url:"./MovieClick.tk",
-								data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+				 				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+// 								data: {date:$('#currentDate_ym').val(), branchCd:$('#select_theater_value_ym').val(), movieCd:$('#select_movie_value_ym').val()},
 								success:function(data){
 // 									alert('ajax2 성공!')
 									$('#time_select_tit_ym').append(data);
+									
 								},
 								error:function(){
 // 									alert('ajax2 실패!')
@@ -52,9 +56,15 @@
 								data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 								success:function(data){
 // 									alert('ajax3 성공!')
+									$('#currentDate_ym').prop('checked', true);
 									$('#list_time_ym li').remove();
 									$('#list_time_ym').append(data)
 // 									alert(data)
+
+									if (typeof $('#list_time_ym li').val() == 'undefined') {
+//				 						alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+										$('#bx_notice_ym').show();
+									}
 
 								},
 								error:function(){
@@ -95,11 +105,12 @@
 // 			alert('제발 되게 해주세요 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 			$('#time_select_tit_ym span').remove();
 			$('#time_select_tit_ym strong').remove();
-			$('#bx_notice_ym').remove();
+			$('#bx_notice_ym').hide();
 			
 			$.ajax({
 				url:"./MovieClick.tk",
 				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
+// 				data: {date:$('#currentDate_ym').val(), branchCd:$('#select_theater_value_ym').val(), movieCd:$('#select_movie_value_ym').val()},
 				success:function(data){
 // 					alert('ajax2 성공!')
 					$('#time_select_tit_ym').append(data);
@@ -116,9 +127,15 @@
 				data: {branch_movie:$(this).val(),date:$('#currentDate_ym').val()},
 				success:function(data){
 // 					alert('ajax3 성공!')
+					$('#currentDate_ym').prop('checked', true);
 					$('#list_time_ym li').remove();
 					$('#list_time_ym').append(data);
 // 					alert(data)
+
+					if (typeof $('#list_time_ym li').val() == 'undefined') {
+//				 		alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+						$('#bx_notice_ym').show();
+					}
 
 				},
 				error:function(){
@@ -154,15 +171,14 @@
 // 			alert($('#list_time_ym li').val())
 			$('#time_select_tit_ym span').remove();
 			$('#time_select_tit_ym strong').remove();
-			$('#bx_notice_ym').remove();
+			$('#bx_notice_ym').hide();
 			
 			$.ajax({
 				url:"./DateClick.tk",
-				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val()},
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val(),branchCd:$('#select_theater_value_ym').val(),movieCd:$('#select_movie_value_ym').val()},
 				success: function(data){
 // 					alert('ajax4 성공!');
 					$('#time_select_tit_ym').append(data);
-// 					alert(data);
 				},
 				error:function(){
 // 					alert('ajax4 실패!');
@@ -173,12 +189,19 @@
 			
 			$.ajax({
 				url:"./DateClick2.tk",
-				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val()},
+				data: {date:$(this).val(),branch_movie:$('#list_time_ym li').val(),branchCd:$('#select_theater_value_ym').val(),movieCd:$('#select_movie_value_ym').val()},
 				success: function(data){
 // 					alert('ajax5 성공!');
 					$('#list_time_ym li').remove();
 					$('#list_time_ym').append(data);
-// 					alert(data);
+					
+// 					alert($('#list_time_ym li').val());
+					
+					if (typeof $('#list_time_ym li').val() == 'undefined') {
+// 						alert("이거뜨면 성공@@@@@@@@@@@@@@@@@@@@@@");
+						$('#bx_notice_ym').show();
+					}
+					
 				},
 				error:function(){
 // 					alert('ajax5 실패!');

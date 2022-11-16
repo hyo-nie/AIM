@@ -5,14 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	
 	<c:set var="i" value="0"/>
 	<c:forEach var="movieDTO" items="${movieList }">
 		<c:set var="scDTO" value="${scheduleList.get(i) }"></c:set>
+		<input type="hidden" value="${scDTO.branchCd }" id="select_theater_value_ym">
 		<li class="" value="${scDTO.branchCd}${movieDTO.movieCd }">
 			<a href="#none">
 				<div class="group_infor">

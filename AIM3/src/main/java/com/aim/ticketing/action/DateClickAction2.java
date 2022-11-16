@@ -18,8 +18,20 @@ public class DateClickAction2 implements Action {
 		// 데이터 저장
 		String date = request.getParameter("date");
 		String branch_movie = request.getParameter("branch_movie");
-		int branchCd = Integer.parseInt(branch_movie.substring(0, 1));
-		String movieCd = branch_movie.substring(1);
+		int branchCd = 0;
+		String movieCd = "";
+		if (branch_movie != null) {
+			branchCd = Integer.parseInt(branch_movie.substring(0, 1));
+			movieCd = branch_movie.substring(1);
+		}
+		String tmpbranchCd = request.getParameter("branchCd");
+		if (tmpbranchCd != null) {
+			branchCd = Integer.parseInt(tmpbranchCd);
+		}
+		String tmpmovieCd = request.getParameter("movieCd");
+		if (tmpmovieCd != null) {
+			movieCd = tmpmovieCd;
+		}
 		
 		System.out.println(date + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ dateaction2");
 		System.out.println(branchCd + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ dateaction2");

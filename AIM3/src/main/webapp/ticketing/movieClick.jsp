@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	
+	<c:if test="${movieList.size() != 0 }">
 		<c:set var="movieDTO" value="${movieList.get(i) }"/>
+		<input type="hidden" value="${movieDTO.movieCd }" id="select_movie_value_ym">
 		<div class="time_select_tit" id="time_select_tit_ym">
 			<!-- 영화 정보 (ajax 구현), 등급, 제목 -->
 			<span class=
@@ -28,6 +28,7 @@
 			</span>
 			<strong>${movieDTO.movieNm }</strong>
 		</div>
+	</c:if>
 	
 </body>
 </html>
