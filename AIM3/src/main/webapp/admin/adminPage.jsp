@@ -26,7 +26,7 @@
 		
 		<input type="button" value="DB에 영화 목록 조회" onclick="location.href='./AdminMovieList.mv'">
 		
-		
+		<input type="button" value="DB에 추천 영화 저장" onclick="location.href='./AdminMovieInsert2.mv'">
 	</form>
 	
 	

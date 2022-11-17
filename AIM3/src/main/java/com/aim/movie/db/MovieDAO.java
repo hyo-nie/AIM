@@ -321,6 +321,115 @@ public class MovieDAO {
 	}
 	
 	
+	/**
+	 * AdminMovieRecommend() - movie 테이블에 추천 영화 정보 저장하는 메서드
+	 */
+	// 추천영화 등록 메서드 시작 - AdminMovieRecommend(MovieDTO dto)
+	   public void AdminMovieRecommend(MovieDTO dto) {
+		      try {
+		         con = getConnection();
+		         sql = "insert into movie(movieCd,openDt,genreNm,movieNm,directors,poster,watchGradeNm,showTm,actors,contents,boxrank) "
+		               +"value(?,?,?,?,?,?,?,?,?,?,?)";
+		         pstmt = con.prepareStatement(sql);
+		         
+		         pstmt.setString(1, dto.getMovieCd());
+		         pstmt.setString(2, dto.getOpenDt());
+		         pstmt.setString(3, dto.getGenreNm());       
+		         pstmt.setString(4, dto.getMovieNm());
+		         pstmt.setString(5, dto.getDirectors());
+		         pstmt.setString(6, dto.getPoster());
+		         pstmt.setString(7, dto.getWatchGradeNm());
+		         pstmt.setString(8, dto.getShowTm());
+		         pstmt.setString(9, dto.getActors());
+		         pstmt.setString(10, dto.getContents());
+		         pstmt.setInt(11, dto.getBoxrank());
+
+		         pstmt.executeUpdate();
+		         
+		        // int result = pstmt.executeUpdate();
+//		         
+//		         if(result > 0) {
+//		            System.out.println("DAO : 추천 영화 등록에 성공하셨습니다");
+//		         }
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      } finally {
+		         closeDB();
+		      }
+		   } // AdminMovieRecommend 끝
+
+	
+		/**
+		 * AdminMovieModify() - movie 테이블에 추천 영화 정보 수정하는 메서드
+		 */
+	   // 영화정보 수정메서드 - AdminMovieModify(DTO)
+		public void AdminMovieModify(MovieDTO dto) {
+			
+			try {
+				con = getConnection();
+				sql = "update movie set "
+						+ "openDt=?,movieNm=?,genreNm=?,directors=?,poster=?,watchGradeNm=?,showTm=?,actors=?,contents=?,boxrank=? "
+						+ "where movieCd=?";
+				pstmt = con.prepareStatement(sql);
+
+		         pstmt.setString(1, dto.getOpenDt());
+		         pstmt.setString(2, dto.getMovieNm());       
+		         pstmt.setString(3, dto.getGenreNm());
+		         pstmt.setString(4, dto.getDirectors());
+		         pstmt.setString(5, dto.getPoster());
+		         pstmt.setString(6, dto.getWatchGradeNm());
+		         pstmt.setString(7, dto.getShowTm());
+		         pstmt.setString(8, dto.getActors());
+		         pstmt.setString(9, dto.getContents());
+		         pstmt.setInt(10, dto.getBoxrank());
+		         pstmt.setString(11, dto.getMovieCd());
+			
+				pstmt.executeUpdate();
+				
+				System.out.println(" DAO : 관리자 영화정보 수정 완료");
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				closeDB();
+			}
+			
+		}	
+		// 영화정보 수정메서드 - AdminMovieModify(DTO)
+		
+		
+		
+		/**
+		 * AdminMovieDelete() - movie 테이블에 추천 영화 정보 삭제하는 메서드
+		 */
+		// 영화정보 삭제메서드 - AdminMovieDelete(MovieCd)
+		public void AdminMovieDelete(String MovieCd) {
+			
+			try {
+				con = getConnection();
+				sql = "delete from movie where movieCd = ?";
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setString(1, MovieCd);
+				
+				pstmt.executeUpdate();
+				
+				System.out.println(" DAO : 관리자 영화 삭제");
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				closeDB();
+			}
+			
+		}
+		
+		// 영화정보 삭제메서드 - AdminMovieDelete(MovieCd)
+	
+	
+	
+	
+	
 }
 
 

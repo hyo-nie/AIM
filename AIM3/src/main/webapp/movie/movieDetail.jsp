@@ -13,7 +13,7 @@
 	<!-- 상위 배너 -->
 	<jsp:include page="../inc/topbanner.jsp" />
 	<!-- 헤더/네비 -->
-	<jsp:include page="../inc/login_nav_bar.jsp" />
+	<jsp:include page="../inc/nav_bar.jsp" />
 	<br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<div id="contents"
 		class="contents_movie_detail area__movingbar litype2">

@@ -69,7 +69,7 @@ public class MoiveFrontController extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-      }
+      } // ReviewWrite.mv 끝
 
     	else if (command.equals("/AdminMovieInsert.mv")) {
     		System.out.println(" C : /AdminMovieInsert.mv 호출 ");
@@ -112,6 +112,97 @@ public class MoiveFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
     	} // AdminMovieList.mv 끝
+    	
+    	
+    	
+    	else if (command.equals("/AdminMovieInsert2.mv")) {
+    		System.out.println(" C : AdminMovieInsert2.mv 호출 ");
+    		System.out.println(" C : [패턴1]");
+    	
+    		forward = new ActionForward();
+			forward.setPath("/admin/adminMovieInsert2.jsp");
+			forward.setRedirect(false);
+			
+    	} // AdminMovieInset2.mv 끝 - 추천영화등록페이지로 이동
+    	
+    	
+    	else if (command.equals("/AdminMovieRecommend.mv")) {
+    		System.out.println(" C : AdminMovieRecommend.mv 호출 ");
+    		System.out.println(" C : [패턴2]");
+    		
+    		// AdminMovieRecommendAction() 객체
+    		action = new AdminMovieRecommendAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // AdminMovieRecommend.mv 끝
+    	
+
+    	else if (command.equals("/AdminMovieModify.mv")) {
+    		System.out.println(" C : AdminMovieModify.mv 호출 ");
+    		System.out.println(" C : [패턴2]");
+    		
+    		// AdminMovieModifyAction() 객체
+    		action = new AdminMovieModifyAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // AdminMovieModify.mv 끝
+    	
+    	
+    	
+    	else if(command.equals("/AdminMovieModifyPro.mv")) {
+			System.out.println(" C : /AdminMovieModifyPro.mv 호출 ");
+			System.out.println(" C : 패턴 2");
+			
+			// AdminMovieModifyProAction
+			action = new AdminMovieModifyProAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} // AdminMovieModifyPro.mv 끝
+    	
+    	
+    	else if(command.equals("/AdminMovieDelete.mv")) {
+			System.out.println(" C : /AdminMovieDelete.mv 호출 ");
+			System.out.println(" C : 패턴 2");
+			
+			// AdminMovieDeleteAction
+			action = new AdminMovieDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} // AdminMovieDelete.mv 끝
+    	
+    	
+    	
+    	if(command.equals("/MovieHomeList.mv")) { // 영화 홈 목록 페이지
+    		System.out.println("C : /MovieHomeList.mv");
+    		System.out.println("C : 패턴3 사용");
+    	
+    		action = new MovieHomeListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} //MovieHomeList.mv 끝
+    	
+    	
+    	
+    	
     	
     	
     	
