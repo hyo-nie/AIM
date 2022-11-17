@@ -32,7 +32,7 @@ public class JoinAction implements Action {
 		System.out.println(" M : dto : " + "회원가입 성공");
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("./Login.aim"); // 로그인페이지
+		forward.setPath("./JoinSuccess.aim"); // 회원가입성공페이지
 		forward.setRedirect(true);
 		
 		return forward;

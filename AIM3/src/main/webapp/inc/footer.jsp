@@ -43,7 +43,7 @@
 				</div>
 				<p class="copyright">COPYRIGHT© AIM ALL RIGHT RESERVED.</p>
 			</div>
-			<div class="article_award">
+<!-- 			<div class="article_award">
 				<div class="inner">
 					<ul>
 						<li><img
@@ -72,6 +72,6 @@
 							alt="소셜미디어 브랜드분야 WINNER 수상"></li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</footer>

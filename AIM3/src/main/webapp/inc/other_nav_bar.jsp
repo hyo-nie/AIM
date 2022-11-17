@@ -31,7 +31,7 @@
 				<!-- 로그인 페이지 -->
 			</ul>
 			<ul class="g_menu3">
-				<li><a href="#" class="btn_my">회원가입</a></li>
+				<li><a href="./JoinTerms.aim" class="btn_my">회원가입</a></li>
 				<!-- 회원가입페이지 -->
 				<li><a href="" class="btn_reserve">바로 예매</a></li>
 				<!-- 바로예매 이동 -->

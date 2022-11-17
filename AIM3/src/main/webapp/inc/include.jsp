@@ -35,8 +35,13 @@
 <link href="./assets/css/content.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/owl.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/dev.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/owl.theme.default.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/owl.theme.green.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/swiper.css" rel="stylesheet" type="text/css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> -->
 
 
 <!-- other -->
@@ -53,13 +58,17 @@
         var CHANNEL_TYPE = "HO";
         const headTitle = "Main";
     </script>
+    <script src="./assets/css/owl.carousel.min.js"></script>
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
     <script src="./assets/jquery-1.12.3.min.js"></script>
     <script src="./assets/jquery.jplayer.min.js"></script>
     <script src="./assets/jquery.lazy.min.js"></script>
     <script src="./assets/jquery-ui.min.js"></script>
     <script src="./assets/jquery.cookie.js"></script>
     <script src="./assets/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="./assets/owl.carousel-2.3.4-custom.js"></script>
+    <script src="./assets/css/owl.carousel-2.3.4-custom.js"></script>
     <script src="./assets/plugin.js"></script>
     <script src="./assets/pl_custom.js"></script>
     <script src="./assets/moment.js"></script>
