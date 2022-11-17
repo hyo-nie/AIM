@@ -23,21 +23,29 @@ public class ReviewWriteAction implements Action {
 		System.out.println(review_sy);
 		
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
+		String mb_id = (String)session.getAttribute("mb_id");
+		
+		ActionForward forward = new ActionForward();
+		if(mb_id==null) {
+		  forward.setPath("./Login.aim?url=MovieDetail.mv&movieCd="+movieCd);
+		  forward.setRedirect(true);
+		  return forward;
+		}
+		
 		
 		MemberDAO mdao = new MemberDAO();
-		MemberDTO mdto = mdao.getMember(id);
+		MemberDTO mdto = mdao.getMember(mb_id);
 		
 		ReviewDTO dto = new ReviewDTO();
 		dto.setReview(review_sy);
 		dto.setMovieCd(movieCd);
 		dto.setMb_nick(mdto.getMb_nick());
+		dto.setMb_id(mb_id);
 		
 		ReviewDAO dao = new ReviewDAO();
 		
 		dao.insertReview(dto);
 		
-		ActionForward forward = new ActionForward();
 		forward.setPath("./MovieDetail.mv?movieCd="+movieCd);
 		forward.setRedirect(true);
 		

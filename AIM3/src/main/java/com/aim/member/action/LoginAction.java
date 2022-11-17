@@ -16,6 +16,8 @@ public class LoginAction implements Action {
 		
 		String mb_id = request.getParameter("mb_id");
 		String mb_pw = request.getParameter("mb_pw");
+		String movieCd = request.getParameter("movieCd");
+		String url = request.getParameter("url");
 		
 		// DAO - 로그인 여부 체크 메서드 loginCheck()
 		MemberDAO dao = new MemberDAO();
@@ -52,9 +54,13 @@ public class LoginAction implements Action {
 		session.setAttribute("mb_id", mb_id);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("./Main.aim");
-		forward.setRedirect(true);	
-		
+		if(movieCd!=null && url!=null) {
+			forward.setPath("./"+url+"?movieCd="+movieCd);
+			forward.setRedirect(true);
+		} else {
+			forward.setPath("./Main.aim");
+			forward.setRedirect(true);	
+		}
 		return forward;
 	}
 

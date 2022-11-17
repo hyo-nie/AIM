@@ -8,6 +8,7 @@ public class ReviewDTO {
   private Timestamp date;      //작성날짜
   private String movieCd; //영화코드
   private String mb_nick; //작성자닉네임
+  private String mb_id;   //작성자아이디
   
   public int getReviewNo() {
     return reviewNo;
@@ -40,9 +41,18 @@ public class ReviewDTO {
     this.mb_nick = mb_nick;
   }
   
+  public String getMb_id() {
+    return mb_id;
+  }
+  public void setMb_id(String mb_id) {
+    this.mb_id = mb_id;
+  }
+  
   @Override
   public String toString() {
-	  return "ReviewDTO [reviewNo=" + reviewNo + ", review=" + review + ", date=" + date + ", movieCd=" + movieCd
-				+ ", mb_nick=" + mb_nick + "]";
-	}
+    return "ReviewDTO [reviewNo=" + reviewNo + ", review=" + review + ", date=" + date + ", movieCd=" + movieCd
+        + ", mb_nick=" + mb_nick + ", mb_id=" + mb_id + "]";
+  }
+  
+  
 }
