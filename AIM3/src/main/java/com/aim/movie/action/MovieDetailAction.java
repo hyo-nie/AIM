@@ -25,6 +25,8 @@ public class MovieDetailAction implements Action {
     String movieCd = request.getParameter("movieCd");
     //System.out.println(movieCd);
     
+    //================================================================
+    
     ReviewDAO redao = new ReviewDAO();
     int cnt = redao.getReviewCount(request.getParameter("movieCd"));
     System.out.println(movieCd);

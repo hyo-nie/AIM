@@ -119,12 +119,13 @@ public class ReviewDAO {
 			reviewNo = rs.getInt(1)+1;
 		}
 		
-		sql = "insert into review(reviewNo,review,date,movieCd,mb_nick) values(?,?,now(),?,?)";
+		sql = "insert into review(reviewNo,review,date,movieCd,mb_nick,mb_id) values(?,?,now(),?,?,?)";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, reviewNo);
 		pstmt.setString(2, dto.getReview());
 		pstmt.setString(3, dto.getMovieCd());
 		pstmt.setString(4, dto.getMb_nick());
+		pstmt.setString(5, dto.getMb_id());
 		pstmt.executeUpdate();
 		
 	} catch (Exception e) {
