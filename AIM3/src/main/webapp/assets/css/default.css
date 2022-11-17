@@ -6,6 +6,7 @@ ver : 1.00
 
 
 
+
 /* noto-sans-kr-regular - korean */
 @font-face {
 	font-family: 'Noto Sans KR';
@@ -83,10 +84,13 @@ body,
 .member_login_wrap {min-width:1024px;}
 body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {margin:0; padding:0;}
 body, textarea {line-height:1.1; letter-spacing:-0.03em;}
-body, input, button, select, textarea {font-family:"Noto Sans KR", "Roboto", "dotum", "sans-serif"; font-size:12px; color:#000;}
+body, input, button, select, textarea {font-family:"Noto Sans KR", "Roboto", "dotum", "sans-serif"; font-size:13px; color:#000;}
 fieldset {border:none;}
 img {border:none; vertical-align:top;}
 h1, h2, h3, h4, h5, h6, address, caption, em, th {font-style:normal; font-weight:normal;}
+.actors_ym {
+	width: 800px;
+}
 ul, ol {list-style:none;}
 table {width:100%; border-collapse:collapse; border-spacing:0; border:0;}
 legend {position:absolute;}

@@ -48,9 +48,15 @@
 			<!-- 로그인 x : 회원가입 버튼 -->
 
 			<c:if test="${mb_id != null }">
-				<li><a href="./MyPage.aim" class="btn_my">마이페이지</a></li>
+				<c:if test="${mb_id.equals('admin') }">
+					<li><a href="./AdminPage.aim" class="btn_my">관리자페이지</a></li>
+				</c:if>
+				<c:if test="${!mb_id.equals('admin') }">
+					<li><a href="./MyPage.aim" class="btn_my">마이페이지</a></li>
+				</c:if>
 			</c:if>
 			<!-- 로그인 o : 마이페이지 버튼 -->
+			
 
 			<li><a href="./Ticketing.tk" class="btn_reserve">바로 예매</a></li>
 			<!-- 바로예매 이동 -->

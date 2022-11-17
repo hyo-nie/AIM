@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.aim.movie.action.AdminMovieInsert;
+
 @WebServlet("*.aim")
 public class MemberFrontController extends HttpServlet {
 
@@ -228,6 +230,18 @@ public class MemberFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
     	} // Logout.aim 끝
+    	
+    	else if (command.equals("/AdminPage.aim")) {
+    		System.out.println(" C : /AdminPage.aim 호출 ");
+    		System.out.println(" [패턴1]");
+    		
+    		forward = new ActionForward();
+    		forward.setPath("./admin/adminPage.jsp");
+    		forward.setRedirect(false);
+    	} // AdminPage.aim 끝
+    	
+    		
+    		
     	
     	
 
