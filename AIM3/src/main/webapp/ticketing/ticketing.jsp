@@ -224,6 +224,7 @@
 
 </script>
 
+
 </head>
 <body>
 	<!-- 각종 요소 -->
@@ -458,15 +459,6 @@
 									</div>
 									
 									
-									<div class="owl-nav">
-										<button type="button" role="presentation"
-											class="owl-prev disabled">
-											<span aria-label="Previous">‹</span>
-										</button>
-										<button type="button" role="presentation" class="owl-next">
-											<span aria-label="Next">›</span>
-										</button>
-									</div>
 									<div class="owl-dots disabled"></div>
 								</ul>
 								
@@ -528,7 +520,7 @@
 								</div></li>
 							
 							
-							
+							<!-- 조조/심야 탭 시작 (추후 구현 예정, 삭제할 수도 있음) -->
 							<li><button type="button" class="tab_tit"
 									style="width: 33.3333%; left: 33.3333%;">
 									<span>조조</span>
@@ -563,7 +555,8 @@
 											</div>
 										</div>
 									</div>
-								</div></li>
+								</div>
+							</li>
 							<li><button type="button" class="tab_tit"
 									style="width: 33.3333%; left: 66.6666%;">
 									<span>심야</span>
@@ -598,7 +591,9 @@
 											</div>
 										</div>
 									</div>
-								</div></li>
+								</div>
+							</li>
+							<!-- 조조/심야 탭 시작 (추후 구현 예정, 삭제할 수도 있음) -->
 							<li class="wrap_nav_underline"><span class="nav_underline"></span></li>
 						</ul>
 					</div>

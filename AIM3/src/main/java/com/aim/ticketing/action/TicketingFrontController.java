@@ -118,6 +118,21 @@ public class TicketingFrontController extends HttpServlet {
 			}
     	} // DateClick.tk2 끝
     	
+    	else if (command.equals("/SelectSeat.mv")) {
+    		System.out.println(" C : /SelectSeat.mv ");
+    		System.out.println(" C : [패턴3] ");
+    		
+    		// SelectSeatAction 객체
+    		action = new SelectSeatAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	} // SelectSeat.mv
+    	
+    	
 
     	
     	System.out.println("C : 2. 가상주소 매핑 끝\n");

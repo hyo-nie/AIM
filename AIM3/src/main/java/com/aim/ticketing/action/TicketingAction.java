@@ -36,6 +36,8 @@ public class TicketingAction implements Action {
 		// 날짜 정보 조회 메서드 - getTime()
 		List<timeDTO> timeList = dao.getTime();
 		
+		System.out.println(timeList);
+		
 		// request에 극장정보 저장
 		request.setAttribute("theaterList", theaterList);
 		request.setAttribute("scheduleFirst", scheduleFirst);

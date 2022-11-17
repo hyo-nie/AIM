@@ -9,7 +9,7 @@
 	<c:if test="${scheduleList.size() != 0 }">
 		<c:forEach var="scList" items="${scheduleList }">
 		<li class="" value="${scList.branchCd }${scList.movieCd}">
-			<a role="button" href="#none">
+			<a role="button" href="./SelectSeat.tk?scCode=${scList.scCode }">
 				<dl>
 					<dt>상영시간</dt>
 					<dd class="time">
